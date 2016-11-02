@@ -1,0 +1,1493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="msdbModelStoreContainer" CdmEntityContainer="msdbEntities">
+    <EntitySetMapping Name="backupfile">
+      <EntityTypeMapping TypeName="msdbModel.backupfile">
+        <MappingFragment StoreEntitySet="backupfile">
+          <ScalarProperty Name="backup_set_id" ColumnName="backup_set_id" />
+          <ScalarProperty Name="first_family_number" ColumnName="first_family_number" />
+          <ScalarProperty Name="first_media_number" ColumnName="first_media_number" />
+          <ScalarProperty Name="filegroup_name" ColumnName="filegroup_name" />
+          <ScalarProperty Name="page_size" ColumnName="page_size" />
+          <ScalarProperty Name="file_number" ColumnName="file_number" />
+          <ScalarProperty Name="backed_up_page_count" ColumnName="backed_up_page_count" />
+          <ScalarProperty Name="file_type" ColumnName="file_type" />
+          <ScalarProperty Name="source_file_block_size" ColumnName="source_file_block_size" />
+          <ScalarProperty Name="file_size" ColumnName="file_size" />
+          <ScalarProperty Name="logical_name" ColumnName="logical_name" />
+          <ScalarProperty Name="physical_drive" ColumnName="physical_drive" />
+          <ScalarProperty Name="physical_name" ColumnName="physical_name" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="state_desc" ColumnName="state_desc" />
+          <ScalarProperty Name="create_lsn" ColumnName="create_lsn" />
+          <ScalarProperty Name="drop_lsn" ColumnName="drop_lsn" />
+          <ScalarProperty Name="file_guid" ColumnName="file_guid" />
+          <ScalarProperty Name="read_only_lsn" ColumnName="read_only_lsn" />
+          <ScalarProperty Name="read_write_lsn" ColumnName="read_write_lsn" />
+          <ScalarProperty Name="differential_base_lsn" ColumnName="differential_base_lsn" />
+          <ScalarProperty Name="differential_base_guid" ColumnName="differential_base_guid" />
+          <ScalarProperty Name="backup_size" ColumnName="backup_size" />
+          <ScalarProperty Name="filegroup_guid" ColumnName="filegroup_guid" />
+          <ScalarProperty Name="is_readonly" ColumnName="is_readonly" />
+          <ScalarProperty Name="is_present" ColumnName="is_present" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="backupfilegroup">
+      <EntityTypeMapping TypeName="msdbModel.backupfilegroup">
+        <MappingFragment StoreEntitySet="backupfilegroup">
+          <ScalarProperty Name="backup_set_id" ColumnName="backup_set_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="filegroup_id" ColumnName="filegroup_id" />
+          <ScalarProperty Name="filegroup_guid" ColumnName="filegroup_guid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="type_desc" ColumnName="type_desc" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+          <ScalarProperty Name="is_readonly" ColumnName="is_readonly" />
+          <ScalarProperty Name="log_filegroup_guid" ColumnName="log_filegroup_guid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="backupmediafamily">
+      <EntityTypeMapping TypeName="msdbModel.backupmediafamily">
+        <MappingFragment StoreEntitySet="backupmediafamily">
+          <ScalarProperty Name="media_set_id" ColumnName="media_set_id" />
+          <ScalarProperty Name="family_sequence_number" ColumnName="family_sequence_number" />
+          <ScalarProperty Name="media_family_id" ColumnName="media_family_id" />
+          <ScalarProperty Name="media_count" ColumnName="media_count" />
+          <ScalarProperty Name="logical_device_name" ColumnName="logical_device_name" />
+          <ScalarProperty Name="physical_device_name" ColumnName="physical_device_name" />
+          <ScalarProperty Name="device_type" ColumnName="device_type" />
+          <ScalarProperty Name="physical_block_size" ColumnName="physical_block_size" />
+          <ScalarProperty Name="mirror" ColumnName="mirror" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="backupmediaset">
+      <EntityTypeMapping TypeName="msdbModel.backupmediaset">
+        <MappingFragment StoreEntitySet="backupmediaset">
+          <ScalarProperty Name="media_set_id" ColumnName="media_set_id" />
+          <ScalarProperty Name="media_uuid" ColumnName="media_uuid" />
+          <ScalarProperty Name="media_family_count" ColumnName="media_family_count" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="software_name" ColumnName="software_name" />
+          <ScalarProperty Name="software_vendor_id" ColumnName="software_vendor_id" />
+          <ScalarProperty Name="MTF_major_version" ColumnName="MTF_major_version" />
+          <ScalarProperty Name="mirror_count" ColumnName="mirror_count" />
+          <ScalarProperty Name="is_password_protected" ColumnName="is_password_protected" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="backupset">
+      <EntityTypeMapping TypeName="msdbModel.backupset">
+        <MappingFragment StoreEntitySet="backupset">
+          <ScalarProperty Name="backup_set_id" ColumnName="backup_set_id" />
+          <ScalarProperty Name="backup_set_uuid" ColumnName="backup_set_uuid" />
+          <ScalarProperty Name="media_set_id" ColumnName="media_set_id" />
+          <ScalarProperty Name="first_family_number" ColumnName="first_family_number" />
+          <ScalarProperty Name="first_media_number" ColumnName="first_media_number" />
+          <ScalarProperty Name="last_family_number" ColumnName="last_family_number" />
+          <ScalarProperty Name="last_media_number" ColumnName="last_media_number" />
+          <ScalarProperty Name="catalog_family_number" ColumnName="catalog_family_number" />
+          <ScalarProperty Name="catalog_media_number" ColumnName="catalog_media_number" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
+          <ScalarProperty Name="software_vendor_id" ColumnName="software_vendor_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="software_major_version" ColumnName="software_major_version" />
+          <ScalarProperty Name="software_minor_version" ColumnName="software_minor_version" />
+          <ScalarProperty Name="software_build_version" ColumnName="software_build_version" />
+          <ScalarProperty Name="time_zone" ColumnName="time_zone" />
+          <ScalarProperty Name="mtf_minor_version" ColumnName="mtf_minor_version" />
+          <ScalarProperty Name="first_lsn" ColumnName="first_lsn" />
+          <ScalarProperty Name="last_lsn" ColumnName="last_lsn" />
+          <ScalarProperty Name="checkpoint_lsn" ColumnName="checkpoint_lsn" />
+          <ScalarProperty Name="database_backup_lsn" ColumnName="database_backup_lsn" />
+          <ScalarProperty Name="database_creation_date" ColumnName="database_creation_date" />
+          <ScalarProperty Name="backup_start_date" ColumnName="backup_start_date" />
+          <ScalarProperty Name="backup_finish_date" ColumnName="backup_finish_date" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="sort_order" ColumnName="sort_order" />
+          <ScalarProperty Name="code_page" ColumnName="code_page" />
+          <ScalarProperty Name="compatibility_level" ColumnName="compatibility_level" />
+          <ScalarProperty Name="database_version" ColumnName="database_version" />
+          <ScalarProperty Name="backup_size" ColumnName="backup_size" />
+          <ScalarProperty Name="database_name" ColumnName="database_name" />
+          <ScalarProperty Name="server_name" ColumnName="server_name" />
+          <ScalarProperty Name="machine_name" ColumnName="machine_name" />
+          <ScalarProperty Name="flags" ColumnName="flags" />
+          <ScalarProperty Name="unicode_locale" ColumnName="unicode_locale" />
+          <ScalarProperty Name="unicode_compare_style" ColumnName="unicode_compare_style" />
+          <ScalarProperty Name="collation_name" ColumnName="collation_name" />
+          <ScalarProperty Name="is_password_protected" ColumnName="is_password_protected" />
+          <ScalarProperty Name="recovery_model" ColumnName="recovery_model" />
+          <ScalarProperty Name="has_bulk_logged_data" ColumnName="has_bulk_logged_data" />
+          <ScalarProperty Name="is_snapshot" ColumnName="is_snapshot" />
+          <ScalarProperty Name="is_readonly" ColumnName="is_readonly" />
+          <ScalarProperty Name="is_single_user" ColumnName="is_single_user" />
+          <ScalarProperty Name="has_backup_checksums" ColumnName="has_backup_checksums" />
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+          <ScalarProperty Name="begins_log_chain" ColumnName="begins_log_chain" />
+          <ScalarProperty Name="has_incomplete_metadata" ColumnName="has_incomplete_metadata" />
+          <ScalarProperty Name="is_force_offline" ColumnName="is_force_offline" />
+          <ScalarProperty Name="is_copy_only" ColumnName="is_copy_only" />
+          <ScalarProperty Name="first_recovery_fork_guid" ColumnName="first_recovery_fork_guid" />
+          <ScalarProperty Name="last_recovery_fork_guid" ColumnName="last_recovery_fork_guid" />
+          <ScalarProperty Name="fork_point_lsn" ColumnName="fork_point_lsn" />
+          <ScalarProperty Name="database_guid" ColumnName="database_guid" />
+          <ScalarProperty Name="family_guid" ColumnName="family_guid" />
+          <ScalarProperty Name="differential_base_lsn" ColumnName="differential_base_lsn" />
+          <ScalarProperty Name="differential_base_guid" ColumnName="differential_base_guid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_shipping_monitor_alert">
+      <EntityTypeMapping TypeName="msdbModel.log_shipping_monitor_alert">
+        <MappingFragment StoreEntitySet="log_shipping_monitor_alert">
+          <ScalarProperty Name="alert_job_id" ColumnName="alert_job_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_shipping_monitor_error_detail">
+      <EntityTypeMapping TypeName="msdbModel.log_shipping_monitor_error_detail">
+        <MappingFragment StoreEntitySet="log_shipping_monitor_error_detail">
+          <ScalarProperty Name="agent_id" ColumnName="agent_id" />
+          <ScalarProperty Name="agent_type" ColumnName="agent_type" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="database_name" ColumnName="database_name" />
+          <ScalarProperty Name="sequence_number" ColumnName="sequence_number" />
+          <ScalarProperty Name="log_time" ColumnName="log_time" />
+          <ScalarProperty Name="log_time_utc" ColumnName="log_time_utc" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="help_url" ColumnName="help_url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_shipping_monitor_history_detail">
+      <EntityTypeMapping TypeName="msdbModel.log_shipping_monitor_history_detail">
+        <MappingFragment StoreEntitySet="log_shipping_monitor_history_detail">
+          <ScalarProperty Name="agent_id" ColumnName="agent_id" />
+          <ScalarProperty Name="agent_type" ColumnName="agent_type" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="database_name" ColumnName="database_name" />
+          <ScalarProperty Name="session_status" ColumnName="session_status" />
+          <ScalarProperty Name="log_time" ColumnName="log_time" />
+          <ScalarProperty Name="log_time_utc" ColumnName="log_time_utc" />
+          <ScalarProperty Name="message" ColumnName="message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_shipping_monitor_primary">
+      <EntityTypeMapping TypeName="msdbModel.log_shipping_monitor_primary">
+        <MappingFragment StoreEntitySet="log_shipping_monitor_primary">
+          <ScalarProperty Name="primary_id" ColumnName="primary_id" />
+          <ScalarProperty Name="primary_server" ColumnName="primary_server" />
+          <ScalarProperty Name="primary_database" ColumnName="primary_database" />
+          <ScalarProperty Name="backup_threshold" ColumnName="backup_threshold" />
+          <ScalarProperty Name="threshold_alert" ColumnName="threshold_alert" />
+          <ScalarProperty Name="threshold_alert_enabled" ColumnName="threshold_alert_enabled" />
+          <ScalarProperty Name="last_backup_file" ColumnName="last_backup_file" />
+          <ScalarProperty Name="last_backup_date" ColumnName="last_backup_date" />
+          <ScalarProperty Name="last_backup_date_utc" ColumnName="last_backup_date_utc" />
+          <ScalarProperty Name="history_retention_period" ColumnName="history_retention_period" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_shipping_monitor_secondary">
+      <EntityTypeMapping TypeName="msdbModel.log_shipping_monitor_secondary">
+        <MappingFragment StoreEntitySet="log_shipping_monitor_secondary">
+          <ScalarProperty Name="secondary_server" ColumnName="secondary_server" />
+          <ScalarProperty Name="secondary_database" ColumnName="secondary_database" />
+          <ScalarProperty Name="secondary_id" ColumnName="secondary_id" />
+          <ScalarProperty Name="primary_server" ColumnName="primary_server" />
+          <ScalarProperty Name="primary_database" ColumnName="primary_database" />
+          <ScalarProperty Name="restore_threshold" ColumnName="restore_threshold" />
+          <ScalarProperty Name="threshold_alert" ColumnName="threshold_alert" />
+          <ScalarProperty Name="threshold_alert_enabled" ColumnName="threshold_alert_enabled" />
+          <ScalarProperty Name="last_copied_file" ColumnName="last_copied_file" />
+          <ScalarProperty Name="last_copied_date" ColumnName="last_copied_date" />
+          <ScalarProperty Name="last_copied_date_utc" ColumnName="last_copied_date_utc" />
+          <ScalarProperty Name="last_restored_file" ColumnName="last_restored_file" />
+          <ScalarProperty Name="last_restored_date" ColumnName="last_restored_date" />
+          <ScalarProperty Name="last_restored_date_utc" ColumnName="last_restored_date_utc" />
+          <ScalarProperty Name="last_restored_latency" ColumnName="last_restored_latency" />
+          <ScalarProperty Name="history_retention_period" ColumnName="history_retention_period" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_shipping_primaries">
+      <EntityTypeMapping TypeName="msdbModel.log_shipping_primaries">
+        <MappingFragment StoreEntitySet="log_shipping_primaries">
+          <ScalarProperty Name="primary_id" ColumnName="primary_id" />
+          <ScalarProperty Name="primary_server_name" ColumnName="primary_server_name" />
+          <ScalarProperty Name="primary_database_name" ColumnName="primary_database_name" />
+          <ScalarProperty Name="maintenance_plan_id" ColumnName="maintenance_plan_id" />
+          <ScalarProperty Name="backup_threshold" ColumnName="backup_threshold" />
+          <ScalarProperty Name="threshold_alert" ColumnName="threshold_alert" />
+          <ScalarProperty Name="threshold_alert_enabled" ColumnName="threshold_alert_enabled" />
+          <ScalarProperty Name="last_backup_filename" ColumnName="last_backup_filename" />
+          <ScalarProperty Name="last_updated" ColumnName="last_updated" />
+          <ScalarProperty Name="planned_outage_start_time" ColumnName="planned_outage_start_time" />
+          <ScalarProperty Name="planned_outage_end_time" ColumnName="planned_outage_end_time" />
+          <ScalarProperty Name="planned_outage_weekday_mask" ColumnName="planned_outage_weekday_mask" />
+          <ScalarProperty Name="source_directory" ColumnName="source_directory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_shipping_primary_databases">
+      <EntityTypeMapping TypeName="msdbModel.log_shipping_primary_databases">
+        <MappingFragment StoreEntitySet="log_shipping_primary_databases">
+          <ScalarProperty Name="primary_id" ColumnName="primary_id" />
+          <ScalarProperty Name="primary_database" ColumnName="primary_database" />
+          <ScalarProperty Name="backup_directory" ColumnName="backup_directory" />
+          <ScalarProperty Name="backup_share" ColumnName="backup_share" />
+          <ScalarProperty Name="backup_retention_period" ColumnName="backup_retention_period" />
+          <ScalarProperty Name="backup_job_id" ColumnName="backup_job_id" />
+          <ScalarProperty Name="monitor_server" ColumnName="monitor_server" />
+          <ScalarProperty Name="user_specified_monitor" ColumnName="user_specified_monitor" />
+          <ScalarProperty Name="monitor_server_security_mode" ColumnName="monitor_server_security_mode" />
+          <ScalarProperty Name="last_backup_file" ColumnName="last_backup_file" />
+          <ScalarProperty Name="last_backup_date" ColumnName="last_backup_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_shipping_primary_secondaries">
+      <EntityTypeMapping TypeName="msdbModel.log_shipping_primary_secondaries">
+        <MappingFragment StoreEntitySet="log_shipping_primary_secondaries">
+          <ScalarProperty Name="primary_id" ColumnName="primary_id" />
+          <ScalarProperty Name="secondary_server" ColumnName="secondary_server" />
+          <ScalarProperty Name="secondary_database" ColumnName="secondary_database" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_shipping_secondaries">
+      <EntityTypeMapping TypeName="msdbModel.log_shipping_secondaries">
+        <MappingFragment StoreEntitySet="log_shipping_secondaries">
+          <ScalarProperty Name="primary_id" ColumnName="primary_id" />
+          <ScalarProperty Name="secondary_server_name" ColumnName="secondary_server_name" />
+          <ScalarProperty Name="secondary_database_name" ColumnName="secondary_database_name" />
+          <ScalarProperty Name="last_copied_filename" ColumnName="last_copied_filename" />
+          <ScalarProperty Name="last_loaded_filename" ColumnName="last_loaded_filename" />
+          <ScalarProperty Name="last_copied_last_updated" ColumnName="last_copied_last_updated" />
+          <ScalarProperty Name="last_loaded_last_updated" ColumnName="last_loaded_last_updated" />
+          <ScalarProperty Name="secondary_plan_id" ColumnName="secondary_plan_id" />
+          <ScalarProperty Name="copy_enabled" ColumnName="copy_enabled" />
+          <ScalarProperty Name="load_enabled" ColumnName="load_enabled" />
+          <ScalarProperty Name="out_of_sync_threshold" ColumnName="out_of_sync_threshold" />
+          <ScalarProperty Name="threshold_alert" ColumnName="threshold_alert" />
+          <ScalarProperty Name="threshold_alert_enabled" ColumnName="threshold_alert_enabled" />
+          <ScalarProperty Name="planned_outage_start_time" ColumnName="planned_outage_start_time" />
+          <ScalarProperty Name="planned_outage_end_time" ColumnName="planned_outage_end_time" />
+          <ScalarProperty Name="planned_outage_weekday_mask" ColumnName="planned_outage_weekday_mask" />
+          <ScalarProperty Name="allow_role_change" ColumnName="allow_role_change" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_shipping_secondary">
+      <EntityTypeMapping TypeName="msdbModel.log_shipping_secondary">
+        <MappingFragment StoreEntitySet="log_shipping_secondary">
+          <ScalarProperty Name="secondary_id" ColumnName="secondary_id" />
+          <ScalarProperty Name="primary_server" ColumnName="primary_server" />
+          <ScalarProperty Name="primary_database" ColumnName="primary_database" />
+          <ScalarProperty Name="backup_source_directory" ColumnName="backup_source_directory" />
+          <ScalarProperty Name="backup_destination_directory" ColumnName="backup_destination_directory" />
+          <ScalarProperty Name="file_retention_period" ColumnName="file_retention_period" />
+          <ScalarProperty Name="copy_job_id" ColumnName="copy_job_id" />
+          <ScalarProperty Name="restore_job_id" ColumnName="restore_job_id" />
+          <ScalarProperty Name="monitor_server" ColumnName="monitor_server" />
+          <ScalarProperty Name="monitor_server_security_mode" ColumnName="monitor_server_security_mode" />
+          <ScalarProperty Name="user_specified_monitor" ColumnName="user_specified_monitor" />
+          <ScalarProperty Name="last_copied_file" ColumnName="last_copied_file" />
+          <ScalarProperty Name="last_copied_date" ColumnName="last_copied_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_shipping_secondary_databases">
+      <EntityTypeMapping TypeName="msdbModel.log_shipping_secondary_databases">
+        <MappingFragment StoreEntitySet="log_shipping_secondary_databases">
+          <ScalarProperty Name="secondary_database" ColumnName="secondary_database" />
+          <ScalarProperty Name="secondary_id" ColumnName="secondary_id" />
+          <ScalarProperty Name="restore_delay" ColumnName="restore_delay" />
+          <ScalarProperty Name="restore_all" ColumnName="restore_all" />
+          <ScalarProperty Name="restore_mode" ColumnName="restore_mode" />
+          <ScalarProperty Name="disconnect_users" ColumnName="disconnect_users" />
+          <ScalarProperty Name="block_size" ColumnName="block_size" />
+          <ScalarProperty Name="buffer_count" ColumnName="buffer_count" />
+          <ScalarProperty Name="max_transfer_size" ColumnName="max_transfer_size" />
+          <ScalarProperty Name="last_restored_file" ColumnName="last_restored_file" />
+          <ScalarProperty Name="last_restored_date" ColumnName="last_restored_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logmarkhistory">
+      <EntityTypeMapping TypeName="msdbModel.logmarkhistory">
+        <MappingFragment StoreEntitySet="logmarkhistory">
+          <ScalarProperty Name="database_name" ColumnName="database_name" />
+          <ScalarProperty Name="mark_name" ColumnName="mark_name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="lsn" ColumnName="lsn" />
+          <ScalarProperty Name="mark_time" ColumnName="mark_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MSdbms">
+      <EntityTypeMapping TypeName="msdbModel.MSdbms">
+        <MappingFragment StoreEntitySet="MSdbms">
+          <ScalarProperty Name="dbms_id" ColumnName="dbms_id" />
+          <ScalarProperty Name="dbms" ColumnName="dbms" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MSdbms_datatype">
+      <EntityTypeMapping TypeName="msdbModel.MSdbms_datatype">
+        <MappingFragment StoreEntitySet="MSdbms_datatype">
+          <ScalarProperty Name="datatype_id" ColumnName="datatype_id" />
+          <ScalarProperty Name="dbms_id" ColumnName="dbms_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="createparams" ColumnName="createparams" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MSdbms_datatype_mapping">
+      <EntityTypeMapping TypeName="msdbModel.MSdbms_datatype_mapping">
+        <MappingFragment StoreEntitySet="MSdbms_datatype_mapping">
+          <ScalarProperty Name="datatype_mapping_id" ColumnName="datatype_mapping_id" />
+          <ScalarProperty Name="map_id" ColumnName="map_id" />
+          <ScalarProperty Name="dest_datatype_id" ColumnName="dest_datatype_id" />
+          <ScalarProperty Name="dest_precision" ColumnName="dest_precision" />
+          <ScalarProperty Name="dest_scale" ColumnName="dest_scale" />
+          <ScalarProperty Name="dest_length" ColumnName="dest_length" />
+          <ScalarProperty Name="dest_nullable" ColumnName="dest_nullable" />
+          <ScalarProperty Name="dest_createparams" ColumnName="dest_createparams" />
+          <ScalarProperty Name="dataloss" ColumnName="dataloss" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MSdbms_map">
+      <EntityTypeMapping TypeName="msdbModel.MSdbms_map">
+        <MappingFragment StoreEntitySet="MSdbms_map">
+          <ScalarProperty Name="map_id" ColumnName="map_id" />
+          <ScalarProperty Name="src_dbms_id" ColumnName="src_dbms_id" />
+          <ScalarProperty Name="dest_dbms_id" ColumnName="dest_dbms_id" />
+          <ScalarProperty Name="src_datatype_id" ColumnName="src_datatype_id" />
+          <ScalarProperty Name="src_len_min" ColumnName="src_len_min" />
+          <ScalarProperty Name="src_len_max" ColumnName="src_len_max" />
+          <ScalarProperty Name="src_prec_min" ColumnName="src_prec_min" />
+          <ScalarProperty Name="src_prec_max" ColumnName="src_prec_max" />
+          <ScalarProperty Name="src_scale_min" ColumnName="src_scale_min" />
+          <ScalarProperty Name="src_scale_max" ColumnName="src_scale_max" />
+          <ScalarProperty Name="src_nullable" ColumnName="src_nullable" />
+          <ScalarProperty Name="default_datatype_mapping_id" ColumnName="default_datatype_mapping_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="restorefile">
+      <EntityTypeMapping TypeName="msdbModel.restorefile">
+        <MappingFragment StoreEntitySet="restorefile">
+          <ScalarProperty Name="restore_history_id" ColumnName="restore_history_id" />
+          <ScalarProperty Name="file_number" ColumnName="file_number" />
+          <ScalarProperty Name="destination_phys_drive" ColumnName="destination_phys_drive" />
+          <ScalarProperty Name="destination_phys_name" ColumnName="destination_phys_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="restorefilegroup">
+      <EntityTypeMapping TypeName="msdbModel.restorefilegroup">
+        <MappingFragment StoreEntitySet="restorefilegroup">
+          <ScalarProperty Name="restore_history_id" ColumnName="restore_history_id" />
+          <ScalarProperty Name="filegroup_name" ColumnName="filegroup_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="restorehistory">
+      <EntityTypeMapping TypeName="msdbModel.restorehistory">
+        <MappingFragment StoreEntitySet="restorehistory">
+          <ScalarProperty Name="restore_history_id" ColumnName="restore_history_id" />
+          <ScalarProperty Name="restore_date" ColumnName="restore_date" />
+          <ScalarProperty Name="destination_database_name" ColumnName="destination_database_name" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="backup_set_id" ColumnName="backup_set_id" />
+          <ScalarProperty Name="restore_type" ColumnName="restore_type" />
+          <ScalarProperty Name="replace" ColumnName="replace" />
+          <ScalarProperty Name="recovery" ColumnName="recovery" />
+          <ScalarProperty Name="restart" ColumnName="restart" />
+          <ScalarProperty Name="stop_at" ColumnName="stop_at" />
+          <ScalarProperty Name="device_count" ColumnName="device_count" />
+          <ScalarProperty Name="stop_at_mark_name" ColumnName="stop_at_mark_name" />
+          <ScalarProperty Name="stop_before" ColumnName="stop_before" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sqlagent_info">
+      <EntityTypeMapping TypeName="msdbModel.sqlagent_info">
+        <MappingFragment StoreEntitySet="sqlagent_info">
+          <ScalarProperty Name="attribute" ColumnName="attribute" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="suspect_pages">
+      <EntityTypeMapping TypeName="msdbModel.suspect_pages">
+        <MappingFragment StoreEntitySet="suspect_pages">
+          <ScalarProperty Name="database_id" ColumnName="database_id" />
+          <ScalarProperty Name="file_id" ColumnName="file_id" />
+          <ScalarProperty Name="page_id" ColumnName="page_id" />
+          <ScalarProperty Name="event_type" ColumnName="event_type" />
+          <ScalarProperty Name="error_count" ColumnName="error_count" />
+          <ScalarProperty Name="last_update_date" ColumnName="last_update_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysalerts">
+      <EntityTypeMapping TypeName="msdbModel.sysalerts">
+        <MappingFragment StoreEntitySet="sysalerts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="event_source" ColumnName="event_source" />
+          <ScalarProperty Name="event_category_id" ColumnName="event_category_id" />
+          <ScalarProperty Name="event_id" ColumnName="event_id" />
+          <ScalarProperty Name="message_id" ColumnName="message_id" />
+          <ScalarProperty Name="severity" ColumnName="severity" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="delay_between_responses" ColumnName="delay_between_responses" />
+          <ScalarProperty Name="last_occurrence_date" ColumnName="last_occurrence_date" />
+          <ScalarProperty Name="last_occurrence_time" ColumnName="last_occurrence_time" />
+          <ScalarProperty Name="last_response_date" ColumnName="last_response_date" />
+          <ScalarProperty Name="last_response_time" ColumnName="last_response_time" />
+          <ScalarProperty Name="notification_message" ColumnName="notification_message" />
+          <ScalarProperty Name="include_event_description" ColumnName="include_event_description" />
+          <ScalarProperty Name="database_name" ColumnName="database_name" />
+          <ScalarProperty Name="event_description_keyword" ColumnName="event_description_keyword" />
+          <ScalarProperty Name="occurrence_count" ColumnName="occurrence_count" />
+          <ScalarProperty Name="count_reset_date" ColumnName="count_reset_date" />
+          <ScalarProperty Name="count_reset_time" ColumnName="count_reset_time" />
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="has_notification" ColumnName="has_notification" />
+          <ScalarProperty Name="flags" ColumnName="flags" />
+          <ScalarProperty Name="performance_condition" ColumnName="performance_condition" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="syscachedcredentials">
+      <EntityTypeMapping TypeName="msdbModel.syscachedcredentials">
+        <MappingFragment StoreEntitySet="syscachedcredentials">
+          <ScalarProperty Name="login_name" ColumnName="login_name" />
+          <ScalarProperty Name="has_server_access" ColumnName="has_server_access" />
+          <ScalarProperty Name="is_sysadmin_member" ColumnName="is_sysadmin_member" />
+          <ScalarProperty Name="cachedate" ColumnName="cachedate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="syscategories">
+      <EntityTypeMapping TypeName="msdbModel.syscategories">
+        <MappingFragment StoreEntitySet="syscategories">
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="category_class" ColumnName="category_class" />
+          <ScalarProperty Name="category_type" ColumnName="category_type" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdbmaintplan_databases">
+      <EntityTypeMapping TypeName="msdbModel.sysdbmaintplan_databases">
+        <MappingFragment StoreEntitySet="sysdbmaintplan_databases">
+          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
+          <ScalarProperty Name="database_name" ColumnName="database_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdbmaintplan_history">
+      <EntityTypeMapping TypeName="msdbModel.sysdbmaintplan_history">
+        <MappingFragment StoreEntitySet="sysdbmaintplan_history">
+          <ScalarProperty Name="sequence_id" ColumnName="sequence_id" />
+          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
+          <ScalarProperty Name="plan_name" ColumnName="plan_name" />
+          <ScalarProperty Name="database_name" ColumnName="database_name" />
+          <ScalarProperty Name="server_name" ColumnName="server_name" />
+          <ScalarProperty Name="activity" ColumnName="activity" />
+          <ScalarProperty Name="succeeded" ColumnName="succeeded" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="error_number" ColumnName="error_number" />
+          <ScalarProperty Name="message" ColumnName="message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdbmaintplan_jobs">
+      <EntityTypeMapping TypeName="msdbModel.sysdbmaintplan_jobs">
+        <MappingFragment StoreEntitySet="sysdbmaintplan_jobs">
+          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdbmaintplans">
+      <EntityTypeMapping TypeName="msdbModel.sysdbmaintplans">
+        <MappingFragment StoreEntitySet="sysdbmaintplans">
+          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
+          <ScalarProperty Name="plan_name" ColumnName="plan_name" />
+          <ScalarProperty Name="date_created" ColumnName="date_created" />
+          <ScalarProperty Name="owner" ColumnName="owner" />
+          <ScalarProperty Name="max_history_rows" ColumnName="max_history_rows" />
+          <ScalarProperty Name="remote_history_server" ColumnName="remote_history_server" />
+          <ScalarProperty Name="max_remote_history_rows" ColumnName="max_remote_history_rows" />
+          <ScalarProperty Name="user_defined_1" ColumnName="user_defined_1" />
+          <ScalarProperty Name="user_defined_2" ColumnName="user_defined_2" />
+          <ScalarProperty Name="user_defined_3" ColumnName="user_defined_3" />
+          <ScalarProperty Name="user_defined_4" ColumnName="user_defined_4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdownloadlist">
+      <EntityTypeMapping TypeName="msdbModel.sysdownloadlist">
+        <MappingFragment StoreEntitySet="sysdownloadlist">
+          <ScalarProperty Name="instance_id" ColumnName="instance_id" />
+          <ScalarProperty Name="source_server" ColumnName="source_server" />
+          <ScalarProperty Name="operation_code" ColumnName="operation_code" />
+          <ScalarProperty Name="object_type" ColumnName="object_type" />
+          <ScalarProperty Name="object_id" ColumnName="object_id" />
+          <ScalarProperty Name="target_server" ColumnName="target_server" />
+          <ScalarProperty Name="error_message" ColumnName="error_message" />
+          <ScalarProperty Name="date_posted" ColumnName="date_posted" />
+          <ScalarProperty Name="date_downloaded" ColumnName="date_downloaded" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="deleted_object_name" ColumnName="deleted_object_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdtscategories">
+      <EntityTypeMapping TypeName="msdbModel.sysdtscategories">
+        <MappingFragment StoreEntitySet="sysdtscategories">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdtslog90">
+      <EntityTypeMapping TypeName="msdbModel.sysdtslog90">
+        <MappingFragment StoreEntitySet="sysdtslog90">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="event" ColumnName="event" />
+          <ScalarProperty Name="computer" ColumnName="computer" />
+          <ScalarProperty Name="operator" ColumnName="operator" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="sourceid" ColumnName="sourceid" />
+          <ScalarProperty Name="executionid" ColumnName="executionid" />
+          <ScalarProperty Name="starttime" ColumnName="starttime" />
+          <ScalarProperty Name="endtime" ColumnName="endtime" />
+          <ScalarProperty Name="datacode" ColumnName="datacode" />
+          <ScalarProperty Name="databytes" ColumnName="databytes" />
+          <ScalarProperty Name="message" ColumnName="message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdtspackagefolders90">
+      <EntityTypeMapping TypeName="msdbModel.sysdtspackagefolders90">
+        <MappingFragment StoreEntitySet="sysdtspackagefolders90">
+          <ScalarProperty Name="folderid" ColumnName="folderid" />
+          <ScalarProperty Name="parentfolderid" ColumnName="parentfolderid" />
+          <ScalarProperty Name="foldername" ColumnName="foldername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdtspackagelog">
+      <EntityTypeMapping TypeName="msdbModel.sysdtspackagelog">
+        <MappingFragment StoreEntitySet="sysdtspackagelog">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="versionid" ColumnName="versionid" />
+          <ScalarProperty Name="lineagefull" ColumnName="lineagefull" />
+          <ScalarProperty Name="lineageshort" ColumnName="lineageshort" />
+          <ScalarProperty Name="starttime" ColumnName="starttime" />
+          <ScalarProperty Name="endtime" ColumnName="endtime" />
+          <ScalarProperty Name="elapsedtime" ColumnName="elapsedtime" />
+          <ScalarProperty Name="computer" ColumnName="computer" />
+          <ScalarProperty Name="operator" ColumnName="operator" />
+          <ScalarProperty Name="logdate" ColumnName="logdate" />
+          <ScalarProperty Name="errorcode" ColumnName="errorcode" />
+          <ScalarProperty Name="errordescription" ColumnName="errordescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdtspackages">
+      <EntityTypeMapping TypeName="msdbModel.sysdtspackages">
+        <MappingFragment StoreEntitySet="sysdtspackages">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="versionid" ColumnName="versionid" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="owner" ColumnName="owner" />
+          <ScalarProperty Name="packagedata" ColumnName="packagedata" />
+          <ScalarProperty Name="owner_sid" ColumnName="owner_sid" />
+          <ScalarProperty Name="packagetype" ColumnName="packagetype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdtspackages90">
+      <EntityTypeMapping TypeName="msdbModel.sysdtspackages90">
+        <MappingFragment StoreEntitySet="sysdtspackages90">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="folderid" ColumnName="folderid" />
+          <ScalarProperty Name="ownersid" ColumnName="ownersid" />
+          <ScalarProperty Name="packagedata" ColumnName="packagedata" />
+          <ScalarProperty Name="packageformat" ColumnName="packageformat" />
+          <ScalarProperty Name="packagetype" ColumnName="packagetype" />
+          <ScalarProperty Name="vermajor" ColumnName="vermajor" />
+          <ScalarProperty Name="verminor" ColumnName="verminor" />
+          <ScalarProperty Name="verbuild" ColumnName="verbuild" />
+          <ScalarProperty Name="vercomments" ColumnName="vercomments" />
+          <ScalarProperty Name="verid" ColumnName="verid" />
+          <ScalarProperty Name="isencrypted" ColumnName="isencrypted" />
+          <ScalarProperty Name="readrolesid" ColumnName="readrolesid" />
+          <ScalarProperty Name="writerolesid" ColumnName="writerolesid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdtssteplog">
+      <EntityTypeMapping TypeName="msdbModel.sysdtssteplog">
+        <MappingFragment StoreEntitySet="sysdtssteplog">
+          <ScalarProperty Name="stepexecutionid" ColumnName="stepexecutionid" />
+          <ScalarProperty Name="lineagefull" ColumnName="lineagefull" />
+          <ScalarProperty Name="stepname" ColumnName="stepname" />
+          <ScalarProperty Name="stepexecstatus" ColumnName="stepexecstatus" />
+          <ScalarProperty Name="stepexecresult" ColumnName="stepexecresult" />
+          <ScalarProperty Name="starttime" ColumnName="starttime" />
+          <ScalarProperty Name="endtime" ColumnName="endtime" />
+          <ScalarProperty Name="elapsedtime" ColumnName="elapsedtime" />
+          <ScalarProperty Name="errorcode" ColumnName="errorcode" />
+          <ScalarProperty Name="errordescription" ColumnName="errordescription" />
+          <ScalarProperty Name="progresscount" ColumnName="progresscount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdtstasklog">
+      <EntityTypeMapping TypeName="msdbModel.sysdtstasklog">
+        <MappingFragment StoreEntitySet="sysdtstasklog">
+          <ScalarProperty Name="stepexecutionid" ColumnName="stepexecutionid" />
+          <ScalarProperty Name="sequenceid" ColumnName="sequenceid" />
+          <ScalarProperty Name="errorcode" ColumnName="errorcode" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysjobactivity">
+      <EntityTypeMapping TypeName="msdbModel.sysjobactivity">
+        <MappingFragment StoreEntitySet="sysjobactivity">
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="run_requested_date" ColumnName="run_requested_date" />
+          <ScalarProperty Name="run_requested_source" ColumnName="run_requested_source" />
+          <ScalarProperty Name="queued_date" ColumnName="queued_date" />
+          <ScalarProperty Name="start_execution_date" ColumnName="start_execution_date" />
+          <ScalarProperty Name="last_executed_step_id" ColumnName="last_executed_step_id" />
+          <ScalarProperty Name="last_executed_step_date" ColumnName="last_executed_step_date" />
+          <ScalarProperty Name="stop_execution_date" ColumnName="stop_execution_date" />
+          <ScalarProperty Name="job_history_id" ColumnName="job_history_id" />
+          <ScalarProperty Name="next_scheduled_run_date" ColumnName="next_scheduled_run_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysjobhistory">
+      <EntityTypeMapping TypeName="msdbModel.sysjobhistory">
+        <MappingFragment StoreEntitySet="sysjobhistory">
+          <ScalarProperty Name="instance_id" ColumnName="instance_id" />
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="step_id" ColumnName="step_id" />
+          <ScalarProperty Name="step_name" ColumnName="step_name" />
+          <ScalarProperty Name="sql_message_id" ColumnName="sql_message_id" />
+          <ScalarProperty Name="sql_severity" ColumnName="sql_severity" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="run_status" ColumnName="run_status" />
+          <ScalarProperty Name="run_date" ColumnName="run_date" />
+          <ScalarProperty Name="run_time" ColumnName="run_time" />
+          <ScalarProperty Name="run_duration" ColumnName="run_duration" />
+          <ScalarProperty Name="operator_id_emailed" ColumnName="operator_id_emailed" />
+          <ScalarProperty Name="operator_id_netsent" ColumnName="operator_id_netsent" />
+          <ScalarProperty Name="operator_id_paged" ColumnName="operator_id_paged" />
+          <ScalarProperty Name="retries_attempted" ColumnName="retries_attempted" />
+          <ScalarProperty Name="server" ColumnName="server" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysjobs">
+      <EntityTypeMapping TypeName="msdbModel.sysjobs">
+        <MappingFragment StoreEntitySet="sysjobs">
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="originating_server_id" ColumnName="originating_server_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="start_step_id" ColumnName="start_step_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="owner_sid" ColumnName="owner_sid" />
+          <ScalarProperty Name="notify_level_eventlog" ColumnName="notify_level_eventlog" />
+          <ScalarProperty Name="notify_level_email" ColumnName="notify_level_email" />
+          <ScalarProperty Name="notify_level_netsend" ColumnName="notify_level_netsend" />
+          <ScalarProperty Name="notify_level_page" ColumnName="notify_level_page" />
+          <ScalarProperty Name="notify_email_operator_id" ColumnName="notify_email_operator_id" />
+          <ScalarProperty Name="notify_netsend_operator_id" ColumnName="notify_netsend_operator_id" />
+          <ScalarProperty Name="notify_page_operator_id" ColumnName="notify_page_operator_id" />
+          <ScalarProperty Name="delete_level" ColumnName="delete_level" />
+          <ScalarProperty Name="date_created" ColumnName="date_created" />
+          <ScalarProperty Name="date_modified" ColumnName="date_modified" />
+          <ScalarProperty Name="version_number" ColumnName="version_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysjobschedules">
+      <EntityTypeMapping TypeName="msdbModel.sysjobschedules">
+        <MappingFragment StoreEntitySet="sysjobschedules">
+          <ScalarProperty Name="schedule_id" ColumnName="schedule_id" />
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="next_run_date" ColumnName="next_run_date" />
+          <ScalarProperty Name="next_run_time" ColumnName="next_run_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysjobservers">
+      <EntityTypeMapping TypeName="msdbModel.sysjobservers">
+        <MappingFragment StoreEntitySet="sysjobservers">
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="server_id" ColumnName="server_id" />
+          <ScalarProperty Name="last_run_outcome" ColumnName="last_run_outcome" />
+          <ScalarProperty Name="last_outcome_message" ColumnName="last_outcome_message" />
+          <ScalarProperty Name="last_run_date" ColumnName="last_run_date" />
+          <ScalarProperty Name="last_run_time" ColumnName="last_run_time" />
+          <ScalarProperty Name="last_run_duration" ColumnName="last_run_duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysjobsteps">
+      <EntityTypeMapping TypeName="msdbModel.sysjobsteps">
+        <MappingFragment StoreEntitySet="sysjobsteps">
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="step_id" ColumnName="step_id" />
+          <ScalarProperty Name="step_name" ColumnName="step_name" />
+          <ScalarProperty Name="subsystem" ColumnName="subsystem" />
+          <ScalarProperty Name="command" ColumnName="command" />
+          <ScalarProperty Name="flags" ColumnName="flags" />
+          <ScalarProperty Name="additional_parameters" ColumnName="additional_parameters" />
+          <ScalarProperty Name="cmdexec_success_code" ColumnName="cmdexec_success_code" />
+          <ScalarProperty Name="on_success_action" ColumnName="on_success_action" />
+          <ScalarProperty Name="on_success_step_id" ColumnName="on_success_step_id" />
+          <ScalarProperty Name="on_fail_action" ColumnName="on_fail_action" />
+          <ScalarProperty Name="on_fail_step_id" ColumnName="on_fail_step_id" />
+          <ScalarProperty Name="server" ColumnName="server" />
+          <ScalarProperty Name="database_name" ColumnName="database_name" />
+          <ScalarProperty Name="database_user_name" ColumnName="database_user_name" />
+          <ScalarProperty Name="retry_attempts" ColumnName="retry_attempts" />
+          <ScalarProperty Name="retry_interval" ColumnName="retry_interval" />
+          <ScalarProperty Name="os_run_priority" ColumnName="os_run_priority" />
+          <ScalarProperty Name="output_file_name" ColumnName="output_file_name" />
+          <ScalarProperty Name="last_run_outcome" ColumnName="last_run_outcome" />
+          <ScalarProperty Name="last_run_duration" ColumnName="last_run_duration" />
+          <ScalarProperty Name="last_run_retries" ColumnName="last_run_retries" />
+          <ScalarProperty Name="last_run_date" ColumnName="last_run_date" />
+          <ScalarProperty Name="last_run_time" ColumnName="last_run_time" />
+          <ScalarProperty Name="proxy_id" ColumnName="proxy_id" />
+          <ScalarProperty Name="step_uid" ColumnName="step_uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysjobstepslogs">
+      <EntityTypeMapping TypeName="msdbModel.sysjobstepslogs">
+        <MappingFragment StoreEntitySet="sysjobstepslogs">
+          <ScalarProperty Name="log_id" ColumnName="log_id" />
+          <ScalarProperty Name="log" ColumnName="log" />
+          <ScalarProperty Name="date_created" ColumnName="date_created" />
+          <ScalarProperty Name="date_modified" ColumnName="date_modified" />
+          <ScalarProperty Name="log_size" ColumnName="log_size" />
+          <ScalarProperty Name="step_uid" ColumnName="step_uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_account">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_account">
+        <MappingFragment StoreEntitySet="sysmail_account">
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="email_address" ColumnName="email_address" />
+          <ScalarProperty Name="display_name" ColumnName="display_name" />
+          <ScalarProperty Name="replyto_address" ColumnName="replyto_address" />
+          <ScalarProperty Name="last_mod_datetime" ColumnName="last_mod_datetime" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_attachments">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_attachments">
+        <MappingFragment StoreEntitySet="sysmail_attachments">
+          <ScalarProperty Name="attachment_id" ColumnName="attachment_id" />
+          <ScalarProperty Name="mailitem_id" ColumnName="mailitem_id" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="attachment" ColumnName="attachment" />
+          <ScalarProperty Name="last_mod_date" ColumnName="last_mod_date" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_attachments_transfer">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_attachments_transfer">
+        <MappingFragment StoreEntitySet="sysmail_attachments_transfer">
+          <ScalarProperty Name="transfer_id" ColumnName="transfer_id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="attachment" ColumnName="attachment" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_configuration">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_configuration">
+        <MappingFragment StoreEntitySet="sysmail_configuration">
+          <ScalarProperty Name="paramname" ColumnName="paramname" />
+          <ScalarProperty Name="paramvalue" ColumnName="paramvalue" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="last_mod_datetime" ColumnName="last_mod_datetime" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_log">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_log">
+        <MappingFragment StoreEntitySet="sysmail_log">
+          <ScalarProperty Name="log_id" ColumnName="log_id" />
+          <ScalarProperty Name="event_type" ColumnName="event_type" />
+          <ScalarProperty Name="log_date" ColumnName="log_date" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="process_id" ColumnName="process_id" />
+          <ScalarProperty Name="mailitem_id" ColumnName="mailitem_id" />
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
+          <ScalarProperty Name="last_mod_date" ColumnName="last_mod_date" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_mailitems">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_mailitems">
+        <MappingFragment StoreEntitySet="sysmail_mailitems">
+          <ScalarProperty Name="mailitem_id" ColumnName="mailitem_id" />
+          <ScalarProperty Name="profile_id" ColumnName="profile_id" />
+          <ScalarProperty Name="recipients" ColumnName="recipients" />
+          <ScalarProperty Name="copy_recipients" ColumnName="copy_recipients" />
+          <ScalarProperty Name="blind_copy_recipients" ColumnName="blind_copy_recipients" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="body_format" ColumnName="body_format" />
+          <ScalarProperty Name="importance" ColumnName="importance" />
+          <ScalarProperty Name="sensitivity" ColumnName="sensitivity" />
+          <ScalarProperty Name="file_attachments" ColumnName="file_attachments" />
+          <ScalarProperty Name="attachment_encoding" ColumnName="attachment_encoding" />
+          <ScalarProperty Name="query" ColumnName="query" />
+          <ScalarProperty Name="execute_query_database" ColumnName="execute_query_database" />
+          <ScalarProperty Name="attach_query_result_as_file" ColumnName="attach_query_result_as_file" />
+          <ScalarProperty Name="query_result_header" ColumnName="query_result_header" />
+          <ScalarProperty Name="query_result_width" ColumnName="query_result_width" />
+          <ScalarProperty Name="query_result_separator" ColumnName="query_result_separator" />
+          <ScalarProperty Name="exclude_query_output" ColumnName="exclude_query_output" />
+          <ScalarProperty Name="append_query_error" ColumnName="append_query_error" />
+          <ScalarProperty Name="send_request_date" ColumnName="send_request_date" />
+          <ScalarProperty Name="send_request_user" ColumnName="send_request_user" />
+          <ScalarProperty Name="sent_account_id" ColumnName="sent_account_id" />
+          <ScalarProperty Name="sent_status" ColumnName="sent_status" />
+          <ScalarProperty Name="sent_date" ColumnName="sent_date" />
+          <ScalarProperty Name="last_mod_date" ColumnName="last_mod_date" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_principalprofile">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_principalprofile">
+        <MappingFragment StoreEntitySet="sysmail_principalprofile">
+          <ScalarProperty Name="profile_id" ColumnName="profile_id" />
+          <ScalarProperty Name="principal_sid" ColumnName="principal_sid" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+          <ScalarProperty Name="last_mod_datetime" ColumnName="last_mod_datetime" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_profile">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_profile">
+        <MappingFragment StoreEntitySet="sysmail_profile">
+          <ScalarProperty Name="profile_id" ColumnName="profile_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="last_mod_datetime" ColumnName="last_mod_datetime" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_profileaccount">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_profileaccount">
+        <MappingFragment StoreEntitySet="sysmail_profileaccount">
+          <ScalarProperty Name="profile_id" ColumnName="profile_id" />
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
+          <ScalarProperty Name="sequence_number" ColumnName="sequence_number" />
+          <ScalarProperty Name="last_mod_datetime" ColumnName="last_mod_datetime" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_query_transfer">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_query_transfer">
+        <MappingFragment StoreEntitySet="sysmail_query_transfer">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="text_data" ColumnName="text_data" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_send_retries">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_send_retries">
+        <MappingFragment StoreEntitySet="sysmail_send_retries">
+          <ScalarProperty Name="conversation_handle" ColumnName="conversation_handle" />
+          <ScalarProperty Name="mailitem_id" ColumnName="mailitem_id" />
+          <ScalarProperty Name="send_attempts" ColumnName="send_attempts" />
+          <ScalarProperty Name="last_send_attempt_date" ColumnName="last_send_attempt_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_server">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_server">
+        <MappingFragment StoreEntitySet="sysmail_server">
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
+          <ScalarProperty Name="servertype" ColumnName="servertype" />
+          <ScalarProperty Name="servername" ColumnName="servername" />
+          <ScalarProperty Name="port" ColumnName="port" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="credential_id" ColumnName="credential_id" />
+          <ScalarProperty Name="use_default_credentials" ColumnName="use_default_credentials" />
+          <ScalarProperty Name="enable_ssl" ColumnName="enable_ssl" />
+          <ScalarProperty Name="flags" ColumnName="flags" />
+          <ScalarProperty Name="last_mod_datetime" ColumnName="last_mod_datetime" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_servertype">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_servertype">
+        <MappingFragment StoreEntitySet="sysmail_servertype">
+          <ScalarProperty Name="servertype" ColumnName="servertype" />
+          <ScalarProperty Name="is_incoming" ColumnName="is_incoming" />
+          <ScalarProperty Name="is_outgoing" ColumnName="is_outgoing" />
+          <ScalarProperty Name="last_mod_datetime" ColumnName="last_mod_datetime" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmaintplan_log">
+      <EntityTypeMapping TypeName="msdbModel.sysmaintplan_log">
+        <MappingFragment StoreEntitySet="sysmaintplan_log">
+          <ScalarProperty Name="task_detail_id" ColumnName="task_detail_id" />
+          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
+          <ScalarProperty Name="subplan_id" ColumnName="subplan_id" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="succeeded" ColumnName="succeeded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmaintplan_logdetail">
+      <EntityTypeMapping TypeName="msdbModel.sysmaintplan_logdetail">
+        <MappingFragment StoreEntitySet="sysmaintplan_logdetail">
+          <ScalarProperty Name="task_detail_id" ColumnName="task_detail_id" />
+          <ScalarProperty Name="line1" ColumnName="line1" />
+          <ScalarProperty Name="line2" ColumnName="line2" />
+          <ScalarProperty Name="line3" ColumnName="line3" />
+          <ScalarProperty Name="line4" ColumnName="line4" />
+          <ScalarProperty Name="line5" ColumnName="line5" />
+          <ScalarProperty Name="server_name" ColumnName="server_name" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="error_number" ColumnName="error_number" />
+          <ScalarProperty Name="error_message" ColumnName="error_message" />
+          <ScalarProperty Name="command" ColumnName="command" />
+          <ScalarProperty Name="succeeded" ColumnName="succeeded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmaintplan_subplans">
+      <EntityTypeMapping TypeName="msdbModel.sysmaintplan_subplans">
+        <MappingFragment StoreEntitySet="sysmaintplan_subplans">
+          <ScalarProperty Name="subplan_id" ColumnName="subplan_id" />
+          <ScalarProperty Name="subplan_name" ColumnName="subplan_name" />
+          <ScalarProperty Name="subplan_description" ColumnName="subplan_description" />
+          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="schedule_id" ColumnName="schedule_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysnotifications">
+      <EntityTypeMapping TypeName="msdbModel.sysnotifications">
+        <MappingFragment StoreEntitySet="sysnotifications">
+          <ScalarProperty Name="alert_id" ColumnName="alert_id" />
+          <ScalarProperty Name="operator_id" ColumnName="operator_id" />
+          <ScalarProperty Name="notification_method" ColumnName="notification_method" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysoperators">
+      <EntityTypeMapping TypeName="msdbModel.sysoperators">
+        <MappingFragment StoreEntitySet="sysoperators">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="email_address" ColumnName="email_address" />
+          <ScalarProperty Name="last_email_date" ColumnName="last_email_date" />
+          <ScalarProperty Name="last_email_time" ColumnName="last_email_time" />
+          <ScalarProperty Name="pager_address" ColumnName="pager_address" />
+          <ScalarProperty Name="last_pager_date" ColumnName="last_pager_date" />
+          <ScalarProperty Name="last_pager_time" ColumnName="last_pager_time" />
+          <ScalarProperty Name="weekday_pager_start_time" ColumnName="weekday_pager_start_time" />
+          <ScalarProperty Name="weekday_pager_end_time" ColumnName="weekday_pager_end_time" />
+          <ScalarProperty Name="saturday_pager_start_time" ColumnName="saturday_pager_start_time" />
+          <ScalarProperty Name="saturday_pager_end_time" ColumnName="saturday_pager_end_time" />
+          <ScalarProperty Name="sunday_pager_start_time" ColumnName="sunday_pager_start_time" />
+          <ScalarProperty Name="sunday_pager_end_time" ColumnName="sunday_pager_end_time" />
+          <ScalarProperty Name="pager_days" ColumnName="pager_days" />
+          <ScalarProperty Name="netsend_address" ColumnName="netsend_address" />
+          <ScalarProperty Name="last_netsend_date" ColumnName="last_netsend_date" />
+          <ScalarProperty Name="last_netsend_time" ColumnName="last_netsend_time" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysoriginatingservers">
+      <EntityTypeMapping TypeName="msdbModel.sysoriginatingservers">
+        <MappingFragment StoreEntitySet="sysoriginatingservers">
+          <ScalarProperty Name="originating_server_id" ColumnName="originating_server_id" />
+          <ScalarProperty Name="originating_server" ColumnName="originating_server" />
+          <ScalarProperty Name="master_server" ColumnName="master_server" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysproxies">
+      <EntityTypeMapping TypeName="msdbModel.sysproxies">
+        <MappingFragment StoreEntitySet="sysproxies">
+          <ScalarProperty Name="proxy_id" ColumnName="proxy_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="credential_id" ColumnName="credential_id" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="user_sid" ColumnName="user_sid" />
+          <ScalarProperty Name="credential_date_created" ColumnName="credential_date_created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysproxylogin">
+      <EntityTypeMapping TypeName="msdbModel.sysproxylogin">
+        <MappingFragment StoreEntitySet="sysproxylogin">
+          <ScalarProperty Name="proxy_id" ColumnName="proxy_id" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="flags" ColumnName="flags" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysproxysubsystem">
+      <EntityTypeMapping TypeName="msdbModel.sysproxysubsystem">
+        <MappingFragment StoreEntitySet="sysproxysubsystem">
+          <ScalarProperty Name="subsystem_id" ColumnName="subsystem_id" />
+          <ScalarProperty Name="proxy_id" ColumnName="proxy_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysschedules">
+      <EntityTypeMapping TypeName="msdbModel.sysschedules">
+        <MappingFragment StoreEntitySet="sysschedules">
+          <ScalarProperty Name="schedule_id" ColumnName="schedule_id" />
+          <ScalarProperty Name="schedule_uid" ColumnName="schedule_uid" />
+          <ScalarProperty Name="originating_server_id" ColumnName="originating_server_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="owner_sid" ColumnName="owner_sid" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="freq_type" ColumnName="freq_type" />
+          <ScalarProperty Name="freq_interval" ColumnName="freq_interval" />
+          <ScalarProperty Name="freq_subday_type" ColumnName="freq_subday_type" />
+          <ScalarProperty Name="freq_subday_interval" ColumnName="freq_subday_interval" />
+          <ScalarProperty Name="freq_relative_interval" ColumnName="freq_relative_interval" />
+          <ScalarProperty Name="freq_recurrence_factor" ColumnName="freq_recurrence_factor" />
+          <ScalarProperty Name="active_start_date" ColumnName="active_start_date" />
+          <ScalarProperty Name="active_end_date" ColumnName="active_end_date" />
+          <ScalarProperty Name="active_start_time" ColumnName="active_start_time" />
+          <ScalarProperty Name="active_end_time" ColumnName="active_end_time" />
+          <ScalarProperty Name="date_created" ColumnName="date_created" />
+          <ScalarProperty Name="date_modified" ColumnName="date_modified" />
+          <ScalarProperty Name="version_number" ColumnName="version_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="syssessions">
+      <EntityTypeMapping TypeName="msdbModel.syssessions">
+        <MappingFragment StoreEntitySet="syssessions">
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="agent_start_date" ColumnName="agent_start_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="syssubsystems">
+      <EntityTypeMapping TypeName="msdbModel.syssubsystems">
+        <MappingFragment StoreEntitySet="syssubsystems">
+          <ScalarProperty Name="subsystem_id" ColumnName="subsystem_id" />
+          <ScalarProperty Name="subsystem" ColumnName="subsystem" />
+          <ScalarProperty Name="description_id" ColumnName="description_id" />
+          <ScalarProperty Name="subsystem_dll" ColumnName="subsystem_dll" />
+          <ScalarProperty Name="agent_exe" ColumnName="agent_exe" />
+          <ScalarProperty Name="start_entry_point" ColumnName="start_entry_point" />
+          <ScalarProperty Name="event_entry_point" ColumnName="event_entry_point" />
+          <ScalarProperty Name="stop_entry_point" ColumnName="stop_entry_point" />
+          <ScalarProperty Name="max_worker_threads" ColumnName="max_worker_threads" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="systargetservergroupmembers">
+      <EntityTypeMapping TypeName="msdbModel.systargetservergroupmembers">
+        <MappingFragment StoreEntitySet="systargetservergroupmembers">
+          <ScalarProperty Name="servergroup_id" ColumnName="servergroup_id" />
+          <ScalarProperty Name="server_id" ColumnName="server_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="systargetservergroups">
+      <EntityTypeMapping TypeName="msdbModel.systargetservergroups">
+        <MappingFragment StoreEntitySet="systargetservergroups">
+          <ScalarProperty Name="servergroup_id" ColumnName="servergroup_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="systargetservers">
+      <EntityTypeMapping TypeName="msdbModel.systargetservers">
+        <MappingFragment StoreEntitySet="systargetservers">
+          <ScalarProperty Name="server_id" ColumnName="server_id" />
+          <ScalarProperty Name="server_name" ColumnName="server_name" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="time_zone_adjustment" ColumnName="time_zone_adjustment" />
+          <ScalarProperty Name="enlist_date" ColumnName="enlist_date" />
+          <ScalarProperty Name="last_poll_date" ColumnName="last_poll_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="local_time_at_last_poll" ColumnName="local_time_at_last_poll" />
+          <ScalarProperty Name="enlisted_by_nt_user" ColumnName="enlisted_by_nt_user" />
+          <ScalarProperty Name="poll_interval" ColumnName="poll_interval" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="systaskids">
+      <EntityTypeMapping TypeName="msdbModel.systaskids">
+        <MappingFragment StoreEntitySet="systaskids">
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MSdatatype_mappings">
+      <EntityTypeMapping TypeName="msdbModel.MSdatatype_mappings">
+        <MappingFragment StoreEntitySet="MSdatatype_mappings">
+          <ScalarProperty Name="dbms_name" ColumnName="dbms_name" />
+          <ScalarProperty Name="sql_type" ColumnName="sql_type" />
+          <ScalarProperty Name="dest_type" ColumnName="dest_type" />
+          <ScalarProperty Name="dest_prec" ColumnName="dest_prec" />
+          <ScalarProperty Name="dest_create_params" ColumnName="dest_create_params" />
+          <ScalarProperty Name="dest_nullable" ColumnName="dest_nullable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdatatypemappings">
+      <EntityTypeMapping TypeName="msdbModel.sysdatatypemappings">
+        <MappingFragment StoreEntitySet="sysdatatypemappings">
+          <ScalarProperty Name="mapping_id" ColumnName="mapping_id" />
+          <ScalarProperty Name="source_dbms" ColumnName="source_dbms" />
+          <ScalarProperty Name="source_version" ColumnName="source_version" />
+          <ScalarProperty Name="source_type" ColumnName="source_type" />
+          <ScalarProperty Name="source_length_min" ColumnName="source_length_min" />
+          <ScalarProperty Name="source_length_max" ColumnName="source_length_max" />
+          <ScalarProperty Name="source_precision_min" ColumnName="source_precision_min" />
+          <ScalarProperty Name="source_precision_max" ColumnName="source_precision_max" />
+          <ScalarProperty Name="source_scale_min" ColumnName="source_scale_min" />
+          <ScalarProperty Name="source_scale_max" ColumnName="source_scale_max" />
+          <ScalarProperty Name="source_nullable" ColumnName="source_nullable" />
+          <ScalarProperty Name="source_createparams" ColumnName="source_createparams" />
+          <ScalarProperty Name="destination_dbms" ColumnName="destination_dbms" />
+          <ScalarProperty Name="destination_version" ColumnName="destination_version" />
+          <ScalarProperty Name="destination_type" ColumnName="destination_type" />
+          <ScalarProperty Name="destination_length" ColumnName="destination_length" />
+          <ScalarProperty Name="destination_precision" ColumnName="destination_precision" />
+          <ScalarProperty Name="destination_scale" ColumnName="destination_scale" />
+          <ScalarProperty Name="destination_nullable" ColumnName="destination_nullable" />
+          <ScalarProperty Name="destination_createparams" ColumnName="destination_createparams" />
+          <ScalarProperty Name="dataloss" ColumnName="dataloss" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysjobs_view">
+      <EntityTypeMapping TypeName="msdbModel.sysjobs_view">
+        <MappingFragment StoreEntitySet="sysjobs_view">
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="originating_server" ColumnName="originating_server" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="start_step_id" ColumnName="start_step_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="owner_sid" ColumnName="owner_sid" />
+          <ScalarProperty Name="notify_level_eventlog" ColumnName="notify_level_eventlog" />
+          <ScalarProperty Name="notify_level_email" ColumnName="notify_level_email" />
+          <ScalarProperty Name="notify_level_netsend" ColumnName="notify_level_netsend" />
+          <ScalarProperty Name="notify_level_page" ColumnName="notify_level_page" />
+          <ScalarProperty Name="notify_email_operator_id" ColumnName="notify_email_operator_id" />
+          <ScalarProperty Name="notify_netsend_operator_id" ColumnName="notify_netsend_operator_id" />
+          <ScalarProperty Name="notify_page_operator_id" ColumnName="notify_page_operator_id" />
+          <ScalarProperty Name="delete_level" ColumnName="delete_level" />
+          <ScalarProperty Name="date_created" ColumnName="date_created" />
+          <ScalarProperty Name="date_modified" ColumnName="date_modified" />
+          <ScalarProperty Name="version_number" ColumnName="version_number" />
+          <ScalarProperty Name="originating_server_id" ColumnName="originating_server_id" />
+          <ScalarProperty Name="master_server" ColumnName="master_server" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_allitems">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_allitems">
+        <MappingFragment StoreEntitySet="sysmail_allitems">
+          <ScalarProperty Name="mailitem_id" ColumnName="mailitem_id" />
+          <ScalarProperty Name="profile_id" ColumnName="profile_id" />
+          <ScalarProperty Name="recipients" ColumnName="recipients" />
+          <ScalarProperty Name="copy_recipients" ColumnName="copy_recipients" />
+          <ScalarProperty Name="blind_copy_recipients" ColumnName="blind_copy_recipients" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="body_format" ColumnName="body_format" />
+          <ScalarProperty Name="importance" ColumnName="importance" />
+          <ScalarProperty Name="sensitivity" ColumnName="sensitivity" />
+          <ScalarProperty Name="file_attachments" ColumnName="file_attachments" />
+          <ScalarProperty Name="attachment_encoding" ColumnName="attachment_encoding" />
+          <ScalarProperty Name="query" ColumnName="query" />
+          <ScalarProperty Name="execute_query_database" ColumnName="execute_query_database" />
+          <ScalarProperty Name="attach_query_result_as_file" ColumnName="attach_query_result_as_file" />
+          <ScalarProperty Name="query_result_header" ColumnName="query_result_header" />
+          <ScalarProperty Name="query_result_width" ColumnName="query_result_width" />
+          <ScalarProperty Name="query_result_separator" ColumnName="query_result_separator" />
+          <ScalarProperty Name="exclude_query_output" ColumnName="exclude_query_output" />
+          <ScalarProperty Name="append_query_error" ColumnName="append_query_error" />
+          <ScalarProperty Name="send_request_date" ColumnName="send_request_date" />
+          <ScalarProperty Name="send_request_user" ColumnName="send_request_user" />
+          <ScalarProperty Name="sent_account_id" ColumnName="sent_account_id" />
+          <ScalarProperty Name="sent_status" ColumnName="sent_status" />
+          <ScalarProperty Name="sent_date" ColumnName="sent_date" />
+          <ScalarProperty Name="last_mod_date" ColumnName="last_mod_date" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_event_log">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_event_log">
+        <MappingFragment StoreEntitySet="sysmail_event_log">
+          <ScalarProperty Name="log_id" ColumnName="log_id" />
+          <ScalarProperty Name="event_type" ColumnName="event_type" />
+          <ScalarProperty Name="log_date" ColumnName="log_date" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="process_id" ColumnName="process_id" />
+          <ScalarProperty Name="mailitem_id" ColumnName="mailitem_id" />
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
+          <ScalarProperty Name="last_mod_date" ColumnName="last_mod_date" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_faileditems">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_faileditems">
+        <MappingFragment StoreEntitySet="sysmail_faileditems">
+          <ScalarProperty Name="mailitem_id" ColumnName="mailitem_id" />
+          <ScalarProperty Name="profile_id" ColumnName="profile_id" />
+          <ScalarProperty Name="recipients" ColumnName="recipients" />
+          <ScalarProperty Name="copy_recipients" ColumnName="copy_recipients" />
+          <ScalarProperty Name="blind_copy_recipients" ColumnName="blind_copy_recipients" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="body_format" ColumnName="body_format" />
+          <ScalarProperty Name="importance" ColumnName="importance" />
+          <ScalarProperty Name="sensitivity" ColumnName="sensitivity" />
+          <ScalarProperty Name="file_attachments" ColumnName="file_attachments" />
+          <ScalarProperty Name="attachment_encoding" ColumnName="attachment_encoding" />
+          <ScalarProperty Name="query" ColumnName="query" />
+          <ScalarProperty Name="execute_query_database" ColumnName="execute_query_database" />
+          <ScalarProperty Name="attach_query_result_as_file" ColumnName="attach_query_result_as_file" />
+          <ScalarProperty Name="query_result_header" ColumnName="query_result_header" />
+          <ScalarProperty Name="query_result_width" ColumnName="query_result_width" />
+          <ScalarProperty Name="query_result_separator" ColumnName="query_result_separator" />
+          <ScalarProperty Name="exclude_query_output" ColumnName="exclude_query_output" />
+          <ScalarProperty Name="append_query_error" ColumnName="append_query_error" />
+          <ScalarProperty Name="send_request_date" ColumnName="send_request_date" />
+          <ScalarProperty Name="send_request_user" ColumnName="send_request_user" />
+          <ScalarProperty Name="sent_account_id" ColumnName="sent_account_id" />
+          <ScalarProperty Name="sent_status" ColumnName="sent_status" />
+          <ScalarProperty Name="sent_date" ColumnName="sent_date" />
+          <ScalarProperty Name="last_mod_date" ColumnName="last_mod_date" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_mailattachments">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_mailattachments">
+        <MappingFragment StoreEntitySet="sysmail_mailattachments">
+          <ScalarProperty Name="attachment_id" ColumnName="attachment_id" />
+          <ScalarProperty Name="mailitem_id" ColumnName="mailitem_id" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="attachment" ColumnName="attachment" />
+          <ScalarProperty Name="last_mod_date" ColumnName="last_mod_date" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_sentitems">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_sentitems">
+        <MappingFragment StoreEntitySet="sysmail_sentitems">
+          <ScalarProperty Name="mailitem_id" ColumnName="mailitem_id" />
+          <ScalarProperty Name="profile_id" ColumnName="profile_id" />
+          <ScalarProperty Name="recipients" ColumnName="recipients" />
+          <ScalarProperty Name="copy_recipients" ColumnName="copy_recipients" />
+          <ScalarProperty Name="blind_copy_recipients" ColumnName="blind_copy_recipients" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="body_format" ColumnName="body_format" />
+          <ScalarProperty Name="importance" ColumnName="importance" />
+          <ScalarProperty Name="sensitivity" ColumnName="sensitivity" />
+          <ScalarProperty Name="file_attachments" ColumnName="file_attachments" />
+          <ScalarProperty Name="attachment_encoding" ColumnName="attachment_encoding" />
+          <ScalarProperty Name="query" ColumnName="query" />
+          <ScalarProperty Name="execute_query_database" ColumnName="execute_query_database" />
+          <ScalarProperty Name="attach_query_result_as_file" ColumnName="attach_query_result_as_file" />
+          <ScalarProperty Name="query_result_header" ColumnName="query_result_header" />
+          <ScalarProperty Name="query_result_width" ColumnName="query_result_width" />
+          <ScalarProperty Name="query_result_separator" ColumnName="query_result_separator" />
+          <ScalarProperty Name="exclude_query_output" ColumnName="exclude_query_output" />
+          <ScalarProperty Name="append_query_error" ColumnName="append_query_error" />
+          <ScalarProperty Name="send_request_date" ColumnName="send_request_date" />
+          <ScalarProperty Name="send_request_user" ColumnName="send_request_user" />
+          <ScalarProperty Name="sent_account_id" ColumnName="sent_account_id" />
+          <ScalarProperty Name="sent_status" ColumnName="sent_status" />
+          <ScalarProperty Name="sent_date" ColumnName="sent_date" />
+          <ScalarProperty Name="last_mod_date" ColumnName="last_mod_date" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmail_unsentitems">
+      <EntityTypeMapping TypeName="msdbModel.sysmail_unsentitems">
+        <MappingFragment StoreEntitySet="sysmail_unsentitems">
+          <ScalarProperty Name="mailitem_id" ColumnName="mailitem_id" />
+          <ScalarProperty Name="profile_id" ColumnName="profile_id" />
+          <ScalarProperty Name="recipients" ColumnName="recipients" />
+          <ScalarProperty Name="copy_recipients" ColumnName="copy_recipients" />
+          <ScalarProperty Name="blind_copy_recipients" ColumnName="blind_copy_recipients" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="body_format" ColumnName="body_format" />
+          <ScalarProperty Name="importance" ColumnName="importance" />
+          <ScalarProperty Name="sensitivity" ColumnName="sensitivity" />
+          <ScalarProperty Name="file_attachments" ColumnName="file_attachments" />
+          <ScalarProperty Name="attachment_encoding" ColumnName="attachment_encoding" />
+          <ScalarProperty Name="query" ColumnName="query" />
+          <ScalarProperty Name="execute_query_database" ColumnName="execute_query_database" />
+          <ScalarProperty Name="attach_query_result_as_file" ColumnName="attach_query_result_as_file" />
+          <ScalarProperty Name="query_result_header" ColumnName="query_result_header" />
+          <ScalarProperty Name="query_result_width" ColumnName="query_result_width" />
+          <ScalarProperty Name="query_result_separator" ColumnName="query_result_separator" />
+          <ScalarProperty Name="exclude_query_output" ColumnName="exclude_query_output" />
+          <ScalarProperty Name="append_query_error" ColumnName="append_query_error" />
+          <ScalarProperty Name="send_request_date" ColumnName="send_request_date" />
+          <ScalarProperty Name="send_request_user" ColumnName="send_request_user" />
+          <ScalarProperty Name="sent_account_id" ColumnName="sent_account_id" />
+          <ScalarProperty Name="sent_status" ColumnName="sent_status" />
+          <ScalarProperty Name="sent_date" ColumnName="sent_date" />
+          <ScalarProperty Name="last_mod_date" ColumnName="last_mod_date" />
+          <ScalarProperty Name="last_mod_user" ColumnName="last_mod_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysmaintplan_plans">
+      <EntityTypeMapping TypeName="msdbModel.sysmaintplan_plans">
+        <MappingFragment StoreEntitySet="sysmaintplan_plans">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="owner" ColumnName="owner" />
+          <ScalarProperty Name="version_major" ColumnName="version_major" />
+          <ScalarProperty Name="version_minor" ColumnName="version_minor" />
+          <ScalarProperty Name="version_build" ColumnName="version_build" />
+          <ScalarProperty Name="version_comments" ColumnName="version_comments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysproxyloginsubsystem_view">
+      <EntityTypeMapping TypeName="msdbModel.sysproxyloginsubsystem_view">
+        <MappingFragment StoreEntitySet="sysproxyloginsubsystem_view">
+          <ScalarProperty Name="subsystem_id" ColumnName="subsystem_id" />
+          <ScalarProperty Name="proxy_id" ColumnName="proxy_id" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="flags" ColumnName="flags" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysschedules_localserver_view">
+      <EntityTypeMapping TypeName="msdbModel.sysschedules_localserver_view">
+        <MappingFragment StoreEntitySet="sysschedules_localserver_view">
+          <ScalarProperty Name="schedule_id" ColumnName="schedule_id" />
+          <ScalarProperty Name="schedule_uid" ColumnName="schedule_uid" />
+          <ScalarProperty Name="originating_server_id" ColumnName="originating_server_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="owner_sid" ColumnName="owner_sid" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="freq_type" ColumnName="freq_type" />
+          <ScalarProperty Name="freq_interval" ColumnName="freq_interval" />
+          <ScalarProperty Name="freq_subday_type" ColumnName="freq_subday_type" />
+          <ScalarProperty Name="freq_subday_interval" ColumnName="freq_subday_interval" />
+          <ScalarProperty Name="freq_relative_interval" ColumnName="freq_relative_interval" />
+          <ScalarProperty Name="freq_recurrence_factor" ColumnName="freq_recurrence_factor" />
+          <ScalarProperty Name="active_start_date" ColumnName="active_start_date" />
+          <ScalarProperty Name="active_end_date" ColumnName="active_end_date" />
+          <ScalarProperty Name="active_start_time" ColumnName="active_start_time" />
+          <ScalarProperty Name="active_end_time" ColumnName="active_end_time" />
+          <ScalarProperty Name="date_created" ColumnName="date_created" />
+          <ScalarProperty Name="date_modified" ColumnName="date_modified" />
+          <ScalarProperty Name="version_number" ColumnName="version_number" />
+          <ScalarProperty Name="originating_server" ColumnName="originating_server" />
+          <ScalarProperty Name="master_server" ColumnName="master_server" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="systargetservers_view">
+      <EntityTypeMapping TypeName="msdbModel.systargetservers_view">
+        <MappingFragment StoreEntitySet="systargetservers_view">
+          <ScalarProperty Name="server_id" ColumnName="server_id" />
+          <ScalarProperty Name="server_name" ColumnName="server_name" />
+          <ScalarProperty Name="enlist_date" ColumnName="enlist_date" />
+          <ScalarProperty Name="last_poll_date" ColumnName="last_poll_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

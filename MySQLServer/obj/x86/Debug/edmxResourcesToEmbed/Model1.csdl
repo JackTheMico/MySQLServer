@@ -1,0 +1,2320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="msdbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="msdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="backupfile" EntityType="msdbModel.backupfile" />
+    <EntitySet Name="backupfilegroup" EntityType="msdbModel.backupfilegroup" />
+    <EntitySet Name="backupmediafamily" EntityType="msdbModel.backupmediafamily" />
+    <EntitySet Name="backupmediaset" EntityType="msdbModel.backupmediaset" />
+    <EntitySet Name="backupset" EntityType="msdbModel.backupset" />
+    <EntitySet Name="log_shipping_monitor_alert" EntityType="msdbModel.log_shipping_monitor_alert" />
+    <EntitySet Name="log_shipping_monitor_error_detail" EntityType="msdbModel.log_shipping_monitor_error_detail" />
+    <EntitySet Name="log_shipping_monitor_history_detail" EntityType="msdbModel.log_shipping_monitor_history_detail" />
+    <EntitySet Name="log_shipping_monitor_primary" EntityType="msdbModel.log_shipping_monitor_primary" />
+    <EntitySet Name="log_shipping_monitor_secondary" EntityType="msdbModel.log_shipping_monitor_secondary" />
+    <EntitySet Name="log_shipping_primaries" EntityType="msdbModel.log_shipping_primaries" />
+    <EntitySet Name="log_shipping_primary_databases" EntityType="msdbModel.log_shipping_primary_databases" />
+    <EntitySet Name="log_shipping_primary_secondaries" EntityType="msdbModel.log_shipping_primary_secondaries" />
+    <EntitySet Name="log_shipping_secondaries" EntityType="msdbModel.log_shipping_secondaries" />
+    <EntitySet Name="log_shipping_secondary" EntityType="msdbModel.log_shipping_secondary" />
+    <EntitySet Name="log_shipping_secondary_databases" EntityType="msdbModel.log_shipping_secondary_databases" />
+    <EntitySet Name="logmarkhistory" EntityType="msdbModel.logmarkhistory" />
+    <EntitySet Name="MSdbms" EntityType="msdbModel.MSdbms" />
+    <EntitySet Name="MSdbms_datatype" EntityType="msdbModel.MSdbms_datatype" />
+    <EntitySet Name="MSdbms_datatype_mapping" EntityType="msdbModel.MSdbms_datatype_mapping" />
+    <EntitySet Name="MSdbms_map" EntityType="msdbModel.MSdbms_map" />
+    <EntitySet Name="restorefile" EntityType="msdbModel.restorefile" />
+    <EntitySet Name="restorefilegroup" EntityType="msdbModel.restorefilegroup" />
+    <EntitySet Name="restorehistory" EntityType="msdbModel.restorehistory" />
+    <EntitySet Name="sqlagent_info" EntityType="msdbModel.sqlagent_info" />
+    <EntitySet Name="suspect_pages" EntityType="msdbModel.suspect_pages" />
+    <EntitySet Name="sysalerts" EntityType="msdbModel.sysalerts" />
+    <EntitySet Name="syscachedcredentials" EntityType="msdbModel.syscachedcredentials" />
+    <EntitySet Name="syscategories" EntityType="msdbModel.syscategories" />
+    <EntitySet Name="sysdbmaintplan_databases" EntityType="msdbModel.sysdbmaintplan_databases" />
+    <EntitySet Name="sysdbmaintplan_history" EntityType="msdbModel.sysdbmaintplan_history" />
+    <EntitySet Name="sysdbmaintplan_jobs" EntityType="msdbModel.sysdbmaintplan_jobs" />
+    <EntitySet Name="sysdbmaintplans" EntityType="msdbModel.sysdbmaintplans" />
+    <EntitySet Name="sysdownloadlist" EntityType="msdbModel.sysdownloadlist" />
+    <EntitySet Name="sysdtscategories" EntityType="msdbModel.sysdtscategories" />
+    <EntitySet Name="sysdtslog90" EntityType="msdbModel.sysdtslog90" />
+    <EntitySet Name="sysdtspackagefolders90" EntityType="msdbModel.sysdtspackagefolders90" />
+    <EntitySet Name="sysdtspackagelog" EntityType="msdbModel.sysdtspackagelog" />
+    <EntitySet Name="sysdtspackages" EntityType="msdbModel.sysdtspackages" />
+    <EntitySet Name="sysdtspackages90" EntityType="msdbModel.sysdtspackages90" />
+    <EntitySet Name="sysdtssteplog" EntityType="msdbModel.sysdtssteplog" />
+    <EntitySet Name="sysdtstasklog" EntityType="msdbModel.sysdtstasklog" />
+    <EntitySet Name="sysjobactivity" EntityType="msdbModel.sysjobactivity" />
+    <EntitySet Name="sysjobhistory" EntityType="msdbModel.sysjobhistory" />
+    <EntitySet Name="sysjobs" EntityType="msdbModel.sysjobs" />
+    <EntitySet Name="sysjobschedules" EntityType="msdbModel.sysjobschedules" />
+    <EntitySet Name="sysjobservers" EntityType="msdbModel.sysjobservers" />
+    <EntitySet Name="sysjobsteps" EntityType="msdbModel.sysjobsteps" />
+    <EntitySet Name="sysjobstepslogs" EntityType="msdbModel.sysjobstepslogs" />
+    <EntitySet Name="sysmail_account" EntityType="msdbModel.sysmail_account" />
+    <EntitySet Name="sysmail_attachments" EntityType="msdbModel.sysmail_attachments" />
+    <EntitySet Name="sysmail_attachments_transfer" EntityType="msdbModel.sysmail_attachments_transfer" />
+    <EntitySet Name="sysmail_configuration" EntityType="msdbModel.sysmail_configuration" />
+    <EntitySet Name="sysmail_log" EntityType="msdbModel.sysmail_log" />
+    <EntitySet Name="sysmail_mailitems" EntityType="msdbModel.sysmail_mailitems" />
+    <EntitySet Name="sysmail_principalprofile" EntityType="msdbModel.sysmail_principalprofile" />
+    <EntitySet Name="sysmail_profile" EntityType="msdbModel.sysmail_profile" />
+    <EntitySet Name="sysmail_profileaccount" EntityType="msdbModel.sysmail_profileaccount" />
+    <EntitySet Name="sysmail_query_transfer" EntityType="msdbModel.sysmail_query_transfer" />
+    <EntitySet Name="sysmail_send_retries" EntityType="msdbModel.sysmail_send_retries" />
+    <EntitySet Name="sysmail_server" EntityType="msdbModel.sysmail_server" />
+    <EntitySet Name="sysmail_servertype" EntityType="msdbModel.sysmail_servertype" />
+    <EntitySet Name="sysmaintplan_log" EntityType="msdbModel.sysmaintplan_log" />
+    <EntitySet Name="sysmaintplan_logdetail" EntityType="msdbModel.sysmaintplan_logdetail" />
+    <EntitySet Name="sysmaintplan_subplans" EntityType="msdbModel.sysmaintplan_subplans" />
+    <EntitySet Name="sysnotifications" EntityType="msdbModel.sysnotifications" />
+    <EntitySet Name="sysoperators" EntityType="msdbModel.sysoperators" />
+    <EntitySet Name="sysoriginatingservers" EntityType="msdbModel.sysoriginatingservers" />
+    <EntitySet Name="sysproxies" EntityType="msdbModel.sysproxies" />
+    <EntitySet Name="sysproxylogin" EntityType="msdbModel.sysproxylogin" />
+    <EntitySet Name="sysproxysubsystem" EntityType="msdbModel.sysproxysubsystem" />
+    <EntitySet Name="sysschedules" EntityType="msdbModel.sysschedules" />
+    <EntitySet Name="syssessions" EntityType="msdbModel.syssessions" />
+    <EntitySet Name="syssubsystems" EntityType="msdbModel.syssubsystems" />
+    <EntitySet Name="systargetservergroupmembers" EntityType="msdbModel.systargetservergroupmembers" />
+    <EntitySet Name="systargetservergroups" EntityType="msdbModel.systargetservergroups" />
+    <EntitySet Name="systargetservers" EntityType="msdbModel.systargetservers" />
+    <EntitySet Name="systaskids" EntityType="msdbModel.systaskids" />
+    <EntitySet Name="MSdatatype_mappings" EntityType="msdbModel.MSdatatype_mappings" />
+    <EntitySet Name="sysdatatypemappings" EntityType="msdbModel.sysdatatypemappings" />
+    <EntitySet Name="sysjobs_view" EntityType="msdbModel.sysjobs_view" />
+    <EntitySet Name="sysmail_allitems" EntityType="msdbModel.sysmail_allitems" />
+    <EntitySet Name="sysmail_event_log" EntityType="msdbModel.sysmail_event_log" />
+    <EntitySet Name="sysmail_faileditems" EntityType="msdbModel.sysmail_faileditems" />
+    <EntitySet Name="sysmail_mailattachments" EntityType="msdbModel.sysmail_mailattachments" />
+    <EntitySet Name="sysmail_sentitems" EntityType="msdbModel.sysmail_sentitems" />
+    <EntitySet Name="sysmail_unsentitems" EntityType="msdbModel.sysmail_unsentitems" />
+    <EntitySet Name="sysmaintplan_plans" EntityType="msdbModel.sysmaintplan_plans" />
+    <EntitySet Name="sysproxyloginsubsystem_view" EntityType="msdbModel.sysproxyloginsubsystem_view" />
+    <EntitySet Name="sysschedules_localserver_view" EntityType="msdbModel.sysschedules_localserver_view" />
+    <EntitySet Name="systargetservers_view" EntityType="msdbModel.systargetservers_view" />
+    <AssociationSet Name="FK__backupfil__backu__7C1A6C5A" Association="msdbModel.FK__backupfil__backu__7C1A6C5A">
+      <End Role="backupset" EntitySet="backupset" />
+      <End Role="backupfile" EntitySet="backupfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__backupfil__backu__793DFFAF" Association="msdbModel.FK__backupfil__backu__793DFFAF">
+      <End Role="backupset" EntitySet="backupset" />
+      <End Role="backupfilegroup" EntitySet="backupfilegroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK__backupmed__media__72910220" Association="msdbModel.FK__backupmed__media__72910220">
+      <End Role="backupmediaset" EntitySet="backupmediaset" />
+      <End Role="backupmediafamily" EntitySet="backupmediafamily" />
+    </AssociationSet>
+    <AssociationSet Name="FK__backupset__media__76619304" Association="msdbModel.FK__backupset__media__76619304">
+      <End Role="backupmediaset" EntitySet="backupmediaset" />
+      <End Role="backupset" EntitySet="backupset" />
+    </AssociationSet>
+    <AssociationSet Name="FK__restorehi__backu__7EF6D905" Association="msdbModel.FK__restorehi__backu__7EF6D905">
+      <End Role="backupset" EntitySet="backupset" />
+      <End Role="restorehistory" EntitySet="restorehistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__log_shipp__prima__60083D91" Association="msdbModel.FK__log_shipp__prima__60083D91">
+      <End Role="log_shipping_primaries" EntitySet="log_shipping_primaries" />
+      <End Role="log_shipping_secondaries" EntitySet="log_shipping_secondaries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MSdbms_datatype_dbms_id" Association="msdbModel.fk_MSdbms_datatype_dbms_id">
+      <End Role="MSdbms" EntitySet="MSdbms" />
+      <End Role="MSdbms_datatype" EntitySet="MSdbms_datatype" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MSdbms_map_dest_dbms_id" Association="msdbModel.fk_MSdbms_map_dest_dbms_id">
+      <End Role="MSdbms" EntitySet="MSdbms" />
+      <End Role="MSdbms_map" EntitySet="MSdbms_map" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MSdbms_map_src_dbms_id" Association="msdbModel.fk_MSdbms_map_src_dbms_id">
+      <End Role="MSdbms" EntitySet="MSdbms" />
+      <End Role="MSdbms_map" EntitySet="MSdbms_map" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MSdbms_datatype_mapping_dest_datatype_id" Association="msdbModel.fk_MSdbms_datatype_mapping_dest_datatype_id">
+      <End Role="MSdbms_datatype" EntitySet="MSdbms_datatype" />
+      <End Role="MSdbms_datatype_mapping" EntitySet="MSdbms_datatype_mapping" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MSdbms_map_src_datatype_id" Association="msdbModel.fk_MSdbms_map_src_datatype_id">
+      <End Role="MSdbms_datatype" EntitySet="MSdbms_datatype" />
+      <End Role="MSdbms_map" EntitySet="MSdbms_map" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MSdbms_datatype_mapping_map_id" Association="msdbModel.fk_MSdbms_datatype_mapping_map_id">
+      <End Role="MSdbms_map" EntitySet="MSdbms_map" />
+      <End Role="MSdbms_datatype_mapping" EntitySet="MSdbms_datatype_mapping" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MSdbms_map_default_datatype_mapping_id" Association="msdbModel.fk_MSdbms_map_default_datatype_mapping_id">
+      <End Role="MSdbms_datatype_mapping" EntitySet="MSdbms_datatype_mapping" />
+      <End Role="MSdbms_map" EntitySet="MSdbms_map" />
+    </AssociationSet>
+    <AssociationSet Name="FK__restorefi__resto__00DF2177" Association="msdbModel.FK__restorefi__resto__00DF2177">
+      <End Role="restorehistory" EntitySet="restorehistory" />
+      <End Role="restorefile" EntitySet="restorefile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__restorefi__resto__02C769E9" Association="msdbModel.FK__restorefi__resto__02C769E9">
+      <End Role="restorehistory" EntitySet="restorehistory" />
+      <End Role="restorefilegroup" EntitySet="restorefilegroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysdbmain__plan___4A18FC72" Association="msdbModel.FK__sysdbmain__plan___4A18FC72">
+      <End Role="sysdbmaintplans" EntitySet="sysdbmaintplans" />
+      <End Role="sysdbmaintplan_databases" EntitySet="sysdbmaintplan_databases" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysdbmain__plan___473C8FC7" Association="msdbModel.FK__sysdbmain__plan___473C8FC7">
+      <End Role="sysdbmaintplans" EntitySet="sysdbmaintplans" />
+      <End Role="sysdbmaintplan_jobs" EntitySet="sysdbmaintplan_jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysdtspac__categ__0D44F85C" Association="msdbModel.FK__sysdtspac__categ__0D44F85C">
+      <End Role="sysdtscategories" EntitySet="sysdtscategories" />
+      <End Role="sysdtspackages" EntitySet="sysdtspackages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysdtsste__linea__2057CCD0" Association="msdbModel.FK__sysdtsste__linea__2057CCD0">
+      <End Role="sysdtspackagelog" EntitySet="sysdtspackagelog" />
+      <End Role="sysdtssteplog" EntitySet="sysdtssteplog" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysdtstas__stepe__2334397B" Association="msdbModel.FK__sysdtstas__stepe__2334397B">
+      <End Role="sysdtssteplog" EntitySet="sysdtssteplog" />
+      <End Role="sysdtstasklog" EntitySet="sysdtstasklog" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysjobact__sessi__173876EA" Association="msdbModel.FK__sysjobact__sessi__173876EA">
+      <End Role="syssessions" EntitySet="syssessions" />
+      <End Role="sysjobactivity" EntitySet="sysjobactivity" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysjobsch__sched__267ABA7A" Association="msdbModel.FK__sysjobsch__sched__267ABA7A">
+      <End Role="sysschedules" EntitySet="sysschedules" />
+      <End Role="sysjobschedules" EntitySet="sysjobschedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysmail_p__accou__40C49C62" Association="msdbModel.FK__sysmail_p__accou__40C49C62">
+      <End Role="sysmail_account" EntitySet="sysmail_account" />
+      <End Role="sysmail_profileaccount" EntitySet="sysmail_profileaccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysmail_s__accou__4B422AD5" Association="msdbModel.FK__sysmail_s__accou__4B422AD5">
+      <End Role="sysmail_account" EntitySet="sysmail_account" />
+      <End Role="sysmail_server" EntitySet="sysmail_server" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sysmail_mailitems_mailitem_id" Association="msdbModel.FK_sysmail_mailitems_mailitem_id">
+      <End Role="sysmail_mailitems" EntitySet="sysmail_mailitems" />
+      <End Role="sysmail_attachments" EntitySet="sysmail_attachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mailitems_mailitem_id" Association="msdbModel.FK_mailitems_mailitem_id">
+      <End Role="sysmail_mailitems" EntitySet="sysmail_mailitems" />
+      <End Role="sysmail_send_retries" EntitySet="sysmail_send_retries" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysmail_p__profi__36470DEF" Association="msdbModel.FK__sysmail_p__profi__36470DEF">
+      <End Role="sysmail_profile" EntitySet="sysmail_profile" />
+      <End Role="sysmail_principalprofile" EntitySet="sysmail_principalprofile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysmail_s__serve__4C364F0E" Association="msdbModel.FK__sysmail_s__serve__4C364F0E">
+      <End Role="sysmail_servertype" EntitySet="sysmail_servertype" />
+      <End Role="sysmail_server" EntitySet="sysmail_server" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sysmaintplan_log_detail_task_id" Association="msdbModel.FK_sysmaintplan_log_detail_task_id">
+      <End Role="sysmaintplan_log" EntitySet="sysmaintplan_log" />
+      <End Role="sysmaintplan_logdetail" EntitySet="sysmaintplan_logdetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sysmaintplan_log_subplan_id" Association="msdbModel.FK_sysmaintplan_log_subplan_id">
+      <End Role="sysmaintplan_subplans" EntitySet="sysmaintplan_subplans" />
+      <End Role="sysmaintplan_log" EntitySet="sysmaintplan_log" />
+    </AssociationSet>
+    <AssociationSet Name="FK_subplan_schedule_id" Association="msdbModel.FK_subplan_schedule_id">
+      <End Role="sysschedules" EntitySet="sysschedules" />
+      <End Role="sysmaintplan_subplans" EntitySet="sysmaintplan_subplans" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="backupfile">
+    <Key>
+      <PropertyRef Name="backup_set_id" />
+      <PropertyRef Name="file_number" />
+    </Key>
+    <Property Name="backup_set_id" Type="Int32" Nullable="false" />
+    <Property Name="first_family_number" Type="Byte" />
+    <Property Name="first_media_number" Type="Int16" />
+    <Property Name="filegroup_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="page_size" Type="Int32" />
+    <Property Name="file_number" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="backed_up_page_count" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="file_type" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="source_file_block_size" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="file_size" Type="Decimal" Precision="20" Scale="0" />
+    <Property Name="logical_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="physical_drive" Type="String" MaxLength="260" Unicode="true" FixedLength="false" />
+    <Property Name="physical_name" Type="String" MaxLength="260" Unicode="true" FixedLength="false" />
+    <Property Name="state" Type="Byte" />
+    <Property Name="state_desc" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="create_lsn" Type="Decimal" Precision="25" Scale="0" />
+    <Property Name="drop_lsn" Type="Decimal" Precision="25" Scale="0" />
+    <Property Name="file_guid" Type="Guid" />
+    <Property Name="read_only_lsn" Type="Decimal" Precision="25" Scale="0" />
+    <Property Name="read_write_lsn" Type="Decimal" Precision="25" Scale="0" />
+    <Property Name="differential_base_lsn" Type="Decimal" Precision="25" Scale="0" />
+    <Property Name="differential_base_guid" Type="Guid" />
+    <Property Name="backup_size" Type="Decimal" Precision="20" Scale="0" />
+    <Property Name="filegroup_guid" Type="Guid" />
+    <Property Name="is_readonly" Type="Boolean" />
+    <Property Name="is_present" Type="Boolean" />
+    <NavigationProperty Name="backupset" Relationship="msdbModel.FK__backupfil__backu__7C1A6C5A" FromRole="backupfile" ToRole="backupset" />
+  </EntityType>
+  <EntityType Name="backupfilegroup">
+    <Key>
+      <PropertyRef Name="backup_set_id" />
+      <PropertyRef Name="filegroup_id" />
+    </Key>
+    <Property Name="backup_set_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="filegroup_id" Type="Int32" Nullable="false" />
+    <Property Name="filegroup_guid" Type="Guid" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="type_desc" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="is_default" Type="Boolean" Nullable="false" />
+    <Property Name="is_readonly" Type="Boolean" Nullable="false" />
+    <Property Name="log_filegroup_guid" Type="Guid" />
+    <NavigationProperty Name="backupset" Relationship="msdbModel.FK__backupfil__backu__793DFFAF" FromRole="backupfilegroup" ToRole="backupset" />
+  </EntityType>
+  <EntityType Name="backupmediafamily">
+    <Key>
+      <PropertyRef Name="media_set_id" />
+      <PropertyRef Name="family_sequence_number" />
+      <PropertyRef Name="mirror" />
+    </Key>
+    <Property Name="media_set_id" Type="Int32" Nullable="false" />
+    <Property Name="family_sequence_number" Type="Byte" Nullable="false" />
+    <Property Name="media_family_id" Type="Guid" />
+    <Property Name="media_count" Type="Int32" />
+    <Property Name="logical_device_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="physical_device_name" Type="String" MaxLength="260" Unicode="true" FixedLength="false" />
+    <Property Name="device_type" Type="Byte" />
+    <Property Name="physical_block_size" Type="Int32" />
+    <Property Name="mirror" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="backupmediaset" Relationship="msdbModel.FK__backupmed__media__72910220" FromRole="backupmediafamily" ToRole="backupmediaset" />
+  </EntityType>
+  <EntityType Name="backupmediaset">
+    <Key>
+      <PropertyRef Name="media_set_id" />
+    </Key>
+    <Property Name="media_set_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="media_uuid" Type="Guid" />
+    <Property Name="media_family_count" Type="Byte" />
+    <Property Name="name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="software_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="software_vendor_id" Type="Int32" />
+    <Property Name="MTF_major_version" Type="Byte" />
+    <Property Name="mirror_count" Type="Byte" />
+    <Property Name="is_password_protected" Type="Boolean" />
+    <NavigationProperty Name="backupmediafamily" Relationship="msdbModel.FK__backupmed__media__72910220" FromRole="backupmediaset" ToRole="backupmediafamily" />
+    <NavigationProperty Name="backupset" Relationship="msdbModel.FK__backupset__media__76619304" FromRole="backupmediaset" ToRole="backupset" />
+  </EntityType>
+  <EntityType Name="backupset">
+    <Key>
+      <PropertyRef Name="backup_set_id" />
+    </Key>
+    <Property Name="backup_set_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="backup_set_uuid" Type="Guid" Nullable="false" />
+    <Property Name="media_set_id" Type="Int32" Nullable="false" />
+    <Property Name="first_family_number" Type="Byte" />
+    <Property Name="first_media_number" Type="Int16" />
+    <Property Name="last_family_number" Type="Byte" />
+    <Property Name="last_media_number" Type="Int16" />
+    <Property Name="catalog_family_number" Type="Byte" />
+    <Property Name="catalog_media_number" Type="Int16" />
+    <Property Name="position" Type="Int32" />
+    <Property Name="expiration_date" Type="DateTime" />
+    <Property Name="software_vendor_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="user_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="software_major_version" Type="Byte" />
+    <Property Name="software_minor_version" Type="Byte" />
+    <Property Name="software_build_version" Type="Int16" />
+    <Property Name="time_zone" Type="Int16" />
+    <Property Name="mtf_minor_version" Type="Byte" />
+    <Property Name="first_lsn" Type="Decimal" Precision="25" Scale="0" />
+    <Property Name="last_lsn" Type="Decimal" Precision="25" Scale="0" />
+    <Property Name="checkpoint_lsn" Type="Decimal" Precision="25" Scale="0" />
+    <Property Name="database_backup_lsn" Type="Decimal" Precision="25" Scale="0" />
+    <Property Name="database_creation_date" Type="DateTime" />
+    <Property Name="backup_start_date" Type="DateTime" />
+    <Property Name="backup_finish_date" Type="DateTime" />
+    <Property Name="type" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="sort_order" Type="Int16" />
+    <Property Name="code_page" Type="Int16" />
+    <Property Name="compatibility_level" Type="Byte" />
+    <Property Name="database_version" Type="Int32" />
+    <Property Name="backup_size" Type="Decimal" Precision="20" Scale="0" />
+    <Property Name="database_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="server_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="machine_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="flags" Type="Int32" />
+    <Property Name="unicode_locale" Type="Int32" />
+    <Property Name="unicode_compare_style" Type="Int32" />
+    <Property Name="collation_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="is_password_protected" Type="Boolean" />
+    <Property Name="recovery_model" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="has_bulk_logged_data" Type="Boolean" />
+    <Property Name="is_snapshot" Type="Boolean" />
+    <Property Name="is_readonly" Type="Boolean" />
+    <Property Name="is_single_user" Type="Boolean" />
+    <Property Name="has_backup_checksums" Type="Boolean" />
+    <Property Name="is_damaged" Type="Boolean" />
+    <Property Name="begins_log_chain" Type="Boolean" />
+    <Property Name="has_incomplete_metadata" Type="Boolean" />
+    <Property Name="is_force_offline" Type="Boolean" />
+    <Property Name="is_copy_only" Type="Boolean" />
+    <Property Name="first_recovery_fork_guid" Type="Guid" />
+    <Property Name="last_recovery_fork_guid" Type="Guid" />
+    <Property Name="fork_point_lsn" Type="Decimal" Precision="25" Scale="0" />
+    <Property Name="database_guid" Type="Guid" />
+    <Property Name="family_guid" Type="Guid" />
+    <Property Name="differential_base_lsn" Type="Decimal" Precision="25" Scale="0" />
+    <Property Name="differential_base_guid" Type="Guid" />
+    <NavigationProperty Name="backupfile" Relationship="msdbModel.FK__backupfil__backu__7C1A6C5A" FromRole="backupset" ToRole="backupfile" />
+    <NavigationProperty Name="backupfilegroup" Relationship="msdbModel.FK__backupfil__backu__793DFFAF" FromRole="backupset" ToRole="backupfilegroup" />
+    <NavigationProperty Name="backupmediaset" Relationship="msdbModel.FK__backupset__media__76619304" FromRole="backupset" ToRole="backupmediaset" />
+    <NavigationProperty Name="restorehistory" Relationship="msdbModel.FK__restorehi__backu__7EF6D905" FromRole="backupset" ToRole="restorehistory" />
+  </EntityType>
+  <EntityType Name="log_shipping_monitor_alert">
+    <Key>
+      <PropertyRef Name="alert_job_id" />
+    </Key>
+    <Property Name="alert_job_id" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="log_shipping_monitor_error_detail">
+    <Key>
+      <PropertyRef Name="agent_id" />
+      <PropertyRef Name="agent_type" />
+      <PropertyRef Name="session_id" />
+      <PropertyRef Name="sequence_number" />
+      <PropertyRef Name="log_time" />
+      <PropertyRef Name="log_time_utc" />
+      <PropertyRef Name="message" />
+      <PropertyRef Name="source" />
+      <PropertyRef Name="help_url" />
+    </Key>
+    <Property Name="agent_id" Type="Guid" Nullable="false" />
+    <Property Name="agent_type" Type="Byte" Nullable="false" />
+    <Property Name="session_id" Type="Int32" Nullable="false" />
+    <Property Name="database_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="sequence_number" Type="Int32" Nullable="false" />
+    <Property Name="log_time" Type="DateTime" Nullable="false" />
+    <Property Name="log_time_utc" Type="DateTime" Nullable="false" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="source" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="help_url" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="log_shipping_monitor_history_detail">
+    <Key>
+      <PropertyRef Name="agent_id" />
+      <PropertyRef Name="agent_type" />
+      <PropertyRef Name="session_id" />
+      <PropertyRef Name="session_status" />
+      <PropertyRef Name="log_time" />
+      <PropertyRef Name="log_time_utc" />
+      <PropertyRef Name="message" />
+    </Key>
+    <Property Name="agent_id" Type="Guid" Nullable="false" />
+    <Property Name="agent_type" Type="Byte" Nullable="false" />
+    <Property Name="session_id" Type="Int32" Nullable="false" />
+    <Property Name="database_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="session_status" Type="Byte" Nullable="false" />
+    <Property Name="log_time" Type="DateTime" Nullable="false" />
+    <Property Name="log_time_utc" Type="DateTime" Nullable="false" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="log_shipping_monitor_primary">
+    <Key>
+      <PropertyRef Name="primary_id" />
+    </Key>
+    <Property Name="primary_id" Type="Guid" Nullable="false" />
+    <Property Name="primary_server" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="primary_database" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="backup_threshold" Type="Int32" Nullable="false" />
+    <Property Name="threshold_alert" Type="Int32" Nullable="false" />
+    <Property Name="threshold_alert_enabled" Type="Boolean" Nullable="false" />
+    <Property Name="last_backup_file" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="last_backup_date" Type="DateTime" />
+    <Property Name="last_backup_date_utc" Type="DateTime" />
+    <Property Name="history_retention_period" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="log_shipping_monitor_secondary">
+    <Key>
+      <PropertyRef Name="secondary_database" />
+      <PropertyRef Name="secondary_id" />
+    </Key>
+    <Property Name="secondary_server" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="secondary_database" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="secondary_id" Type="Guid" Nullable="false" />
+    <Property Name="primary_server" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="primary_database" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="restore_threshold" Type="Int32" Nullable="false" />
+    <Property Name="threshold_alert" Type="Int32" Nullable="false" />
+    <Property Name="threshold_alert_enabled" Type="Boolean" Nullable="false" />
+    <Property Name="last_copied_file" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="last_copied_date" Type="DateTime" />
+    <Property Name="last_copied_date_utc" Type="DateTime" />
+    <Property Name="last_restored_file" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="last_restored_date" Type="DateTime" />
+    <Property Name="last_restored_date_utc" Type="DateTime" />
+    <Property Name="last_restored_latency" Type="Int32" />
+    <Property Name="history_retention_period" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="log_shipping_primaries">
+    <Key>
+      <PropertyRef Name="primary_id" />
+    </Key>
+    <Property Name="primary_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="primary_server_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="primary_database_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="maintenance_plan_id" Type="Guid" />
+    <Property Name="backup_threshold" Type="Int32" Nullable="false" />
+    <Property Name="threshold_alert" Type="Int32" Nullable="false" />
+    <Property Name="threshold_alert_enabled" Type="Boolean" Nullable="false" />
+    <Property Name="last_backup_filename" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="last_updated" Type="DateTime" />
+    <Property Name="planned_outage_start_time" Type="Int32" Nullable="false" />
+    <Property Name="planned_outage_end_time" Type="Int32" Nullable="false" />
+    <Property Name="planned_outage_weekday_mask" Type="Int32" Nullable="false" />
+    <Property Name="source_directory" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="log_shipping_secondaries" Relationship="msdbModel.FK__log_shipp__prima__60083D91" FromRole="log_shipping_primaries" ToRole="log_shipping_secondaries" />
+  </EntityType>
+  <EntityType Name="log_shipping_primary_databases">
+    <Key>
+      <PropertyRef Name="primary_id" />
+    </Key>
+    <Property Name="primary_id" Type="Guid" Nullable="false" />
+    <Property Name="primary_database" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="backup_directory" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="backup_share" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="backup_retention_period" Type="Int32" Nullable="false" />
+    <Property Name="backup_job_id" Type="Guid" Nullable="false" />
+    <Property Name="monitor_server" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="user_specified_monitor" Type="Boolean" />
+    <Property Name="monitor_server_security_mode" Type="Boolean" Nullable="false" />
+    <Property Name="last_backup_file" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="last_backup_date" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="log_shipping_primary_secondaries">
+    <Key>
+      <PropertyRef Name="primary_id" />
+      <PropertyRef Name="secondary_server" />
+      <PropertyRef Name="secondary_database" />
+    </Key>
+    <Property Name="primary_id" Type="Guid" Nullable="false" />
+    <Property Name="secondary_server" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="secondary_database" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="log_shipping_secondaries">
+    <Key>
+      <PropertyRef Name="secondary_server_name" />
+      <PropertyRef Name="secondary_database_name" />
+    </Key>
+    <Property Name="primary_id" Type="Int32" />
+    <Property Name="secondary_server_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="secondary_database_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="last_copied_filename" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="last_loaded_filename" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="last_copied_last_updated" Type="DateTime" />
+    <Property Name="last_loaded_last_updated" Type="DateTime" />
+    <Property Name="secondary_plan_id" Type="Guid" />
+    <Property Name="copy_enabled" Type="Boolean" />
+    <Property Name="load_enabled" Type="Boolean" />
+    <Property Name="out_of_sync_threshold" Type="Int32" />
+    <Property Name="threshold_alert" Type="Int32" />
+    <Property Name="threshold_alert_enabled" Type="Boolean" />
+    <Property Name="planned_outage_start_time" Type="Int32" />
+    <Property Name="planned_outage_end_time" Type="Int32" />
+    <Property Name="planned_outage_weekday_mask" Type="Int32" />
+    <Property Name="allow_role_change" Type="Boolean" />
+    <NavigationProperty Name="log_shipping_primaries" Relationship="msdbModel.FK__log_shipp__prima__60083D91" FromRole="log_shipping_secondaries" ToRole="log_shipping_primaries" />
+  </EntityType>
+  <EntityType Name="log_shipping_secondary">
+    <Key>
+      <PropertyRef Name="secondary_id" />
+    </Key>
+    <Property Name="secondary_id" Type="Guid" Nullable="false" />
+    <Property Name="primary_server" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="primary_database" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="backup_source_directory" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="backup_destination_directory" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="file_retention_period" Type="Int32" Nullable="false" />
+    <Property Name="copy_job_id" Type="Guid" Nullable="false" />
+    <Property Name="restore_job_id" Type="Guid" Nullable="false" />
+    <Property Name="monitor_server" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="monitor_server_security_mode" Type="Boolean" Nullable="false" />
+    <Property Name="user_specified_monitor" Type="Boolean" />
+    <Property Name="last_copied_file" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="last_copied_date" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="log_shipping_secondary_databases">
+    <Key>
+      <PropertyRef Name="secondary_database" />
+    </Key>
+    <Property Name="secondary_database" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="secondary_id" Type="Guid" Nullable="false" />
+    <Property Name="restore_delay" Type="Int32" Nullable="false" />
+    <Property Name="restore_all" Type="Boolean" Nullable="false" />
+    <Property Name="restore_mode" Type="Boolean" Nullable="false" />
+    <Property Name="disconnect_users" Type="Boolean" Nullable="false" />
+    <Property Name="block_size" Type="Int32" />
+    <Property Name="buffer_count" Type="Int32" />
+    <Property Name="max_transfer_size" Type="Int32" />
+    <Property Name="last_restored_file" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="last_restored_date" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="logmarkhistory">
+    <Key>
+      <PropertyRef Name="database_name" />
+      <PropertyRef Name="mark_name" />
+      <PropertyRef Name="user_name" />
+      <PropertyRef Name="lsn" />
+      <PropertyRef Name="mark_time" />
+    </Key>
+    <Property Name="database_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="mark_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="user_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="lsn" Type="Decimal" Nullable="false" Precision="25" Scale="0" />
+    <Property Name="mark_time" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MSdbms">
+    <Key>
+      <PropertyRef Name="dbms_id" />
+    </Key>
+    <Property Name="dbms_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dbms" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="version" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="MSdbms_datatype" Relationship="msdbModel.fk_MSdbms_datatype_dbms_id" FromRole="MSdbms" ToRole="MSdbms_datatype" />
+    <NavigationProperty Name="MSdbms_map" Relationship="msdbModel.fk_MSdbms_map_dest_dbms_id" FromRole="MSdbms" ToRole="MSdbms_map" />
+    <NavigationProperty Name="MSdbms_map1" Relationship="msdbModel.fk_MSdbms_map_src_dbms_id" FromRole="MSdbms" ToRole="MSdbms_map" />
+  </EntityType>
+  <EntityType Name="MSdbms_datatype">
+    <Key>
+      <PropertyRef Name="datatype_id" />
+    </Key>
+    <Property Name="datatype_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dbms_id" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="createparams" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MSdbms" Relationship="msdbModel.fk_MSdbms_datatype_dbms_id" FromRole="MSdbms_datatype" ToRole="MSdbms" />
+    <NavigationProperty Name="MSdbms_datatype_mapping" Relationship="msdbModel.fk_MSdbms_datatype_mapping_dest_datatype_id" FromRole="MSdbms_datatype" ToRole="MSdbms_datatype_mapping" />
+    <NavigationProperty Name="MSdbms_map" Relationship="msdbModel.fk_MSdbms_map_src_datatype_id" FromRole="MSdbms_datatype" ToRole="MSdbms_map" />
+  </EntityType>
+  <EntityType Name="MSdbms_datatype_mapping">
+    <Key>
+      <PropertyRef Name="datatype_mapping_id" />
+    </Key>
+    <Property Name="datatype_mapping_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="map_id" Type="Int32" Nullable="false" />
+    <Property Name="dest_datatype_id" Type="Int32" Nullable="false" />
+    <Property Name="dest_precision" Type="Int64" />
+    <Property Name="dest_scale" Type="Int32" />
+    <Property Name="dest_length" Type="Int64" />
+    <Property Name="dest_nullable" Type="Boolean" />
+    <Property Name="dest_createparams" Type="Int32" />
+    <Property Name="dataloss" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="MSdbms_datatype" Relationship="msdbModel.fk_MSdbms_datatype_mapping_dest_datatype_id" FromRole="MSdbms_datatype_mapping" ToRole="MSdbms_datatype" />
+    <NavigationProperty Name="MSdbms_map" Relationship="msdbModel.fk_MSdbms_datatype_mapping_map_id" FromRole="MSdbms_datatype_mapping" ToRole="MSdbms_map" />
+    <NavigationProperty Name="MSdbms_map1" Relationship="msdbModel.fk_MSdbms_map_default_datatype_mapping_id" FromRole="MSdbms_datatype_mapping" ToRole="MSdbms_map" />
+  </EntityType>
+  <EntityType Name="MSdbms_map">
+    <Key>
+      <PropertyRef Name="map_id" />
+    </Key>
+    <Property Name="map_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="src_dbms_id" Type="Int32" Nullable="false" />
+    <Property Name="dest_dbms_id" Type="Int32" Nullable="false" />
+    <Property Name="src_datatype_id" Type="Int32" Nullable="false" />
+    <Property Name="src_len_min" Type="Int64" />
+    <Property Name="src_len_max" Type="Int64" />
+    <Property Name="src_prec_min" Type="Int64" />
+    <Property Name="src_prec_max" Type="Int64" />
+    <Property Name="src_scale_min" Type="Int64" />
+    <Property Name="src_scale_max" Type="Int64" />
+    <Property Name="src_nullable" Type="Boolean" />
+    <Property Name="default_datatype_mapping_id" Type="Int32" />
+    <NavigationProperty Name="MSdbms" Relationship="msdbModel.fk_MSdbms_map_dest_dbms_id" FromRole="MSdbms_map" ToRole="MSdbms" />
+    <NavigationProperty Name="MSdbms1" Relationship="msdbModel.fk_MSdbms_map_src_dbms_id" FromRole="MSdbms_map" ToRole="MSdbms" />
+    <NavigationProperty Name="MSdbms_datatype" Relationship="msdbModel.fk_MSdbms_map_src_datatype_id" FromRole="MSdbms_map" ToRole="MSdbms_datatype" />
+    <NavigationProperty Name="MSdbms_datatype_mapping" Relationship="msdbModel.fk_MSdbms_datatype_mapping_map_id" FromRole="MSdbms_map" ToRole="MSdbms_datatype_mapping" />
+    <NavigationProperty Name="MSdbms_datatype_mapping1" Relationship="msdbModel.fk_MSdbms_map_default_datatype_mapping_id" FromRole="MSdbms_map" ToRole="MSdbms_datatype_mapping" />
+  </EntityType>
+  <EntityType Name="restorefile">
+    <Key>
+      <PropertyRef Name="restore_history_id" />
+    </Key>
+    <Property Name="restore_history_id" Type="Int32" Nullable="false" />
+    <Property Name="file_number" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="destination_phys_drive" Type="String" MaxLength="260" Unicode="true" FixedLength="false" />
+    <Property Name="destination_phys_name" Type="String" MaxLength="260" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="restorehistory" Relationship="msdbModel.FK__restorefi__resto__00DF2177" FromRole="restorefile" ToRole="restorehistory" />
+  </EntityType>
+  <EntityType Name="restorefilegroup">
+    <Key>
+      <PropertyRef Name="restore_history_id" />
+    </Key>
+    <Property Name="restore_history_id" Type="Int32" Nullable="false" />
+    <Property Name="filegroup_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="restorehistory" Relationship="msdbModel.FK__restorefi__resto__02C769E9" FromRole="restorefilegroup" ToRole="restorehistory" />
+  </EntityType>
+  <EntityType Name="restorehistory">
+    <Key>
+      <PropertyRef Name="restore_history_id" />
+    </Key>
+    <Property Name="restore_history_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="restore_date" Type="DateTime" />
+    <Property Name="destination_database_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="user_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="backup_set_id" Type="Int32" Nullable="false" />
+    <Property Name="restore_type" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="replace" Type="Boolean" />
+    <Property Name="recovery" Type="Boolean" />
+    <Property Name="restart" Type="Boolean" />
+    <Property Name="stop_at" Type="DateTime" />
+    <Property Name="device_count" Type="Byte" />
+    <Property Name="stop_at_mark_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="stop_before" Type="Boolean" />
+    <NavigationProperty Name="backupset" Relationship="msdbModel.FK__restorehi__backu__7EF6D905" FromRole="restorehistory" ToRole="backupset" />
+    <NavigationProperty Name="restorefile" Relationship="msdbModel.FK__restorefi__resto__00DF2177" FromRole="restorehistory" ToRole="restorefile" />
+    <NavigationProperty Name="restorefilegroup" Relationship="msdbModel.FK__restorefi__resto__02C769E9" FromRole="restorehistory" ToRole="restorefilegroup" />
+  </EntityType>
+  <EntityType Name="sqlagent_info">
+    <Key>
+      <PropertyRef Name="attribute" />
+      <PropertyRef Name="value" />
+    </Key>
+    <Property Name="attribute" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="value" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="suspect_pages">
+    <Key>
+      <PropertyRef Name="database_id" />
+      <PropertyRef Name="file_id" />
+      <PropertyRef Name="page_id" />
+      <PropertyRef Name="event_type" />
+      <PropertyRef Name="error_count" />
+      <PropertyRef Name="last_update_date" />
+    </Key>
+    <Property Name="database_id" Type="Int32" Nullable="false" />
+    <Property Name="file_id" Type="Int32" Nullable="false" />
+    <Property Name="page_id" Type="Int64" Nullable="false" />
+    <Property Name="event_type" Type="Int32" Nullable="false" />
+    <Property Name="error_count" Type="Int32" Nullable="false" />
+    <Property Name="last_update_date" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysalerts">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="event_source" />
+      <PropertyRef Name="message_id" />
+      <PropertyRef Name="severity" />
+      <PropertyRef Name="enabled" />
+      <PropertyRef Name="delay_between_responses" />
+      <PropertyRef Name="last_occurrence_date" />
+      <PropertyRef Name="last_occurrence_time" />
+      <PropertyRef Name="last_response_date" />
+      <PropertyRef Name="last_response_time" />
+      <PropertyRef Name="include_event_description" />
+      <PropertyRef Name="occurrence_count" />
+      <PropertyRef Name="count_reset_date" />
+      <PropertyRef Name="count_reset_time" />
+      <PropertyRef Name="job_id" />
+      <PropertyRef Name="has_notification" />
+      <PropertyRef Name="flags" />
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="event_source" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="event_category_id" Type="Int32" />
+    <Property Name="event_id" Type="Int32" />
+    <Property Name="message_id" Type="Int32" Nullable="false" />
+    <Property Name="severity" Type="Int32" Nullable="false" />
+    <Property Name="enabled" Type="Byte" Nullable="false" />
+    <Property Name="delay_between_responses" Type="Int32" Nullable="false" />
+    <Property Name="last_occurrence_date" Type="Int32" Nullable="false" />
+    <Property Name="last_occurrence_time" Type="Int32" Nullable="false" />
+    <Property Name="last_response_date" Type="Int32" Nullable="false" />
+    <Property Name="last_response_time" Type="Int32" Nullable="false" />
+    <Property Name="notification_message" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="include_event_description" Type="Byte" Nullable="false" />
+    <Property Name="database_name" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="event_description_keyword" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="occurrence_count" Type="Int32" Nullable="false" />
+    <Property Name="count_reset_date" Type="Int32" Nullable="false" />
+    <Property Name="count_reset_time" Type="Int32" Nullable="false" />
+    <Property Name="job_id" Type="Guid" Nullable="false" />
+    <Property Name="has_notification" Type="Int32" Nullable="false" />
+    <Property Name="flags" Type="Int32" Nullable="false" />
+    <Property Name="performance_condition" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="syscachedcredentials">
+    <Key>
+      <PropertyRef Name="login_name" />
+    </Key>
+    <Property Name="login_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="has_server_access" Type="Boolean" Nullable="false" />
+    <Property Name="is_sysadmin_member" Type="Boolean" Nullable="false" />
+    <Property Name="cachedate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="syscategories">
+    <Key>
+      <PropertyRef Name="category_id" />
+      <PropertyRef Name="category_class" />
+      <PropertyRef Name="category_type" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="category_class" Type="Int32" Nullable="false" />
+    <Property Name="category_type" Type="Byte" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysdbmaintplan_databases">
+    <Key>
+      <PropertyRef Name="plan_id" />
+      <PropertyRef Name="database_name" />
+    </Key>
+    <Property Name="plan_id" Type="Guid" Nullable="false" />
+    <Property Name="database_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="sysdbmaintplans" Relationship="msdbModel.FK__sysdbmain__plan___4A18FC72" FromRole="sysdbmaintplan_databases" ToRole="sysdbmaintplans" />
+  </EntityType>
+  <EntityType Name="sysdbmaintplan_history">
+    <Key>
+      <PropertyRef Name="sequence_id" />
+      <PropertyRef Name="plan_id" />
+      <PropertyRef Name="plan_name" />
+      <PropertyRef Name="server_name" />
+      <PropertyRef Name="succeeded" />
+      <PropertyRef Name="end_time" />
+      <PropertyRef Name="error_number" />
+    </Key>
+    <Property Name="sequence_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="plan_id" Type="Guid" Nullable="false" />
+    <Property Name="plan_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="database_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="server_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="activity" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="succeeded" Type="Boolean" Nullable="false" />
+    <Property Name="end_time" Type="DateTime" Nullable="false" />
+    <Property Name="duration" Type="Int32" />
+    <Property Name="start_time" Type="DateTime" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="error_number" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysdbmaintplan_jobs">
+    <Key>
+      <PropertyRef Name="plan_id" />
+      <PropertyRef Name="job_id" />
+    </Key>
+    <Property Name="plan_id" Type="Guid" Nullable="false" />
+    <Property Name="job_id" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="sysdbmaintplans" Relationship="msdbModel.FK__sysdbmain__plan___473C8FC7" FromRole="sysdbmaintplan_jobs" ToRole="sysdbmaintplans" />
+  </EntityType>
+  <EntityType Name="sysdbmaintplans">
+    <Key>
+      <PropertyRef Name="plan_id" />
+    </Key>
+    <Property Name="plan_id" Type="Guid" Nullable="false" />
+    <Property Name="plan_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="date_created" Type="DateTime" Nullable="false" />
+    <Property Name="owner" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="max_history_rows" Type="Int32" Nullable="false" />
+    <Property Name="remote_history_server" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="max_remote_history_rows" Type="Int32" Nullable="false" />
+    <Property Name="user_defined_1" Type="Int32" />
+    <Property Name="user_defined_2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="user_defined_3" Type="DateTime" />
+    <Property Name="user_defined_4" Type="Guid" />
+    <NavigationProperty Name="sysdbmaintplan_databases" Relationship="msdbModel.FK__sysdbmain__plan___4A18FC72" FromRole="sysdbmaintplans" ToRole="sysdbmaintplan_databases" />
+    <NavigationProperty Name="sysdbmaintplan_jobs" Relationship="msdbModel.FK__sysdbmain__plan___473C8FC7" FromRole="sysdbmaintplans" ToRole="sysdbmaintplan_jobs" />
+  </EntityType>
+  <EntityType Name="sysdownloadlist">
+    <Key>
+      <PropertyRef Name="instance_id" />
+      <PropertyRef Name="source_server" />
+      <PropertyRef Name="operation_code" />
+      <PropertyRef Name="object_type" />
+      <PropertyRef Name="object_id" />
+      <PropertyRef Name="target_server" />
+      <PropertyRef Name="date_posted" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="instance_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="source_server" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="operation_code" Type="Byte" Nullable="false" />
+    <Property Name="object_type" Type="Byte" Nullable="false" />
+    <Property Name="object_id" Type="Guid" Nullable="false" />
+    <Property Name="target_server" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="error_message" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="date_posted" Type="DateTime" Nullable="false" />
+    <Property Name="date_downloaded" Type="DateTime" />
+    <Property Name="status" Type="Byte" Nullable="false" />
+    <Property Name="deleted_object_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysdtscategories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="parentid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="sysdtspackages" Relationship="msdbModel.FK__sysdtspac__categ__0D44F85C" FromRole="sysdtscategories" ToRole="sysdtspackages" />
+  </EntityType>
+  <EntityType Name="sysdtslog90">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="event" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="computer" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="operator" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="source" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="sourceid" Type="Guid" Nullable="false" />
+    <Property Name="executionid" Type="Guid" Nullable="false" />
+    <Property Name="starttime" Type="DateTime" Nullable="false" />
+    <Property Name="endtime" Type="DateTime" Nullable="false" />
+    <Property Name="datacode" Type="Int32" Nullable="false" />
+    <Property Name="databytes" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="2048" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysdtspackagefolders90">
+    <Key>
+      <PropertyRef Name="folderid" />
+    </Key>
+    <Property Name="folderid" Type="Guid" Nullable="false" />
+    <Property Name="parentfolderid" Type="Guid" />
+    <Property Name="foldername" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysdtspackagelog">
+    <Key>
+      <PropertyRef Name="lineagefull" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="versionid" Type="Guid" Nullable="false" />
+    <Property Name="lineagefull" Type="Guid" Nullable="false" />
+    <Property Name="lineageshort" Type="Int32" Nullable="false" />
+    <Property Name="starttime" Type="DateTime" Nullable="false" />
+    <Property Name="endtime" Type="DateTime" />
+    <Property Name="elapsedtime" Type="Double" />
+    <Property Name="computer" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="operator" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="logdate" Type="DateTime" Nullable="false" />
+    <Property Name="errorcode" Type="Int32" />
+    <Property Name="errordescription" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="sysdtssteplog" Relationship="msdbModel.FK__sysdtsste__linea__2057CCD0" FromRole="sysdtspackagelog" ToRole="sysdtssteplog" />
+  </EntityType>
+  <EntityType Name="sysdtspackages">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="versionid" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="versionid" Type="Guid" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="categoryid" Type="Guid" Nullable="false" />
+    <Property Name="createdate" Type="DateTime" />
+    <Property Name="owner" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="packagedata" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="owner_sid" Type="Binary" Nullable="false" MaxLength="85" FixedLength="false" />
+    <Property Name="packagetype" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="sysdtscategories" Relationship="msdbModel.FK__sysdtspac__categ__0D44F85C" FromRole="sysdtspackages" ToRole="sysdtscategories" />
+  </EntityType>
+  <EntityType Name="sysdtspackages90">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="folderid" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="createdate" Type="DateTime" Nullable="false" />
+    <Property Name="folderid" Type="Guid" Nullable="false" />
+    <Property Name="ownersid" Type="Binary" Nullable="false" MaxLength="85" FixedLength="false" />
+    <Property Name="packagedata" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="packageformat" Type="Int32" Nullable="false" />
+    <Property Name="packagetype" Type="Int32" Nullable="false" />
+    <Property Name="vermajor" Type="Int32" Nullable="false" />
+    <Property Name="verminor" Type="Int32" Nullable="false" />
+    <Property Name="verbuild" Type="Int32" Nullable="false" />
+    <Property Name="vercomments" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="verid" Type="Guid" Nullable="false" />
+    <Property Name="isencrypted" Type="Boolean" Nullable="false" />
+    <Property Name="readrolesid" Type="Binary" MaxLength="85" FixedLength="false" />
+    <Property Name="writerolesid" Type="Binary" MaxLength="85" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysdtssteplog">
+    <Key>
+      <PropertyRef Name="stepexecutionid" />
+    </Key>
+    <Property Name="stepexecutionid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="lineagefull" Type="Guid" Nullable="false" />
+    <Property Name="stepname" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="stepexecstatus" Type="Int32" />
+    <Property Name="stepexecresult" Type="Int32" />
+    <Property Name="starttime" Type="DateTime" Nullable="false" />
+    <Property Name="endtime" Type="DateTime" />
+    <Property Name="elapsedtime" Type="Double" />
+    <Property Name="errorcode" Type="Int32" />
+    <Property Name="errordescription" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+    <Property Name="progresscount" Type="Int64" />
+    <NavigationProperty Name="sysdtspackagelog" Relationship="msdbModel.FK__sysdtsste__linea__2057CCD0" FromRole="sysdtssteplog" ToRole="sysdtspackagelog" />
+    <NavigationProperty Name="sysdtstasklog" Relationship="msdbModel.FK__sysdtstas__stepe__2334397B" FromRole="sysdtssteplog" ToRole="sysdtstasklog" />
+  </EntityType>
+  <EntityType Name="sysdtstasklog">
+    <Key>
+      <PropertyRef Name="stepexecutionid" />
+      <PropertyRef Name="sequenceid" />
+    </Key>
+    <Property Name="stepexecutionid" Type="Int64" Nullable="false" />
+    <Property Name="sequenceid" Type="Int32" Nullable="false" />
+    <Property Name="errorcode" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="sysdtssteplog" Relationship="msdbModel.FK__sysdtstas__stepe__2334397B" FromRole="sysdtstasklog" ToRole="sysdtssteplog" />
+  </EntityType>
+  <EntityType Name="sysjobactivity">
+    <Key>
+      <PropertyRef Name="session_id" />
+      <PropertyRef Name="job_id" />
+    </Key>
+    <Property Name="session_id" Type="Int32" Nullable="false" />
+    <Property Name="job_id" Type="Guid" Nullable="false" />
+    <Property Name="run_requested_date" Type="DateTime" />
+    <Property Name="run_requested_source" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="queued_date" Type="DateTime" />
+    <Property Name="start_execution_date" Type="DateTime" />
+    <Property Name="last_executed_step_id" Type="Int32" />
+    <Property Name="last_executed_step_date" Type="DateTime" />
+    <Property Name="stop_execution_date" Type="DateTime" />
+    <Property Name="job_history_id" Type="Int32" />
+    <Property Name="next_scheduled_run_date" Type="DateTime" />
+    <NavigationProperty Name="syssessions" Relationship="msdbModel.FK__sysjobact__sessi__173876EA" FromRole="sysjobactivity" ToRole="syssessions" />
+  </EntityType>
+  <EntityType Name="sysjobhistory">
+    <Key>
+      <PropertyRef Name="instance_id" />
+      <PropertyRef Name="job_id" />
+      <PropertyRef Name="step_id" />
+      <PropertyRef Name="step_name" />
+      <PropertyRef Name="sql_message_id" />
+      <PropertyRef Name="sql_severity" />
+      <PropertyRef Name="run_status" />
+      <PropertyRef Name="run_date" />
+      <PropertyRef Name="run_time" />
+      <PropertyRef Name="run_duration" />
+      <PropertyRef Name="operator_id_emailed" />
+      <PropertyRef Name="operator_id_netsent" />
+      <PropertyRef Name="operator_id_paged" />
+      <PropertyRef Name="retries_attempted" />
+      <PropertyRef Name="server" />
+    </Key>
+    <Property Name="instance_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="job_id" Type="Guid" Nullable="false" />
+    <Property Name="step_id" Type="Int32" Nullable="false" />
+    <Property Name="step_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="sql_message_id" Type="Int32" Nullable="false" />
+    <Property Name="sql_severity" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="run_status" Type="Int32" Nullable="false" />
+    <Property Name="run_date" Type="Int32" Nullable="false" />
+    <Property Name="run_time" Type="Int32" Nullable="false" />
+    <Property Name="run_duration" Type="Int32" Nullable="false" />
+    <Property Name="operator_id_emailed" Type="Int32" Nullable="false" />
+    <Property Name="operator_id_netsent" Type="Int32" Nullable="false" />
+    <Property Name="operator_id_paged" Type="Int32" Nullable="false" />
+    <Property Name="retries_attempted" Type="Int32" Nullable="false" />
+    <Property Name="server" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysjobs">
+    <Key>
+      <PropertyRef Name="job_id" />
+      <PropertyRef Name="originating_server_id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="enabled" />
+      <PropertyRef Name="start_step_id" />
+      <PropertyRef Name="category_id" />
+      <PropertyRef Name="owner_sid" />
+      <PropertyRef Name="notify_level_eventlog" />
+      <PropertyRef Name="notify_level_email" />
+      <PropertyRef Name="notify_level_netsend" />
+      <PropertyRef Name="notify_level_page" />
+      <PropertyRef Name="notify_email_operator_id" />
+      <PropertyRef Name="notify_netsend_operator_id" />
+      <PropertyRef Name="notify_page_operator_id" />
+      <PropertyRef Name="delete_level" />
+      <PropertyRef Name="date_created" />
+      <PropertyRef Name="date_modified" />
+      <PropertyRef Name="version_number" />
+    </Key>
+    <Property Name="job_id" Type="Guid" Nullable="false" />
+    <Property Name="originating_server_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="enabled" Type="Byte" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="start_step_id" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="owner_sid" Type="Binary" Nullable="false" MaxLength="85" FixedLength="false" />
+    <Property Name="notify_level_eventlog" Type="Int32" Nullable="false" />
+    <Property Name="notify_level_email" Type="Int32" Nullable="false" />
+    <Property Name="notify_level_netsend" Type="Int32" Nullable="false" />
+    <Property Name="notify_level_page" Type="Int32" Nullable="false" />
+    <Property Name="notify_email_operator_id" Type="Int32" Nullable="false" />
+    <Property Name="notify_netsend_operator_id" Type="Int32" Nullable="false" />
+    <Property Name="notify_page_operator_id" Type="Int32" Nullable="false" />
+    <Property Name="delete_level" Type="Int32" Nullable="false" />
+    <Property Name="date_created" Type="DateTime" Nullable="false" />
+    <Property Name="date_modified" Type="DateTime" Nullable="false" />
+    <Property Name="version_number" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysjobschedules">
+    <Key>
+      <PropertyRef Name="next_run_date" />
+      <PropertyRef Name="next_run_time" />
+    </Key>
+    <Property Name="schedule_id" Type="Int32" />
+    <Property Name="job_id" Type="Guid" />
+    <Property Name="next_run_date" Type="Int32" Nullable="false" />
+    <Property Name="next_run_time" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="sysschedules" Relationship="msdbModel.FK__sysjobsch__sched__267ABA7A" FromRole="sysjobschedules" ToRole="sysschedules" />
+  </EntityType>
+  <EntityType Name="sysjobservers">
+    <Key>
+      <PropertyRef Name="job_id" />
+      <PropertyRef Name="server_id" />
+      <PropertyRef Name="last_run_outcome" />
+      <PropertyRef Name="last_run_date" />
+      <PropertyRef Name="last_run_time" />
+      <PropertyRef Name="last_run_duration" />
+    </Key>
+    <Property Name="job_id" Type="Guid" Nullable="false" />
+    <Property Name="server_id" Type="Int32" Nullable="false" />
+    <Property Name="last_run_outcome" Type="Byte" Nullable="false" />
+    <Property Name="last_outcome_message" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="last_run_date" Type="Int32" Nullable="false" />
+    <Property Name="last_run_time" Type="Int32" Nullable="false" />
+    <Property Name="last_run_duration" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysjobsteps">
+    <Key>
+      <PropertyRef Name="job_id" />
+      <PropertyRef Name="step_id" />
+      <PropertyRef Name="step_name" />
+      <PropertyRef Name="subsystem" />
+      <PropertyRef Name="flags" />
+      <PropertyRef Name="cmdexec_success_code" />
+      <PropertyRef Name="on_success_action" />
+      <PropertyRef Name="on_success_step_id" />
+      <PropertyRef Name="on_fail_action" />
+      <PropertyRef Name="on_fail_step_id" />
+      <PropertyRef Name="retry_attempts" />
+      <PropertyRef Name="retry_interval" />
+      <PropertyRef Name="os_run_priority" />
+      <PropertyRef Name="last_run_outcome" />
+      <PropertyRef Name="last_run_duration" />
+      <PropertyRef Name="last_run_retries" />
+      <PropertyRef Name="last_run_date" />
+      <PropertyRef Name="last_run_time" />
+    </Key>
+    <Property Name="job_id" Type="Guid" Nullable="false" />
+    <Property Name="step_id" Type="Int32" Nullable="false" />
+    <Property Name="step_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="subsystem" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+    <Property Name="command" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="flags" Type="Int32" Nullable="false" />
+    <Property Name="additional_parameters" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="cmdexec_success_code" Type="Int32" Nullable="false" />
+    <Property Name="on_success_action" Type="Byte" Nullable="false" />
+    <Property Name="on_success_step_id" Type="Int32" Nullable="false" />
+    <Property Name="on_fail_action" Type="Byte" Nullable="false" />
+    <Property Name="on_fail_step_id" Type="Int32" Nullable="false" />
+    <Property Name="server" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="database_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="database_user_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="retry_attempts" Type="Int32" Nullable="false" />
+    <Property Name="retry_interval" Type="Int32" Nullable="false" />
+    <Property Name="os_run_priority" Type="Int32" Nullable="false" />
+    <Property Name="output_file_name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="last_run_outcome" Type="Int32" Nullable="false" />
+    <Property Name="last_run_duration" Type="Int32" Nullable="false" />
+    <Property Name="last_run_retries" Type="Int32" Nullable="false" />
+    <Property Name="last_run_date" Type="Int32" Nullable="false" />
+    <Property Name="last_run_time" Type="Int32" Nullable="false" />
+    <Property Name="proxy_id" Type="Int32" />
+    <Property Name="step_uid" Type="Guid" />
+  </EntityType>
+  <EntityType Name="sysjobstepslogs">
+    <Key>
+      <PropertyRef Name="log_id" />
+    </Key>
+    <Property Name="log_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="log" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="date_created" Type="DateTime" Nullable="false" />
+    <Property Name="date_modified" Type="DateTime" Nullable="false" />
+    <Property Name="log_size" Type="Int64" Nullable="false" />
+    <Property Name="step_uid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysmail_account">
+    <Key>
+      <PropertyRef Name="account_id" />
+    </Key>
+    <Property Name="account_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="email_address" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="display_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="replyto_address" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="last_mod_datetime" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="sysmail_profileaccount" Relationship="msdbModel.FK__sysmail_p__accou__40C49C62" FromRole="sysmail_account" ToRole="sysmail_profileaccount" />
+    <NavigationProperty Name="sysmail_server" Relationship="msdbModel.FK__sysmail_s__accou__4B422AD5" FromRole="sysmail_account" ToRole="sysmail_server" />
+  </EntityType>
+  <EntityType Name="sysmail_attachments">
+    <Key>
+      <PropertyRef Name="attachment_id" />
+      <PropertyRef Name="mailitem_id" />
+      <PropertyRef Name="filename" />
+      <PropertyRef Name="filesize" />
+      <PropertyRef Name="last_mod_date" />
+      <PropertyRef Name="last_mod_user" />
+    </Key>
+    <Property Name="attachment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mailitem_id" Type="Int32" Nullable="false" />
+    <Property Name="filename" Type="String" Nullable="false" MaxLength="260" Unicode="true" FixedLength="false" />
+    <Property Name="filesize" Type="Int32" Nullable="false" />
+    <Property Name="attachment" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="last_mod_date" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="sysmail_mailitems" Relationship="msdbModel.FK_sysmail_mailitems_mailitem_id" FromRole="sysmail_attachments" ToRole="sysmail_mailitems" />
+  </EntityType>
+  <EntityType Name="sysmail_attachments_transfer">
+    <Key>
+      <PropertyRef Name="transfer_id" />
+    </Key>
+    <Property Name="transfer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Guid" Nullable="false" />
+    <Property Name="filename" Type="String" Nullable="false" MaxLength="260" Unicode="true" FixedLength="false" />
+    <Property Name="filesize" Type="Int32" Nullable="false" />
+    <Property Name="attachment" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysmail_configuration">
+    <Key>
+      <PropertyRef Name="paramname" />
+    </Key>
+    <Property Name="paramname" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="paramvalue" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="last_mod_datetime" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysmail_log">
+    <Key>
+      <PropertyRef Name="log_id" />
+    </Key>
+    <Property Name="log_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="event_type" Type="Int32" Nullable="false" />
+    <Property Name="log_date" Type="DateTime" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="process_id" Type="Int32" />
+    <Property Name="mailitem_id" Type="Int32" />
+    <Property Name="account_id" Type="Int32" />
+    <Property Name="last_mod_date" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysmail_mailitems">
+    <Key>
+      <PropertyRef Name="mailitem_id" />
+    </Key>
+    <Property Name="mailitem_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="profile_id" Type="Int32" Nullable="false" />
+    <Property Name="recipients" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="copy_recipients" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="blind_copy_recipients" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="subject" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="body_format" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="importance" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="sensitivity" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="file_attachments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="attachment_encoding" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="query" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="execute_query_database" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="attach_query_result_as_file" Type="Boolean" />
+    <Property Name="query_result_header" Type="Boolean" />
+    <Property Name="query_result_width" Type="Int32" />
+    <Property Name="query_result_separator" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="exclude_query_output" Type="Boolean" />
+    <Property Name="append_query_error" Type="Boolean" />
+    <Property Name="send_request_date" Type="DateTime" Nullable="false" />
+    <Property Name="send_request_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="sent_account_id" Type="Int32" />
+    <Property Name="sent_status" Type="Byte" />
+    <Property Name="sent_date" Type="DateTime" />
+    <Property Name="last_mod_date" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="sysmail_attachments" Relationship="msdbModel.FK_sysmail_mailitems_mailitem_id" FromRole="sysmail_mailitems" ToRole="sysmail_attachments" />
+    <NavigationProperty Name="sysmail_send_retries" Relationship="msdbModel.FK_mailitems_mailitem_id" FromRole="sysmail_mailitems" ToRole="sysmail_send_retries" />
+  </EntityType>
+  <EntityType Name="sysmail_principalprofile">
+    <Key>
+      <PropertyRef Name="profile_id" />
+      <PropertyRef Name="principal_sid" />
+    </Key>
+    <Property Name="profile_id" Type="Int32" Nullable="false" />
+    <Property Name="principal_sid" Type="Binary" Nullable="false" MaxLength="85" FixedLength="false" />
+    <Property Name="is_default" Type="Boolean" Nullable="false" />
+    <Property Name="last_mod_datetime" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="sysmail_profile" Relationship="msdbModel.FK__sysmail_p__profi__36470DEF" FromRole="sysmail_principalprofile" ToRole="sysmail_profile" />
+  </EntityType>
+  <EntityType Name="sysmail_profile">
+    <Key>
+      <PropertyRef Name="profile_id" />
+    </Key>
+    <Property Name="profile_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="last_mod_datetime" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="sysmail_principalprofile" Relationship="msdbModel.FK__sysmail_p__profi__36470DEF" FromRole="sysmail_profile" ToRole="sysmail_principalprofile" />
+  </EntityType>
+  <EntityType Name="sysmail_profileaccount">
+    <Key>
+      <PropertyRef Name="profile_id" />
+      <PropertyRef Name="account_id" />
+    </Key>
+    <Property Name="profile_id" Type="Int32" Nullable="false" />
+    <Property Name="account_id" Type="Int32" Nullable="false" />
+    <Property Name="sequence_number" Type="Int32" />
+    <Property Name="last_mod_datetime" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="sysmail_account" Relationship="msdbModel.FK__sysmail_p__accou__40C49C62" FromRole="sysmail_profileaccount" ToRole="sysmail_account" />
+  </EntityType>
+  <EntityType Name="sysmail_query_transfer">
+    <Key>
+      <PropertyRef Name="uid" />
+    </Key>
+    <Property Name="uid" Type="Guid" Nullable="false" />
+    <Property Name="text_data" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysmail_send_retries">
+    <Key>
+      <PropertyRef Name="conversation_handle" />
+    </Key>
+    <Property Name="conversation_handle" Type="Guid" Nullable="false" />
+    <Property Name="mailitem_id" Type="Int32" Nullable="false" />
+    <Property Name="send_attempts" Type="Int32" Nullable="false" />
+    <Property Name="last_send_attempt_date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="sysmail_mailitems" Relationship="msdbModel.FK_mailitems_mailitem_id" FromRole="sysmail_send_retries" ToRole="sysmail_mailitems" />
+  </EntityType>
+  <EntityType Name="sysmail_server">
+    <Key>
+      <PropertyRef Name="account_id" />
+      <PropertyRef Name="servertype" />
+    </Key>
+    <Property Name="account_id" Type="Int32" Nullable="false" />
+    <Property Name="servertype" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="servername" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="port" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="credential_id" Type="Int32" />
+    <Property Name="use_default_credentials" Type="Boolean" Nullable="false" />
+    <Property Name="enable_ssl" Type="Boolean" Nullable="false" />
+    <Property Name="flags" Type="Int32" Nullable="false" />
+    <Property Name="last_mod_datetime" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="sysmail_account" Relationship="msdbModel.FK__sysmail_s__accou__4B422AD5" FromRole="sysmail_server" ToRole="sysmail_account" />
+    <NavigationProperty Name="sysmail_servertype" Relationship="msdbModel.FK__sysmail_s__serve__4C364F0E" FromRole="sysmail_server" ToRole="sysmail_servertype" />
+  </EntityType>
+  <EntityType Name="sysmail_servertype">
+    <Key>
+      <PropertyRef Name="servertype" />
+    </Key>
+    <Property Name="servertype" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="is_incoming" Type="Boolean" Nullable="false" />
+    <Property Name="is_outgoing" Type="Boolean" Nullable="false" />
+    <Property Name="last_mod_datetime" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="sysmail_server" Relationship="msdbModel.FK__sysmail_s__serve__4C364F0E" FromRole="sysmail_servertype" ToRole="sysmail_server" />
+  </EntityType>
+  <EntityType Name="sysmaintplan_log">
+    <Key>
+      <PropertyRef Name="task_detail_id" />
+    </Key>
+    <Property Name="task_detail_id" Type="Guid" Nullable="false" />
+    <Property Name="plan_id" Type="Guid" Nullable="false" />
+    <Property Name="subplan_id" Type="Guid" Nullable="false" />
+    <Property Name="start_time" Type="DateTime" />
+    <Property Name="end_time" Type="DateTime" />
+    <Property Name="succeeded" Type="Boolean" />
+    <NavigationProperty Name="sysmaintplan_logdetail" Relationship="msdbModel.FK_sysmaintplan_log_detail_task_id" FromRole="sysmaintplan_log" ToRole="sysmaintplan_logdetail" />
+    <NavigationProperty Name="sysmaintplan_subplans" Relationship="msdbModel.FK_sysmaintplan_log_subplan_id" FromRole="sysmaintplan_log" ToRole="sysmaintplan_subplans" />
+  </EntityType>
+  <EntityType Name="sysmaintplan_logdetail">
+    <Key>
+      <PropertyRef Name="task_detail_id" />
+      <PropertyRef Name="line1" />
+      <PropertyRef Name="server_name" />
+    </Key>
+    <Property Name="task_detail_id" Type="Guid" Nullable="false" />
+    <Property Name="line1" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="line2" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="line3" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="line4" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="line5" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="server_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="start_time" Type="DateTime" />
+    <Property Name="end_time" Type="DateTime" />
+    <Property Name="error_number" Type="Int32" />
+    <Property Name="error_message" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="command" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="succeeded" Type="Boolean" />
+    <NavigationProperty Name="sysmaintplan_log" Relationship="msdbModel.FK_sysmaintplan_log_detail_task_id" FromRole="sysmaintplan_logdetail" ToRole="sysmaintplan_log" />
+  </EntityType>
+  <EntityType Name="sysmaintplan_subplans">
+    <Key>
+      <PropertyRef Name="subplan_id" />
+    </Key>
+    <Property Name="subplan_id" Type="Guid" Nullable="false" />
+    <Property Name="subplan_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="subplan_description" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="plan_id" Type="Guid" Nullable="false" />
+    <Property Name="job_id" Type="Guid" Nullable="false" />
+    <Property Name="schedule_id" Type="Int32" />
+    <NavigationProperty Name="sysmaintplan_log" Relationship="msdbModel.FK_sysmaintplan_log_subplan_id" FromRole="sysmaintplan_subplans" ToRole="sysmaintplan_log" />
+    <NavigationProperty Name="sysschedules" Relationship="msdbModel.FK_subplan_schedule_id" FromRole="sysmaintplan_subplans" ToRole="sysschedules" />
+  </EntityType>
+  <EntityType Name="sysnotifications">
+    <Key>
+      <PropertyRef Name="alert_id" />
+      <PropertyRef Name="operator_id" />
+      <PropertyRef Name="notification_method" />
+    </Key>
+    <Property Name="alert_id" Type="Int32" Nullable="false" />
+    <Property Name="operator_id" Type="Int32" Nullable="false" />
+    <Property Name="notification_method" Type="Byte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysoperators">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="enabled" />
+      <PropertyRef Name="last_email_date" />
+      <PropertyRef Name="last_email_time" />
+      <PropertyRef Name="last_pager_date" />
+      <PropertyRef Name="last_pager_time" />
+      <PropertyRef Name="weekday_pager_start_time" />
+      <PropertyRef Name="weekday_pager_end_time" />
+      <PropertyRef Name="saturday_pager_start_time" />
+      <PropertyRef Name="saturday_pager_end_time" />
+      <PropertyRef Name="sunday_pager_start_time" />
+      <PropertyRef Name="sunday_pager_end_time" />
+      <PropertyRef Name="pager_days" />
+      <PropertyRef Name="last_netsend_date" />
+      <PropertyRef Name="last_netsend_time" />
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="enabled" Type="Byte" Nullable="false" />
+    <Property Name="email_address" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="last_email_date" Type="Int32" Nullable="false" />
+    <Property Name="last_email_time" Type="Int32" Nullable="false" />
+    <Property Name="pager_address" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="last_pager_date" Type="Int32" Nullable="false" />
+    <Property Name="last_pager_time" Type="Int32" Nullable="false" />
+    <Property Name="weekday_pager_start_time" Type="Int32" Nullable="false" />
+    <Property Name="weekday_pager_end_time" Type="Int32" Nullable="false" />
+    <Property Name="saturday_pager_start_time" Type="Int32" Nullable="false" />
+    <Property Name="saturday_pager_end_time" Type="Int32" Nullable="false" />
+    <Property Name="sunday_pager_start_time" Type="Int32" Nullable="false" />
+    <Property Name="sunday_pager_end_time" Type="Int32" Nullable="false" />
+    <Property Name="pager_days" Type="Byte" Nullable="false" />
+    <Property Name="netsend_address" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="last_netsend_date" Type="Int32" Nullable="false" />
+    <Property Name="last_netsend_time" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysoriginatingservers">
+    <Key>
+      <PropertyRef Name="originating_server" />
+    </Key>
+    <Property Name="originating_server_id" Type="Int32" />
+    <Property Name="originating_server" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="master_server" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sysproxies">
+    <Key>
+      <PropertyRef Name="proxy_id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="credential_id" />
+      <PropertyRef Name="enabled" />
+      <PropertyRef Name="user_sid" />
+      <PropertyRef Name="credential_date_created" />
+    </Key>
+    <Property Name="proxy_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="credential_id" Type="Int32" Nullable="false" />
+    <Property Name="enabled" Type="Byte" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="user_sid" Type="Binary" Nullable="false" MaxLength="85" FixedLength="false" />
+    <Property Name="credential_date_created" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysproxylogin">
+    <Key>
+      <PropertyRef Name="proxy_id" />
+      <PropertyRef Name="flags" />
+    </Key>
+    <Property Name="proxy_id" Type="Int32" Nullable="false" />
+    <Property Name="sid" Type="Binary" MaxLength="85" FixedLength="false" />
+    <Property Name="flags" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysproxysubsystem">
+    <Key>
+      <PropertyRef Name="subsystem_id" />
+      <PropertyRef Name="proxy_id" />
+    </Key>
+    <Property Name="subsystem_id" Type="Int32" Nullable="false" />
+    <Property Name="proxy_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysschedules">
+    <Key>
+      <PropertyRef Name="schedule_id" />
+    </Key>
+    <Property Name="schedule_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="schedule_uid" Type="Guid" Nullable="false" />
+    <Property Name="originating_server_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="owner_sid" Type="Binary" Nullable="false" MaxLength="85" FixedLength="false" />
+    <Property Name="enabled" Type="Int32" Nullable="false" />
+    <Property Name="freq_type" Type="Int32" Nullable="false" />
+    <Property Name="freq_interval" Type="Int32" Nullable="false" />
+    <Property Name="freq_subday_type" Type="Int32" Nullable="false" />
+    <Property Name="freq_subday_interval" Type="Int32" Nullable="false" />
+    <Property Name="freq_relative_interval" Type="Int32" Nullable="false" />
+    <Property Name="freq_recurrence_factor" Type="Int32" Nullable="false" />
+    <Property Name="active_start_date" Type="Int32" Nullable="false" />
+    <Property Name="active_end_date" Type="Int32" Nullable="false" />
+    <Property Name="active_start_time" Type="Int32" Nullable="false" />
+    <Property Name="active_end_time" Type="Int32" Nullable="false" />
+    <Property Name="date_created" Type="DateTime" Nullable="false" />
+    <Property Name="date_modified" Type="DateTime" Nullable="false" />
+    <Property Name="version_number" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="sysjobschedules" Relationship="msdbModel.FK__sysjobsch__sched__267ABA7A" FromRole="sysschedules" ToRole="sysjobschedules" />
+    <NavigationProperty Name="sysmaintplan_subplans" Relationship="msdbModel.FK_subplan_schedule_id" FromRole="sysschedules" ToRole="sysmaintplan_subplans" />
+  </EntityType>
+  <EntityType Name="syssessions">
+    <Key>
+      <PropertyRef Name="session_id" />
+    </Key>
+    <Property Name="session_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="agent_start_date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="sysjobactivity" Relationship="msdbModel.FK__sysjobact__sessi__173876EA" FromRole="syssessions" ToRole="sysjobactivity" />
+  </EntityType>
+  <EntityType Name="syssubsystems">
+    <Key>
+      <PropertyRef Name="subsystem_id" />
+      <PropertyRef Name="subsystem" />
+    </Key>
+    <Property Name="subsystem_id" Type="Int32" Nullable="false" />
+    <Property Name="subsystem" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+    <Property Name="description_id" Type="Int32" />
+    <Property Name="subsystem_dll" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="agent_exe" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="start_entry_point" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="event_entry_point" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="stop_entry_point" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="max_worker_threads" Type="Int32" />
+  </EntityType>
+  <EntityType Name="systargetservergroupmembers">
+    <Key>
+      <PropertyRef Name="servergroup_id" />
+      <PropertyRef Name="server_id" />
+    </Key>
+    <Property Name="servergroup_id" Type="Int32" Nullable="false" />
+    <Property Name="server_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="systargetservergroups">
+    <Key>
+      <PropertyRef Name="servergroup_id" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="servergroup_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="systargetservers">
+    <Key>
+      <PropertyRef Name="server_id" />
+      <PropertyRef Name="server_name" />
+      <PropertyRef Name="time_zone_adjustment" />
+      <PropertyRef Name="enlist_date" />
+      <PropertyRef Name="last_poll_date" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="local_time_at_last_poll" />
+      <PropertyRef Name="enlisted_by_nt_user" />
+      <PropertyRef Name="poll_interval" />
+    </Key>
+    <Property Name="server_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="server_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="location" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="time_zone_adjustment" Type="Int32" Nullable="false" />
+    <Property Name="enlist_date" Type="DateTime" Nullable="false" />
+    <Property Name="last_poll_date" Type="DateTime" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="local_time_at_last_poll" Type="DateTime" Nullable="false" />
+    <Property Name="enlisted_by_nt_user" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="poll_interval" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="systaskids">
+    <Key>
+      <PropertyRef Name="task_id" />
+      <PropertyRef Name="job_id" />
+    </Key>
+    <Property Name="task_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="job_id" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MSdatatype_mappings">
+    <Key>
+      <PropertyRef Name="dbms_name" />
+      <PropertyRef Name="sql_type" />
+      <PropertyRef Name="dest_type" />
+    </Key>
+    <Property Name="dbms_name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="sql_type" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="dest_type" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="dest_prec" Type="Int64" />
+    <Property Name="dest_create_params" Type="Int32" />
+    <Property Name="dest_nullable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sysdatatypemappings">
+    <Key>
+      <PropertyRef Name="source_dbms" />
+      <PropertyRef Name="source_type" />
+      <PropertyRef Name="destination_dbms" />
+      <PropertyRef Name="destination_type" />
+    </Key>
+    <Property Name="mapping_id" Type="Int32" />
+    <Property Name="source_dbms" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="source_version" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="source_type" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="source_length_min" Type="Int64" />
+    <Property Name="source_length_max" Type="Int64" />
+    <Property Name="source_precision_min" Type="Int64" />
+    <Property Name="source_precision_max" Type="Int64" />
+    <Property Name="source_scale_min" Type="Int32" />
+    <Property Name="source_scale_max" Type="Int32" />
+    <Property Name="source_nullable" Type="Boolean" />
+    <Property Name="source_createparams" Type="Int32" />
+    <Property Name="destination_dbms" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="destination_version" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="destination_type" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="destination_length" Type="Int64" />
+    <Property Name="destination_precision" Type="Int64" />
+    <Property Name="destination_scale" Type="Int32" />
+    <Property Name="destination_nullable" Type="Boolean" />
+    <Property Name="destination_createparams" Type="Int32" />
+    <Property Name="dataloss" Type="Boolean" />
+    <Property Name="is_default" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sysjobs_view">
+    <Key>
+      <PropertyRef Name="job_id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="enabled" />
+      <PropertyRef Name="start_step_id" />
+      <PropertyRef Name="category_id" />
+      <PropertyRef Name="owner_sid" />
+      <PropertyRef Name="notify_level_eventlog" />
+      <PropertyRef Name="notify_level_email" />
+      <PropertyRef Name="notify_level_netsend" />
+      <PropertyRef Name="notify_level_page" />
+      <PropertyRef Name="notify_email_operator_id" />
+      <PropertyRef Name="notify_netsend_operator_id" />
+      <PropertyRef Name="notify_page_operator_id" />
+      <PropertyRef Name="delete_level" />
+      <PropertyRef Name="date_created" />
+      <PropertyRef Name="date_modified" />
+      <PropertyRef Name="version_number" />
+      <PropertyRef Name="originating_server_id" />
+    </Key>
+    <Property Name="job_id" Type="Guid" Nullable="false" />
+    <Property Name="originating_server" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="enabled" Type="Byte" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="start_step_id" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="owner_sid" Type="Binary" Nullable="false" MaxLength="85" FixedLength="false" />
+    <Property Name="notify_level_eventlog" Type="Int32" Nullable="false" />
+    <Property Name="notify_level_email" Type="Int32" Nullable="false" />
+    <Property Name="notify_level_netsend" Type="Int32" Nullable="false" />
+    <Property Name="notify_level_page" Type="Int32" Nullable="false" />
+    <Property Name="notify_email_operator_id" Type="Int32" Nullable="false" />
+    <Property Name="notify_netsend_operator_id" Type="Int32" Nullable="false" />
+    <Property Name="notify_page_operator_id" Type="Int32" Nullable="false" />
+    <Property Name="delete_level" Type="Int32" Nullable="false" />
+    <Property Name="date_created" Type="DateTime" Nullable="false" />
+    <Property Name="date_modified" Type="DateTime" Nullable="false" />
+    <Property Name="version_number" Type="Int32" Nullable="false" />
+    <Property Name="originating_server_id" Type="Int32" Nullable="false" />
+    <Property Name="master_server" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysmail_allitems">
+    <Key>
+      <PropertyRef Name="mailitem_id" />
+      <PropertyRef Name="profile_id" />
+      <PropertyRef Name="send_request_date" />
+      <PropertyRef Name="send_request_user" />
+      <PropertyRef Name="sent_status" />
+      <PropertyRef Name="last_mod_date" />
+      <PropertyRef Name="last_mod_user" />
+    </Key>
+    <Property Name="mailitem_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="profile_id" Type="Int32" Nullable="false" />
+    <Property Name="recipients" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="copy_recipients" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="blind_copy_recipients" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="subject" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="body_format" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="importance" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="sensitivity" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="file_attachments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="attachment_encoding" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="query" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="execute_query_database" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="attach_query_result_as_file" Type="Boolean" />
+    <Property Name="query_result_header" Type="Boolean" />
+    <Property Name="query_result_width" Type="Int32" />
+    <Property Name="query_result_separator" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="exclude_query_output" Type="Boolean" />
+    <Property Name="append_query_error" Type="Boolean" />
+    <Property Name="send_request_date" Type="DateTime" Nullable="false" />
+    <Property Name="send_request_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="sent_account_id" Type="Int32" />
+    <Property Name="sent_status" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="sent_date" Type="DateTime" />
+    <Property Name="last_mod_date" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysmail_event_log">
+    <Key>
+      <PropertyRef Name="log_id" />
+      <PropertyRef Name="event_type" />
+      <PropertyRef Name="log_date" />
+      <PropertyRef Name="last_mod_date" />
+      <PropertyRef Name="last_mod_user" />
+    </Key>
+    <Property Name="log_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="event_type" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+    <Property Name="log_date" Type="DateTime" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="process_id" Type="Int32" />
+    <Property Name="mailitem_id" Type="Int32" />
+    <Property Name="account_id" Type="Int32" />
+    <Property Name="last_mod_date" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysmail_faileditems">
+    <Key>
+      <PropertyRef Name="mailitem_id" />
+      <PropertyRef Name="profile_id" />
+      <PropertyRef Name="send_request_date" />
+      <PropertyRef Name="send_request_user" />
+      <PropertyRef Name="sent_status" />
+      <PropertyRef Name="last_mod_date" />
+      <PropertyRef Name="last_mod_user" />
+    </Key>
+    <Property Name="mailitem_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="profile_id" Type="Int32" Nullable="false" />
+    <Property Name="recipients" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="copy_recipients" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="blind_copy_recipients" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="subject" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="body_format" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="importance" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="sensitivity" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="file_attachments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="attachment_encoding" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="query" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="execute_query_database" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="attach_query_result_as_file" Type="Boolean" />
+    <Property Name="query_result_header" Type="Boolean" />
+    <Property Name="query_result_width" Type="Int32" />
+    <Property Name="query_result_separator" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="exclude_query_output" Type="Boolean" />
+    <Property Name="append_query_error" Type="Boolean" />
+    <Property Name="send_request_date" Type="DateTime" Nullable="false" />
+    <Property Name="send_request_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="sent_account_id" Type="Int32" />
+    <Property Name="sent_status" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="sent_date" Type="DateTime" />
+    <Property Name="last_mod_date" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysmail_mailattachments">
+    <Key>
+      <PropertyRef Name="attachment_id" />
+      <PropertyRef Name="mailitem_id" />
+      <PropertyRef Name="filename" />
+      <PropertyRef Name="filesize" />
+      <PropertyRef Name="last_mod_date" />
+      <PropertyRef Name="last_mod_user" />
+    </Key>
+    <Property Name="attachment_id" Type="Int32" Nullable="false" />
+    <Property Name="mailitem_id" Type="Int32" Nullable="false" />
+    <Property Name="filename" Type="String" Nullable="false" MaxLength="260" Unicode="true" FixedLength="false" />
+    <Property Name="filesize" Type="Int32" Nullable="false" />
+    <Property Name="attachment" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="last_mod_date" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysmail_sentitems">
+    <Key>
+      <PropertyRef Name="mailitem_id" />
+      <PropertyRef Name="profile_id" />
+      <PropertyRef Name="send_request_date" />
+      <PropertyRef Name="send_request_user" />
+      <PropertyRef Name="sent_status" />
+      <PropertyRef Name="last_mod_date" />
+      <PropertyRef Name="last_mod_user" />
+    </Key>
+    <Property Name="mailitem_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="profile_id" Type="Int32" Nullable="false" />
+    <Property Name="recipients" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="copy_recipients" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="blind_copy_recipients" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="subject" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="body_format" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="importance" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="sensitivity" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="file_attachments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="attachment_encoding" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="query" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="execute_query_database" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="attach_query_result_as_file" Type="Boolean" />
+    <Property Name="query_result_header" Type="Boolean" />
+    <Property Name="query_result_width" Type="Int32" />
+    <Property Name="query_result_separator" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="exclude_query_output" Type="Boolean" />
+    <Property Name="append_query_error" Type="Boolean" />
+    <Property Name="send_request_date" Type="DateTime" Nullable="false" />
+    <Property Name="send_request_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="sent_account_id" Type="Int32" />
+    <Property Name="sent_status" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="sent_date" Type="DateTime" />
+    <Property Name="last_mod_date" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysmail_unsentitems">
+    <Key>
+      <PropertyRef Name="mailitem_id" />
+      <PropertyRef Name="profile_id" />
+      <PropertyRef Name="send_request_date" />
+      <PropertyRef Name="send_request_user" />
+      <PropertyRef Name="sent_status" />
+      <PropertyRef Name="last_mod_date" />
+      <PropertyRef Name="last_mod_user" />
+    </Key>
+    <Property Name="mailitem_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="profile_id" Type="Int32" Nullable="false" />
+    <Property Name="recipients" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="copy_recipients" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="blind_copy_recipients" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="subject" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="body_format" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="importance" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="sensitivity" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="file_attachments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="attachment_encoding" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="query" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="execute_query_database" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="attach_query_result_as_file" Type="Boolean" />
+    <Property Name="query_result_header" Type="Boolean" />
+    <Property Name="query_result_width" Type="Int32" />
+    <Property Name="query_result_separator" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="exclude_query_output" Type="Boolean" />
+    <Property Name="append_query_error" Type="Boolean" />
+    <Property Name="send_request_date" Type="DateTime" Nullable="false" />
+    <Property Name="send_request_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="sent_account_id" Type="Int32" />
+    <Property Name="sent_status" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="sent_date" Type="DateTime" />
+    <Property Name="last_mod_date" Type="DateTime" Nullable="false" />
+    <Property Name="last_mod_user" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysmaintplan_plans">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="id" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="version_major" />
+      <PropertyRef Name="version_minor" />
+      <PropertyRef Name="version_build" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" />
+    <Property Name="owner" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="version_major" Type="Int32" Nullable="false" />
+    <Property Name="version_minor" Type="Int32" Nullable="false" />
+    <Property Name="version_build" Type="Int32" Nullable="false" />
+    <Property Name="version_comments" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysproxyloginsubsystem_view">
+    <Key>
+      <PropertyRef Name="subsystem_id" />
+      <PropertyRef Name="proxy_id" />
+      <PropertyRef Name="flags" />
+    </Key>
+    <Property Name="subsystem_id" Type="Int32" Nullable="false" />
+    <Property Name="proxy_id" Type="Int32" Nullable="false" />
+    <Property Name="sid" Type="Binary" MaxLength="85" FixedLength="false" />
+    <Property Name="flags" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysschedules_localserver_view">
+    <Key>
+      <PropertyRef Name="schedule_id" />
+      <PropertyRef Name="schedule_uid" />
+      <PropertyRef Name="originating_server_id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="owner_sid" />
+      <PropertyRef Name="enabled" />
+      <PropertyRef Name="freq_type" />
+      <PropertyRef Name="freq_interval" />
+      <PropertyRef Name="freq_subday_type" />
+      <PropertyRef Name="freq_subday_interval" />
+      <PropertyRef Name="freq_relative_interval" />
+      <PropertyRef Name="freq_recurrence_factor" />
+      <PropertyRef Name="active_start_date" />
+      <PropertyRef Name="active_end_date" />
+      <PropertyRef Name="active_start_time" />
+      <PropertyRef Name="active_end_time" />
+      <PropertyRef Name="date_created" />
+      <PropertyRef Name="date_modified" />
+      <PropertyRef Name="version_number" />
+    </Key>
+    <Property Name="schedule_id" Type="Int32" Nullable="false" />
+    <Property Name="schedule_uid" Type="Guid" Nullable="false" />
+    <Property Name="originating_server_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="owner_sid" Type="Binary" Nullable="false" MaxLength="85" FixedLength="false" />
+    <Property Name="enabled" Type="Int32" Nullable="false" />
+    <Property Name="freq_type" Type="Int32" Nullable="false" />
+    <Property Name="freq_interval" Type="Int32" Nullable="false" />
+    <Property Name="freq_subday_type" Type="Int32" Nullable="false" />
+    <Property Name="freq_subday_interval" Type="Int32" Nullable="false" />
+    <Property Name="freq_relative_interval" Type="Int32" Nullable="false" />
+    <Property Name="freq_recurrence_factor" Type="Int32" Nullable="false" />
+    <Property Name="active_start_date" Type="Int32" Nullable="false" />
+    <Property Name="active_end_date" Type="Int32" Nullable="false" />
+    <Property Name="active_start_time" Type="Int32" Nullable="false" />
+    <Property Name="active_end_time" Type="Int32" Nullable="false" />
+    <Property Name="date_created" Type="DateTime" Nullable="false" />
+    <Property Name="date_modified" Type="DateTime" Nullable="false" />
+    <Property Name="version_number" Type="Int32" Nullable="false" />
+    <Property Name="originating_server" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="master_server" Type="Int32" />
+  </EntityType>
+  <EntityType Name="systargetservers_view">
+    <Key>
+      <PropertyRef Name="server_id" />
+    </Key>
+    <Property Name="server_id" Type="Int32" Nullable="false" />
+    <Property Name="server_name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="enlist_date" Type="DateTime" />
+    <Property Name="last_poll_date" Type="DateTime" />
+  </EntityType>
+  <Association Name="FK__backupfil__backu__7C1A6C5A">
+    <End Role="backupset" Type="msdbModel.backupset" Multiplicity="1" />
+    <End Role="backupfile" Type="msdbModel.backupfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="backupset">
+        <PropertyRef Name="backup_set_id" />
+      </Principal>
+      <Dependent Role="backupfile">
+        <PropertyRef Name="backup_set_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__backupfil__backu__793DFFAF">
+    <End Role="backupset" Type="msdbModel.backupset" Multiplicity="1" />
+    <End Role="backupfilegroup" Type="msdbModel.backupfilegroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="backupset">
+        <PropertyRef Name="backup_set_id" />
+      </Principal>
+      <Dependent Role="backupfilegroup">
+        <PropertyRef Name="backup_set_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__backupmed__media__72910220">
+    <End Role="backupmediaset" Type="msdbModel.backupmediaset" Multiplicity="1" />
+    <End Role="backupmediafamily" Type="msdbModel.backupmediafamily" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="backupmediaset">
+        <PropertyRef Name="media_set_id" />
+      </Principal>
+      <Dependent Role="backupmediafamily">
+        <PropertyRef Name="media_set_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__backupset__media__76619304">
+    <End Role="backupmediaset" Type="msdbModel.backupmediaset" Multiplicity="1" />
+    <End Role="backupset" Type="msdbModel.backupset" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="backupmediaset">
+        <PropertyRef Name="media_set_id" />
+      </Principal>
+      <Dependent Role="backupset">
+        <PropertyRef Name="media_set_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__restorehi__backu__7EF6D905">
+    <End Role="backupset" Type="msdbModel.backupset" Multiplicity="1" />
+    <End Role="restorehistory" Type="msdbModel.restorehistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="backupset">
+        <PropertyRef Name="backup_set_id" />
+      </Principal>
+      <Dependent Role="restorehistory">
+        <PropertyRef Name="backup_set_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__log_shipp__prima__60083D91">
+    <End Role="log_shipping_primaries" Type="msdbModel.log_shipping_primaries" Multiplicity="0..1" />
+    <End Role="log_shipping_secondaries" Type="msdbModel.log_shipping_secondaries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="log_shipping_primaries">
+        <PropertyRef Name="primary_id" />
+      </Principal>
+      <Dependent Role="log_shipping_secondaries">
+        <PropertyRef Name="primary_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MSdbms_datatype_dbms_id">
+    <End Role="MSdbms" Type="msdbModel.MSdbms" Multiplicity="1" />
+    <End Role="MSdbms_datatype" Type="msdbModel.MSdbms_datatype" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSdbms">
+        <PropertyRef Name="dbms_id" />
+      </Principal>
+      <Dependent Role="MSdbms_datatype">
+        <PropertyRef Name="dbms_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MSdbms_map_dest_dbms_id">
+    <End Role="MSdbms" Type="msdbModel.MSdbms" Multiplicity="1" />
+    <End Role="MSdbms_map" Type="msdbModel.MSdbms_map" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSdbms">
+        <PropertyRef Name="dbms_id" />
+      </Principal>
+      <Dependent Role="MSdbms_map">
+        <PropertyRef Name="dest_dbms_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MSdbms_map_src_dbms_id">
+    <End Role="MSdbms" Type="msdbModel.MSdbms" Multiplicity="1" />
+    <End Role="MSdbms_map" Type="msdbModel.MSdbms_map" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSdbms">
+        <PropertyRef Name="dbms_id" />
+      </Principal>
+      <Dependent Role="MSdbms_map">
+        <PropertyRef Name="src_dbms_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MSdbms_datatype_mapping_dest_datatype_id">
+    <End Role="MSdbms_datatype" Type="msdbModel.MSdbms_datatype" Multiplicity="1" />
+    <End Role="MSdbms_datatype_mapping" Type="msdbModel.MSdbms_datatype_mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSdbms_datatype">
+        <PropertyRef Name="datatype_id" />
+      </Principal>
+      <Dependent Role="MSdbms_datatype_mapping">
+        <PropertyRef Name="dest_datatype_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MSdbms_map_src_datatype_id">
+    <End Role="MSdbms_datatype" Type="msdbModel.MSdbms_datatype" Multiplicity="1" />
+    <End Role="MSdbms_map" Type="msdbModel.MSdbms_map" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSdbms_datatype">
+        <PropertyRef Name="datatype_id" />
+      </Principal>
+      <Dependent Role="MSdbms_map">
+        <PropertyRef Name="src_datatype_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MSdbms_datatype_mapping_map_id">
+    <End Role="MSdbms_map" Type="msdbModel.MSdbms_map" Multiplicity="1" />
+    <End Role="MSdbms_datatype_mapping" Type="msdbModel.MSdbms_datatype_mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSdbms_map">
+        <PropertyRef Name="map_id" />
+      </Principal>
+      <Dependent Role="MSdbms_datatype_mapping">
+        <PropertyRef Name="map_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MSdbms_map_default_datatype_mapping_id">
+    <End Role="MSdbms_datatype_mapping" Type="msdbModel.MSdbms_datatype_mapping" Multiplicity="0..1" />
+    <End Role="MSdbms_map" Type="msdbModel.MSdbms_map" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSdbms_datatype_mapping">
+        <PropertyRef Name="datatype_mapping_id" />
+      </Principal>
+      <Dependent Role="MSdbms_map">
+        <PropertyRef Name="default_datatype_mapping_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__restorefi__resto__00DF2177">
+    <End Role="restorehistory" Type="msdbModel.restorehistory" Multiplicity="1" />
+    <End Role="restorefile" Type="msdbModel.restorefile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="restorehistory">
+        <PropertyRef Name="restore_history_id" />
+      </Principal>
+      <Dependent Role="restorefile">
+        <PropertyRef Name="restore_history_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__restorefi__resto__02C769E9">
+    <End Role="restorehistory" Type="msdbModel.restorehistory" Multiplicity="1" />
+    <End Role="restorefilegroup" Type="msdbModel.restorefilegroup" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="restorehistory">
+        <PropertyRef Name="restore_history_id" />
+      </Principal>
+      <Dependent Role="restorefilegroup">
+        <PropertyRef Name="restore_history_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysdbmain__plan___4A18FC72">
+    <End Role="sysdbmaintplans" Type="msdbModel.sysdbmaintplans" Multiplicity="1" />
+    <End Role="sysdbmaintplan_databases" Type="msdbModel.sysdbmaintplan_databases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysdbmaintplans">
+        <PropertyRef Name="plan_id" />
+      </Principal>
+      <Dependent Role="sysdbmaintplan_databases">
+        <PropertyRef Name="plan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysdbmain__plan___473C8FC7">
+    <End Role="sysdbmaintplans" Type="msdbModel.sysdbmaintplans" Multiplicity="1" />
+    <End Role="sysdbmaintplan_jobs" Type="msdbModel.sysdbmaintplan_jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysdbmaintplans">
+        <PropertyRef Name="plan_id" />
+      </Principal>
+      <Dependent Role="sysdbmaintplan_jobs">
+        <PropertyRef Name="plan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysdtspac__categ__0D44F85C">
+    <End Role="sysdtscategories" Type="msdbModel.sysdtscategories" Multiplicity="1" />
+    <End Role="sysdtspackages" Type="msdbModel.sysdtspackages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysdtscategories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sysdtspackages">
+        <PropertyRef Name="categoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysdtsste__linea__2057CCD0">
+    <End Role="sysdtspackagelog" Type="msdbModel.sysdtspackagelog" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysdtssteplog" Type="msdbModel.sysdtssteplog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysdtspackagelog">
+        <PropertyRef Name="lineagefull" />
+      </Principal>
+      <Dependent Role="sysdtssteplog">
+        <PropertyRef Name="lineagefull" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysdtstas__stepe__2334397B">
+    <End Role="sysdtssteplog" Type="msdbModel.sysdtssteplog" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysdtstasklog" Type="msdbModel.sysdtstasklog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysdtssteplog">
+        <PropertyRef Name="stepexecutionid" />
+      </Principal>
+      <Dependent Role="sysdtstasklog">
+        <PropertyRef Name="stepexecutionid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysjobact__sessi__173876EA">
+    <End Role="syssessions" Type="msdbModel.syssessions" Multiplicity="1" />
+    <End Role="sysjobactivity" Type="msdbModel.sysjobactivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="syssessions">
+        <PropertyRef Name="session_id" />
+      </Principal>
+      <Dependent Role="sysjobactivity">
+        <PropertyRef Name="session_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysjobsch__sched__267ABA7A">
+    <End Role="sysschedules" Type="msdbModel.sysschedules" Multiplicity="0..1" />
+    <End Role="sysjobschedules" Type="msdbModel.sysjobschedules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysschedules">
+        <PropertyRef Name="schedule_id" />
+      </Principal>
+      <Dependent Role="sysjobschedules">
+        <PropertyRef Name="schedule_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysmail_p__accou__40C49C62">
+    <End Role="sysmail_account" Type="msdbModel.sysmail_account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysmail_profileaccount" Type="msdbModel.sysmail_profileaccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmail_account">
+        <PropertyRef Name="account_id" />
+      </Principal>
+      <Dependent Role="sysmail_profileaccount">
+        <PropertyRef Name="account_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysmail_s__accou__4B422AD5">
+    <End Role="sysmail_account" Type="msdbModel.sysmail_account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysmail_server" Type="msdbModel.sysmail_server" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmail_account">
+        <PropertyRef Name="account_id" />
+      </Principal>
+      <Dependent Role="sysmail_server">
+        <PropertyRef Name="account_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sysmail_mailitems_mailitem_id">
+    <End Role="sysmail_mailitems" Type="msdbModel.sysmail_mailitems" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysmail_attachments" Type="msdbModel.sysmail_attachments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmail_mailitems">
+        <PropertyRef Name="mailitem_id" />
+      </Principal>
+      <Dependent Role="sysmail_attachments">
+        <PropertyRef Name="mailitem_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mailitems_mailitem_id">
+    <End Role="sysmail_mailitems" Type="msdbModel.sysmail_mailitems" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysmail_send_retries" Type="msdbModel.sysmail_send_retries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmail_mailitems">
+        <PropertyRef Name="mailitem_id" />
+      </Principal>
+      <Dependent Role="sysmail_send_retries">
+        <PropertyRef Name="mailitem_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysmail_p__profi__36470DEF">
+    <End Role="sysmail_profile" Type="msdbModel.sysmail_profile" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysmail_principalprofile" Type="msdbModel.sysmail_principalprofile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmail_profile">
+        <PropertyRef Name="profile_id" />
+      </Principal>
+      <Dependent Role="sysmail_principalprofile">
+        <PropertyRef Name="profile_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysmail_s__serve__4C364F0E">
+    <End Role="sysmail_servertype" Type="msdbModel.sysmail_servertype" Multiplicity="1" />
+    <End Role="sysmail_server" Type="msdbModel.sysmail_server" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmail_servertype">
+        <PropertyRef Name="servertype" />
+      </Principal>
+      <Dependent Role="sysmail_server">
+        <PropertyRef Name="servertype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sysmaintplan_log_detail_task_id">
+    <End Role="sysmaintplan_log" Type="msdbModel.sysmaintplan_log" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysmaintplan_logdetail" Type="msdbModel.sysmaintplan_logdetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmaintplan_log">
+        <PropertyRef Name="task_detail_id" />
+      </Principal>
+      <Dependent Role="sysmaintplan_logdetail">
+        <PropertyRef Name="task_detail_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sysmaintplan_log_subplan_id">
+    <End Role="sysmaintplan_subplans" Type="msdbModel.sysmaintplan_subplans" Multiplicity="1" />
+    <End Role="sysmaintplan_log" Type="msdbModel.sysmaintplan_log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmaintplan_subplans">
+        <PropertyRef Name="subplan_id" />
+      </Principal>
+      <Dependent Role="sysmaintplan_log">
+        <PropertyRef Name="subplan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_subplan_schedule_id">
+    <End Role="sysschedules" Type="msdbModel.sysschedules" Multiplicity="0..1" />
+    <End Role="sysmaintplan_subplans" Type="msdbModel.sysmaintplan_subplans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysschedules">
+        <PropertyRef Name="schedule_id" />
+      </Principal>
+      <Dependent Role="sysmaintplan_subplans">
+        <PropertyRef Name="schedule_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,3030 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="msdbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="msdbModelStoreContainer">
+    <EntitySet Name="backupfile" EntityType="msdbModel.Store.backupfile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="backupfilegroup" EntityType="msdbModel.Store.backupfilegroup" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="backupmediafamily" EntityType="msdbModel.Store.backupmediafamily" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="backupmediaset" EntityType="msdbModel.Store.backupmediaset" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="backupset" EntityType="msdbModel.Store.backupset" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="log_shipping_monitor_alert" EntityType="msdbModel.Store.log_shipping_monitor_alert" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="log_shipping_monitor_error_detail" EntityType="msdbModel.Store.log_shipping_monitor_error_detail" store:Type="Tables" store:Schema="dbo" store:Name="log_shipping_monitor_error_detail">
+      <DefiningQuery>SELECT 
+      [log_shipping_monitor_error_detail].[agent_id] AS [agent_id], 
+      [log_shipping_monitor_error_detail].[agent_type] AS [agent_type], 
+      [log_shipping_monitor_error_detail].[session_id] AS [session_id], 
+      [log_shipping_monitor_error_detail].[database_name] AS [database_name], 
+      [log_shipping_monitor_error_detail].[sequence_number] AS [sequence_number], 
+      [log_shipping_monitor_error_detail].[log_time] AS [log_time], 
+      [log_shipping_monitor_error_detail].[log_time_utc] AS [log_time_utc], 
+      [log_shipping_monitor_error_detail].[message] AS [message], 
+      [log_shipping_monitor_error_detail].[source] AS [source], 
+      [log_shipping_monitor_error_detail].[help_url] AS [help_url]
+      FROM [dbo].[log_shipping_monitor_error_detail] AS [log_shipping_monitor_error_detail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="log_shipping_monitor_history_detail" EntityType="msdbModel.Store.log_shipping_monitor_history_detail" store:Type="Tables" store:Schema="dbo" store:Name="log_shipping_monitor_history_detail">
+      <DefiningQuery>SELECT 
+      [log_shipping_monitor_history_detail].[agent_id] AS [agent_id], 
+      [log_shipping_monitor_history_detail].[agent_type] AS [agent_type], 
+      [log_shipping_monitor_history_detail].[session_id] AS [session_id], 
+      [log_shipping_monitor_history_detail].[database_name] AS [database_name], 
+      [log_shipping_monitor_history_detail].[session_status] AS [session_status], 
+      [log_shipping_monitor_history_detail].[log_time] AS [log_time], 
+      [log_shipping_monitor_history_detail].[log_time_utc] AS [log_time_utc], 
+      [log_shipping_monitor_history_detail].[message] AS [message]
+      FROM [dbo].[log_shipping_monitor_history_detail] AS [log_shipping_monitor_history_detail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="log_shipping_monitor_primary" EntityType="msdbModel.Store.log_shipping_monitor_primary" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="log_shipping_monitor_secondary" EntityType="msdbModel.Store.log_shipping_monitor_secondary" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="log_shipping_primaries" EntityType="msdbModel.Store.log_shipping_primaries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="log_shipping_primary_databases" EntityType="msdbModel.Store.log_shipping_primary_databases" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="log_shipping_primary_secondaries" EntityType="msdbModel.Store.log_shipping_primary_secondaries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="log_shipping_secondaries" EntityType="msdbModel.Store.log_shipping_secondaries" store:Type="Tables" store:Schema="dbo" store:Name="log_shipping_secondaries">
+      <DefiningQuery>SELECT 
+      [log_shipping_secondaries].[primary_id] AS [primary_id], 
+      [log_shipping_secondaries].[secondary_server_name] AS [secondary_server_name], 
+      [log_shipping_secondaries].[secondary_database_name] AS [secondary_database_name], 
+      [log_shipping_secondaries].[last_copied_filename] AS [last_copied_filename], 
+      [log_shipping_secondaries].[last_loaded_filename] AS [last_loaded_filename], 
+      [log_shipping_secondaries].[last_copied_last_updated] AS [last_copied_last_updated], 
+      [log_shipping_secondaries].[last_loaded_last_updated] AS [last_loaded_last_updated], 
+      [log_shipping_secondaries].[secondary_plan_id] AS [secondary_plan_id], 
+      [log_shipping_secondaries].[copy_enabled] AS [copy_enabled], 
+      [log_shipping_secondaries].[load_enabled] AS [load_enabled], 
+      [log_shipping_secondaries].[out_of_sync_threshold] AS [out_of_sync_threshold], 
+      [log_shipping_secondaries].[threshold_alert] AS [threshold_alert], 
+      [log_shipping_secondaries].[threshold_alert_enabled] AS [threshold_alert_enabled], 
+      [log_shipping_secondaries].[planned_outage_start_time] AS [planned_outage_start_time], 
+      [log_shipping_secondaries].[planned_outage_end_time] AS [planned_outage_end_time], 
+      [log_shipping_secondaries].[planned_outage_weekday_mask] AS [planned_outage_weekday_mask], 
+      [log_shipping_secondaries].[allow_role_change] AS [allow_role_change]
+      FROM [dbo].[log_shipping_secondaries] AS [log_shipping_secondaries]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="log_shipping_secondary" EntityType="msdbModel.Store.log_shipping_secondary" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="log_shipping_secondary_databases" EntityType="msdbModel.Store.log_shipping_secondary_databases" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="logmarkhistory" EntityType="msdbModel.Store.logmarkhistory" store:Type="Tables" store:Schema="dbo" store:Name="logmarkhistory">
+      <DefiningQuery>SELECT 
+      [logmarkhistory].[database_name] AS [database_name], 
+      [logmarkhistory].[mark_name] AS [mark_name], 
+      [logmarkhistory].[description] AS [description], 
+      [logmarkhistory].[user_name] AS [user_name], 
+      [logmarkhistory].[lsn] AS [lsn], 
+      [logmarkhistory].[mark_time] AS [mark_time]
+      FROM [dbo].[logmarkhistory] AS [logmarkhistory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSdbms" EntityType="msdbModel.Store.MSdbms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSdbms_datatype" EntityType="msdbModel.Store.MSdbms_datatype" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSdbms_datatype_mapping" EntityType="msdbModel.Store.MSdbms_datatype_mapping" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSdbms_map" EntityType="msdbModel.Store.MSdbms_map" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="restorefile" EntityType="msdbModel.Store.restorefile" store:Type="Tables" store:Schema="dbo" store:Name="restorefile">
+      <DefiningQuery>SELECT 
+      [restorefile].[restore_history_id] AS [restore_history_id], 
+      [restorefile].[file_number] AS [file_number], 
+      [restorefile].[destination_phys_drive] AS [destination_phys_drive], 
+      [restorefile].[destination_phys_name] AS [destination_phys_name]
+      FROM [dbo].[restorefile] AS [restorefile]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="restorefilegroup" EntityType="msdbModel.Store.restorefilegroup" store:Type="Tables" store:Schema="dbo" store:Name="restorefilegroup">
+      <DefiningQuery>SELECT 
+      [restorefilegroup].[restore_history_id] AS [restore_history_id], 
+      [restorefilegroup].[filegroup_name] AS [filegroup_name]
+      FROM [dbo].[restorefilegroup] AS [restorefilegroup]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="restorehistory" EntityType="msdbModel.Store.restorehistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sqlagent_info" EntityType="msdbModel.Store.sqlagent_info" store:Type="Tables" store:Schema="dbo" store:Name="sqlagent_info">
+      <DefiningQuery>SELECT 
+      [sqlagent_info].[attribute] AS [attribute], 
+      [sqlagent_info].[value] AS [value]
+      FROM [dbo].[sqlagent_info] AS [sqlagent_info]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="suspect_pages" EntityType="msdbModel.Store.suspect_pages" store:Type="Tables" store:Schema="dbo" store:Name="suspect_pages">
+      <DefiningQuery>SELECT 
+      [suspect_pages].[database_id] AS [database_id], 
+      [suspect_pages].[file_id] AS [file_id], 
+      [suspect_pages].[page_id] AS [page_id], 
+      [suspect_pages].[event_type] AS [event_type], 
+      [suspect_pages].[error_count] AS [error_count], 
+      [suspect_pages].[last_update_date] AS [last_update_date]
+      FROM [dbo].[suspect_pages] AS [suspect_pages]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysalerts" EntityType="msdbModel.Store.sysalerts" store:Type="Tables" store:Schema="dbo" store:Name="sysalerts">
+      <DefiningQuery>SELECT 
+      [sysalerts].[id] AS [id], 
+      [sysalerts].[name] AS [name], 
+      [sysalerts].[event_source] AS [event_source], 
+      [sysalerts].[event_category_id] AS [event_category_id], 
+      [sysalerts].[event_id] AS [event_id], 
+      [sysalerts].[message_id] AS [message_id], 
+      [sysalerts].[severity] AS [severity], 
+      [sysalerts].[enabled] AS [enabled], 
+      [sysalerts].[delay_between_responses] AS [delay_between_responses], 
+      [sysalerts].[last_occurrence_date] AS [last_occurrence_date], 
+      [sysalerts].[last_occurrence_time] AS [last_occurrence_time], 
+      [sysalerts].[last_response_date] AS [last_response_date], 
+      [sysalerts].[last_response_time] AS [last_response_time], 
+      [sysalerts].[notification_message] AS [notification_message], 
+      [sysalerts].[include_event_description] AS [include_event_description], 
+      [sysalerts].[database_name] AS [database_name], 
+      [sysalerts].[event_description_keyword] AS [event_description_keyword], 
+      [sysalerts].[occurrence_count] AS [occurrence_count], 
+      [sysalerts].[count_reset_date] AS [count_reset_date], 
+      [sysalerts].[count_reset_time] AS [count_reset_time], 
+      [sysalerts].[job_id] AS [job_id], 
+      [sysalerts].[has_notification] AS [has_notification], 
+      [sysalerts].[flags] AS [flags], 
+      [sysalerts].[performance_condition] AS [performance_condition], 
+      [sysalerts].[category_id] AS [category_id]
+      FROM [dbo].[sysalerts] AS [sysalerts]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="syscachedcredentials" EntityType="msdbModel.Store.syscachedcredentials" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="syscategories" EntityType="msdbModel.Store.syscategories" store:Type="Tables" store:Schema="dbo" store:Name="syscategories">
+      <DefiningQuery>SELECT 
+      [syscategories].[category_id] AS [category_id], 
+      [syscategories].[category_class] AS [category_class], 
+      [syscategories].[category_type] AS [category_type], 
+      [syscategories].[name] AS [name]
+      FROM [dbo].[syscategories] AS [syscategories]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysdbmaintplan_databases" EntityType="msdbModel.Store.sysdbmaintplan_databases" store:Type="Tables" store:Schema="dbo" store:Name="sysdbmaintplan_databases">
+      <DefiningQuery>SELECT 
+      [sysdbmaintplan_databases].[plan_id] AS [plan_id], 
+      [sysdbmaintplan_databases].[database_name] AS [database_name]
+      FROM [dbo].[sysdbmaintplan_databases] AS [sysdbmaintplan_databases]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysdbmaintplan_history" EntityType="msdbModel.Store.sysdbmaintplan_history" store:Type="Tables" store:Schema="dbo" store:Name="sysdbmaintplan_history">
+      <DefiningQuery>SELECT 
+      [sysdbmaintplan_history].[sequence_id] AS [sequence_id], 
+      [sysdbmaintplan_history].[plan_id] AS [plan_id], 
+      [sysdbmaintplan_history].[plan_name] AS [plan_name], 
+      [sysdbmaintplan_history].[database_name] AS [database_name], 
+      [sysdbmaintplan_history].[server_name] AS [server_name], 
+      [sysdbmaintplan_history].[activity] AS [activity], 
+      [sysdbmaintplan_history].[succeeded] AS [succeeded], 
+      [sysdbmaintplan_history].[end_time] AS [end_time], 
+      [sysdbmaintplan_history].[duration] AS [duration], 
+      [sysdbmaintplan_history].[start_time] AS [start_time], 
+      [sysdbmaintplan_history].[error_number] AS [error_number], 
+      [sysdbmaintplan_history].[message] AS [message]
+      FROM [dbo].[sysdbmaintplan_history] AS [sysdbmaintplan_history]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysdbmaintplan_jobs" EntityType="msdbModel.Store.sysdbmaintplan_jobs" store:Type="Tables" store:Schema="dbo" store:Name="sysdbmaintplan_jobs">
+      <DefiningQuery>SELECT 
+      [sysdbmaintplan_jobs].[plan_id] AS [plan_id], 
+      [sysdbmaintplan_jobs].[job_id] AS [job_id]
+      FROM [dbo].[sysdbmaintplan_jobs] AS [sysdbmaintplan_jobs]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysdbmaintplans" EntityType="msdbModel.Store.sysdbmaintplans" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdownloadlist" EntityType="msdbModel.Store.sysdownloadlist" store:Type="Tables" store:Schema="dbo" store:Name="sysdownloadlist">
+      <DefiningQuery>SELECT 
+      [sysdownloadlist].[instance_id] AS [instance_id], 
+      [sysdownloadlist].[source_server] AS [source_server], 
+      [sysdownloadlist].[operation_code] AS [operation_code], 
+      [sysdownloadlist].[object_type] AS [object_type], 
+      [sysdownloadlist].[object_id] AS [object_id], 
+      [sysdownloadlist].[target_server] AS [target_server], 
+      [sysdownloadlist].[error_message] AS [error_message], 
+      [sysdownloadlist].[date_posted] AS [date_posted], 
+      [sysdownloadlist].[date_downloaded] AS [date_downloaded], 
+      [sysdownloadlist].[status] AS [status], 
+      [sysdownloadlist].[deleted_object_name] AS [deleted_object_name]
+      FROM [dbo].[sysdownloadlist] AS [sysdownloadlist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysdtscategories" EntityType="msdbModel.Store.sysdtscategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdtslog90" EntityType="msdbModel.Store.sysdtslog90" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdtspackagefolders90" EntityType="msdbModel.Store.sysdtspackagefolders90" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdtspackagelog" EntityType="msdbModel.Store.sysdtspackagelog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdtspackages" EntityType="msdbModel.Store.sysdtspackages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdtspackages90" EntityType="msdbModel.Store.sysdtspackages90" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdtssteplog" EntityType="msdbModel.Store.sysdtssteplog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdtstasklog" EntityType="msdbModel.Store.sysdtstasklog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysjobactivity" EntityType="msdbModel.Store.sysjobactivity" store:Type="Tables" store:Schema="dbo" store:Name="sysjobactivity">
+      <DefiningQuery>SELECT 
+      [sysjobactivity].[session_id] AS [session_id], 
+      [sysjobactivity].[job_id] AS [job_id], 
+      [sysjobactivity].[run_requested_date] AS [run_requested_date], 
+      [sysjobactivity].[run_requested_source] AS [run_requested_source], 
+      [sysjobactivity].[queued_date] AS [queued_date], 
+      [sysjobactivity].[start_execution_date] AS [start_execution_date], 
+      [sysjobactivity].[last_executed_step_id] AS [last_executed_step_id], 
+      [sysjobactivity].[last_executed_step_date] AS [last_executed_step_date], 
+      [sysjobactivity].[stop_execution_date] AS [stop_execution_date], 
+      [sysjobactivity].[job_history_id] AS [job_history_id], 
+      [sysjobactivity].[next_scheduled_run_date] AS [next_scheduled_run_date]
+      FROM [dbo].[sysjobactivity] AS [sysjobactivity]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysjobhistory" EntityType="msdbModel.Store.sysjobhistory" store:Type="Tables" store:Schema="dbo" store:Name="sysjobhistory">
+      <DefiningQuery>SELECT 
+      [sysjobhistory].[instance_id] AS [instance_id], 
+      [sysjobhistory].[job_id] AS [job_id], 
+      [sysjobhistory].[step_id] AS [step_id], 
+      [sysjobhistory].[step_name] AS [step_name], 
+      [sysjobhistory].[sql_message_id] AS [sql_message_id], 
+      [sysjobhistory].[sql_severity] AS [sql_severity], 
+      [sysjobhistory].[message] AS [message], 
+      [sysjobhistory].[run_status] AS [run_status], 
+      [sysjobhistory].[run_date] AS [run_date], 
+      [sysjobhistory].[run_time] AS [run_time], 
+      [sysjobhistory].[run_duration] AS [run_duration], 
+      [sysjobhistory].[operator_id_emailed] AS [operator_id_emailed], 
+      [sysjobhistory].[operator_id_netsent] AS [operator_id_netsent], 
+      [sysjobhistory].[operator_id_paged] AS [operator_id_paged], 
+      [sysjobhistory].[retries_attempted] AS [retries_attempted], 
+      [sysjobhistory].[server] AS [server]
+      FROM [dbo].[sysjobhistory] AS [sysjobhistory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysjobs" EntityType="msdbModel.Store.sysjobs" store:Type="Tables" store:Schema="dbo" store:Name="sysjobs">
+      <DefiningQuery>SELECT 
+      [sysjobs].[job_id] AS [job_id], 
+      [sysjobs].[originating_server_id] AS [originating_server_id], 
+      [sysjobs].[name] AS [name], 
+      [sysjobs].[enabled] AS [enabled], 
+      [sysjobs].[description] AS [description], 
+      [sysjobs].[start_step_id] AS [start_step_id], 
+      [sysjobs].[category_id] AS [category_id], 
+      [sysjobs].[owner_sid] AS [owner_sid], 
+      [sysjobs].[notify_level_eventlog] AS [notify_level_eventlog], 
+      [sysjobs].[notify_level_email] AS [notify_level_email], 
+      [sysjobs].[notify_level_netsend] AS [notify_level_netsend], 
+      [sysjobs].[notify_level_page] AS [notify_level_page], 
+      [sysjobs].[notify_email_operator_id] AS [notify_email_operator_id], 
+      [sysjobs].[notify_netsend_operator_id] AS [notify_netsend_operator_id], 
+      [sysjobs].[notify_page_operator_id] AS [notify_page_operator_id], 
+      [sysjobs].[delete_level] AS [delete_level], 
+      [sysjobs].[date_created] AS [date_created], 
+      [sysjobs].[date_modified] AS [date_modified], 
+      [sysjobs].[version_number] AS [version_number]
+      FROM [dbo].[sysjobs] AS [sysjobs]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysjobschedules" EntityType="msdbModel.Store.sysjobschedules" store:Type="Tables" store:Schema="dbo" store:Name="sysjobschedules">
+      <DefiningQuery>SELECT 
+      [sysjobschedules].[schedule_id] AS [schedule_id], 
+      [sysjobschedules].[job_id] AS [job_id], 
+      [sysjobschedules].[next_run_date] AS [next_run_date], 
+      [sysjobschedules].[next_run_time] AS [next_run_time]
+      FROM [dbo].[sysjobschedules] AS [sysjobschedules]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysjobservers" EntityType="msdbModel.Store.sysjobservers" store:Type="Tables" store:Schema="dbo" store:Name="sysjobservers">
+      <DefiningQuery>SELECT 
+      [sysjobservers].[job_id] AS [job_id], 
+      [sysjobservers].[server_id] AS [server_id], 
+      [sysjobservers].[last_run_outcome] AS [last_run_outcome], 
+      [sysjobservers].[last_outcome_message] AS [last_outcome_message], 
+      [sysjobservers].[last_run_date] AS [last_run_date], 
+      [sysjobservers].[last_run_time] AS [last_run_time], 
+      [sysjobservers].[last_run_duration] AS [last_run_duration]
+      FROM [dbo].[sysjobservers] AS [sysjobservers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysjobsteps" EntityType="msdbModel.Store.sysjobsteps" store:Type="Tables" store:Schema="dbo" store:Name="sysjobsteps">
+      <DefiningQuery>SELECT 
+      [sysjobsteps].[job_id] AS [job_id], 
+      [sysjobsteps].[step_id] AS [step_id], 
+      [sysjobsteps].[step_name] AS [step_name], 
+      [sysjobsteps].[subsystem] AS [subsystem], 
+      [sysjobsteps].[command] AS [command], 
+      [sysjobsteps].[flags] AS [flags], 
+      [sysjobsteps].[additional_parameters] AS [additional_parameters], 
+      [sysjobsteps].[cmdexec_success_code] AS [cmdexec_success_code], 
+      [sysjobsteps].[on_success_action] AS [on_success_action], 
+      [sysjobsteps].[on_success_step_id] AS [on_success_step_id], 
+      [sysjobsteps].[on_fail_action] AS [on_fail_action], 
+      [sysjobsteps].[on_fail_step_id] AS [on_fail_step_id], 
+      [sysjobsteps].[server] AS [server], 
+      [sysjobsteps].[database_name] AS [database_name], 
+      [sysjobsteps].[database_user_name] AS [database_user_name], 
+      [sysjobsteps].[retry_attempts] AS [retry_attempts], 
+      [sysjobsteps].[retry_interval] AS [retry_interval], 
+      [sysjobsteps].[os_run_priority] AS [os_run_priority], 
+      [sysjobsteps].[output_file_name] AS [output_file_name], 
+      [sysjobsteps].[last_run_outcome] AS [last_run_outcome], 
+      [sysjobsteps].[last_run_duration] AS [last_run_duration], 
+      [sysjobsteps].[last_run_retries] AS [last_run_retries], 
+      [sysjobsteps].[last_run_date] AS [last_run_date], 
+      [sysjobsteps].[last_run_time] AS [last_run_time], 
+      [sysjobsteps].[proxy_id] AS [proxy_id], 
+      [sysjobsteps].[step_uid] AS [step_uid]
+      FROM [dbo].[sysjobsteps] AS [sysjobsteps]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysjobstepslogs" EntityType="msdbModel.Store.sysjobstepslogs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysmail_account" EntityType="msdbModel.Store.sysmail_account" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysmail_attachments" EntityType="msdbModel.Store.sysmail_attachments" store:Type="Tables" store:Schema="dbo" store:Name="sysmail_attachments">
+      <DefiningQuery>SELECT 
+      [sysmail_attachments].[attachment_id] AS [attachment_id], 
+      [sysmail_attachments].[mailitem_id] AS [mailitem_id], 
+      [sysmail_attachments].[filename] AS [filename], 
+      [sysmail_attachments].[filesize] AS [filesize], 
+      [sysmail_attachments].[attachment] AS [attachment], 
+      [sysmail_attachments].[last_mod_date] AS [last_mod_date], 
+      [sysmail_attachments].[last_mod_user] AS [last_mod_user]
+      FROM [dbo].[sysmail_attachments] AS [sysmail_attachments]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmail_attachments_transfer" EntityType="msdbModel.Store.sysmail_attachments_transfer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysmail_configuration" EntityType="msdbModel.Store.sysmail_configuration" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysmail_log" EntityType="msdbModel.Store.sysmail_log" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysmail_mailitems" EntityType="msdbModel.Store.sysmail_mailitems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysmail_principalprofile" EntityType="msdbModel.Store.sysmail_principalprofile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysmail_profile" EntityType="msdbModel.Store.sysmail_profile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysmail_profileaccount" EntityType="msdbModel.Store.sysmail_profileaccount" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysmail_query_transfer" EntityType="msdbModel.Store.sysmail_query_transfer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysmail_send_retries" EntityType="msdbModel.Store.sysmail_send_retries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysmail_server" EntityType="msdbModel.Store.sysmail_server" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysmail_servertype" EntityType="msdbModel.Store.sysmail_servertype" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysmaintplan_log" EntityType="msdbModel.Store.sysmaintplan_log" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysmaintplan_logdetail" EntityType="msdbModel.Store.sysmaintplan_logdetail" store:Type="Tables" store:Schema="dbo" store:Name="sysmaintplan_logdetail">
+      <DefiningQuery>SELECT 
+      [sysmaintplan_logdetail].[task_detail_id] AS [task_detail_id], 
+      [sysmaintplan_logdetail].[line1] AS [line1], 
+      [sysmaintplan_logdetail].[line2] AS [line2], 
+      [sysmaintplan_logdetail].[line3] AS [line3], 
+      [sysmaintplan_logdetail].[line4] AS [line4], 
+      [sysmaintplan_logdetail].[line5] AS [line5], 
+      [sysmaintplan_logdetail].[server_name] AS [server_name], 
+      [sysmaintplan_logdetail].[start_time] AS [start_time], 
+      [sysmaintplan_logdetail].[end_time] AS [end_time], 
+      [sysmaintplan_logdetail].[error_number] AS [error_number], 
+      [sysmaintplan_logdetail].[error_message] AS [error_message], 
+      [sysmaintplan_logdetail].[command] AS [command], 
+      [sysmaintplan_logdetail].[succeeded] AS [succeeded]
+      FROM [dbo].[sysmaintplan_logdetail] AS [sysmaintplan_logdetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmaintplan_subplans" EntityType="msdbModel.Store.sysmaintplan_subplans" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysnotifications" EntityType="msdbModel.Store.sysnotifications" store:Type="Tables" store:Schema="dbo" store:Name="sysnotifications">
+      <DefiningQuery>SELECT 
+      [sysnotifications].[alert_id] AS [alert_id], 
+      [sysnotifications].[operator_id] AS [operator_id], 
+      [sysnotifications].[notification_method] AS [notification_method]
+      FROM [dbo].[sysnotifications] AS [sysnotifications]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysoperators" EntityType="msdbModel.Store.sysoperators" store:Type="Tables" store:Schema="dbo" store:Name="sysoperators">
+      <DefiningQuery>SELECT 
+      [sysoperators].[id] AS [id], 
+      [sysoperators].[name] AS [name], 
+      [sysoperators].[enabled] AS [enabled], 
+      [sysoperators].[email_address] AS [email_address], 
+      [sysoperators].[last_email_date] AS [last_email_date], 
+      [sysoperators].[last_email_time] AS [last_email_time], 
+      [sysoperators].[pager_address] AS [pager_address], 
+      [sysoperators].[last_pager_date] AS [last_pager_date], 
+      [sysoperators].[last_pager_time] AS [last_pager_time], 
+      [sysoperators].[weekday_pager_start_time] AS [weekday_pager_start_time], 
+      [sysoperators].[weekday_pager_end_time] AS [weekday_pager_end_time], 
+      [sysoperators].[saturday_pager_start_time] AS [saturday_pager_start_time], 
+      [sysoperators].[saturday_pager_end_time] AS [saturday_pager_end_time], 
+      [sysoperators].[sunday_pager_start_time] AS [sunday_pager_start_time], 
+      [sysoperators].[sunday_pager_end_time] AS [sunday_pager_end_time], 
+      [sysoperators].[pager_days] AS [pager_days], 
+      [sysoperators].[netsend_address] AS [netsend_address], 
+      [sysoperators].[last_netsend_date] AS [last_netsend_date], 
+      [sysoperators].[last_netsend_time] AS [last_netsend_time], 
+      [sysoperators].[category_id] AS [category_id]
+      FROM [dbo].[sysoperators] AS [sysoperators]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysoriginatingservers" EntityType="msdbModel.Store.sysoriginatingservers" store:Type="Tables" store:Schema="dbo" store:Name="sysoriginatingservers">
+      <DefiningQuery>SELECT 
+      [sysoriginatingservers].[originating_server_id] AS [originating_server_id], 
+      [sysoriginatingservers].[originating_server] AS [originating_server], 
+      [sysoriginatingservers].[master_server] AS [master_server]
+      FROM [dbo].[sysoriginatingservers] AS [sysoriginatingservers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysproxies" EntityType="msdbModel.Store.sysproxies" store:Type="Tables" store:Schema="dbo" store:Name="sysproxies">
+      <DefiningQuery>SELECT 
+      [sysproxies].[proxy_id] AS [proxy_id], 
+      [sysproxies].[name] AS [name], 
+      [sysproxies].[credential_id] AS [credential_id], 
+      [sysproxies].[enabled] AS [enabled], 
+      [sysproxies].[description] AS [description], 
+      [sysproxies].[user_sid] AS [user_sid], 
+      [sysproxies].[credential_date_created] AS [credential_date_created]
+      FROM [dbo].[sysproxies] AS [sysproxies]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysproxylogin" EntityType="msdbModel.Store.sysproxylogin" store:Type="Tables" store:Schema="dbo" store:Name="sysproxylogin">
+      <DefiningQuery>SELECT 
+      [sysproxylogin].[proxy_id] AS [proxy_id], 
+      [sysproxylogin].[sid] AS [sid], 
+      [sysproxylogin].[flags] AS [flags]
+      FROM [dbo].[sysproxylogin] AS [sysproxylogin]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysproxysubsystem" EntityType="msdbModel.Store.sysproxysubsystem" store:Type="Tables" store:Schema="dbo" store:Name="sysproxysubsystem">
+      <DefiningQuery>SELECT 
+      [sysproxysubsystem].[subsystem_id] AS [subsystem_id], 
+      [sysproxysubsystem].[proxy_id] AS [proxy_id]
+      FROM [dbo].[sysproxysubsystem] AS [sysproxysubsystem]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysschedules" EntityType="msdbModel.Store.sysschedules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="syssessions" EntityType="msdbModel.Store.syssessions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="syssubsystems" EntityType="msdbModel.Store.syssubsystems" store:Type="Tables" store:Schema="dbo" store:Name="syssubsystems">
+      <DefiningQuery>SELECT 
+      [syssubsystems].[subsystem_id] AS [subsystem_id], 
+      [syssubsystems].[subsystem] AS [subsystem], 
+      [syssubsystems].[description_id] AS [description_id], 
+      [syssubsystems].[subsystem_dll] AS [subsystem_dll], 
+      [syssubsystems].[agent_exe] AS [agent_exe], 
+      [syssubsystems].[start_entry_point] AS [start_entry_point], 
+      [syssubsystems].[event_entry_point] AS [event_entry_point], 
+      [syssubsystems].[stop_entry_point] AS [stop_entry_point], 
+      [syssubsystems].[max_worker_threads] AS [max_worker_threads]
+      FROM [dbo].[syssubsystems] AS [syssubsystems]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="systargetservergroupmembers" EntityType="msdbModel.Store.systargetservergroupmembers" store:Type="Tables" store:Schema="dbo" store:Name="systargetservergroupmembers">
+      <DefiningQuery>SELECT 
+      [systargetservergroupmembers].[servergroup_id] AS [servergroup_id], 
+      [systargetservergroupmembers].[server_id] AS [server_id]
+      FROM [dbo].[systargetservergroupmembers] AS [systargetservergroupmembers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="systargetservergroups" EntityType="msdbModel.Store.systargetservergroups" store:Type="Tables" store:Schema="dbo" store:Name="systargetservergroups">
+      <DefiningQuery>SELECT 
+      [systargetservergroups].[servergroup_id] AS [servergroup_id], 
+      [systargetservergroups].[name] AS [name]
+      FROM [dbo].[systargetservergroups] AS [systargetservergroups]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="systargetservers" EntityType="msdbModel.Store.systargetservers" store:Type="Tables" store:Schema="dbo" store:Name="systargetservers">
+      <DefiningQuery>SELECT 
+      [systargetservers].[server_id] AS [server_id], 
+      [systargetservers].[server_name] AS [server_name], 
+      [systargetservers].[location] AS [location], 
+      [systargetservers].[time_zone_adjustment] AS [time_zone_adjustment], 
+      [systargetservers].[enlist_date] AS [enlist_date], 
+      [systargetservers].[last_poll_date] AS [last_poll_date], 
+      [systargetservers].[status] AS [status], 
+      [systargetservers].[local_time_at_last_poll] AS [local_time_at_last_poll], 
+      [systargetservers].[enlisted_by_nt_user] AS [enlisted_by_nt_user], 
+      [systargetservers].[poll_interval] AS [poll_interval]
+      FROM [dbo].[systargetservers] AS [systargetservers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="systaskids" EntityType="msdbModel.Store.systaskids" store:Type="Tables" store:Schema="dbo" store:Name="systaskids">
+      <DefiningQuery>SELECT 
+      [systaskids].[task_id] AS [task_id], 
+      [systaskids].[job_id] AS [job_id]
+      FROM [dbo].[systaskids] AS [systaskids]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSdatatype_mappings" EntityType="msdbModel.Store.MSdatatype_mappings" store:Type="Views" store:Schema="dbo" store:Name="MSdatatype_mappings">
+      <DefiningQuery>SELECT 
+      [MSdatatype_mappings].[dbms_name] AS [dbms_name], 
+      [MSdatatype_mappings].[sql_type] AS [sql_type], 
+      [MSdatatype_mappings].[dest_type] AS [dest_type], 
+      [MSdatatype_mappings].[dest_prec] AS [dest_prec], 
+      [MSdatatype_mappings].[dest_create_params] AS [dest_create_params], 
+      [MSdatatype_mappings].[dest_nullable] AS [dest_nullable]
+      FROM [dbo].[MSdatatype_mappings] AS [MSdatatype_mappings]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysdatatypemappings" EntityType="msdbModel.Store.sysdatatypemappings" store:Type="Views" store:Schema="dbo" store:Name="sysdatatypemappings">
+      <DefiningQuery>SELECT 
+      [sysdatatypemappings].[mapping_id] AS [mapping_id], 
+      [sysdatatypemappings].[source_dbms] AS [source_dbms], 
+      [sysdatatypemappings].[source_version] AS [source_version], 
+      [sysdatatypemappings].[source_type] AS [source_type], 
+      [sysdatatypemappings].[source_length_min] AS [source_length_min], 
+      [sysdatatypemappings].[source_length_max] AS [source_length_max], 
+      [sysdatatypemappings].[source_precision_min] AS [source_precision_min], 
+      [sysdatatypemappings].[source_precision_max] AS [source_precision_max], 
+      [sysdatatypemappings].[source_scale_min] AS [source_scale_min], 
+      [sysdatatypemappings].[source_scale_max] AS [source_scale_max], 
+      [sysdatatypemappings].[source_nullable] AS [source_nullable], 
+      [sysdatatypemappings].[source_createparams] AS [source_createparams], 
+      [sysdatatypemappings].[destination_dbms] AS [destination_dbms], 
+      [sysdatatypemappings].[destination_version] AS [destination_version], 
+      [sysdatatypemappings].[destination_type] AS [destination_type], 
+      [sysdatatypemappings].[destination_length] AS [destination_length], 
+      [sysdatatypemappings].[destination_precision] AS [destination_precision], 
+      [sysdatatypemappings].[destination_scale] AS [destination_scale], 
+      [sysdatatypemappings].[destination_nullable] AS [destination_nullable], 
+      [sysdatatypemappings].[destination_createparams] AS [destination_createparams], 
+      [sysdatatypemappings].[dataloss] AS [dataloss], 
+      [sysdatatypemappings].[is_default] AS [is_default]
+      FROM [dbo].[sysdatatypemappings] AS [sysdatatypemappings]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysjobs_view" EntityType="msdbModel.Store.sysjobs_view" store:Type="Views" store:Schema="dbo" store:Name="sysjobs_view">
+      <DefiningQuery>SELECT 
+      [sysjobs_view].[job_id] AS [job_id], 
+      [sysjobs_view].[originating_server] AS [originating_server], 
+      [sysjobs_view].[name] AS [name], 
+      [sysjobs_view].[enabled] AS [enabled], 
+      [sysjobs_view].[description] AS [description], 
+      [sysjobs_view].[start_step_id] AS [start_step_id], 
+      [sysjobs_view].[category_id] AS [category_id], 
+      [sysjobs_view].[owner_sid] AS [owner_sid], 
+      [sysjobs_view].[notify_level_eventlog] AS [notify_level_eventlog], 
+      [sysjobs_view].[notify_level_email] AS [notify_level_email], 
+      [sysjobs_view].[notify_level_netsend] AS [notify_level_netsend], 
+      [sysjobs_view].[notify_level_page] AS [notify_level_page], 
+      [sysjobs_view].[notify_email_operator_id] AS [notify_email_operator_id], 
+      [sysjobs_view].[notify_netsend_operator_id] AS [notify_netsend_operator_id], 
+      [sysjobs_view].[notify_page_operator_id] AS [notify_page_operator_id], 
+      [sysjobs_view].[delete_level] AS [delete_level], 
+      [sysjobs_view].[date_created] AS [date_created], 
+      [sysjobs_view].[date_modified] AS [date_modified], 
+      [sysjobs_view].[version_number] AS [version_number], 
+      [sysjobs_view].[originating_server_id] AS [originating_server_id], 
+      [sysjobs_view].[master_server] AS [master_server]
+      FROM [dbo].[sysjobs_view] AS [sysjobs_view]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmail_allitems" EntityType="msdbModel.Store.sysmail_allitems" store:Type="Views" store:Schema="dbo" store:Name="sysmail_allitems">
+      <DefiningQuery>SELECT 
+      [sysmail_allitems].[mailitem_id] AS [mailitem_id], 
+      [sysmail_allitems].[profile_id] AS [profile_id], 
+      [sysmail_allitems].[recipients] AS [recipients], 
+      [sysmail_allitems].[copy_recipients] AS [copy_recipients], 
+      [sysmail_allitems].[blind_copy_recipients] AS [blind_copy_recipients], 
+      [sysmail_allitems].[subject] AS [subject], 
+      [sysmail_allitems].[body] AS [body], 
+      [sysmail_allitems].[body_format] AS [body_format], 
+      [sysmail_allitems].[importance] AS [importance], 
+      [sysmail_allitems].[sensitivity] AS [sensitivity], 
+      [sysmail_allitems].[file_attachments] AS [file_attachments], 
+      [sysmail_allitems].[attachment_encoding] AS [attachment_encoding], 
+      [sysmail_allitems].[query] AS [query], 
+      [sysmail_allitems].[execute_query_database] AS [execute_query_database], 
+      [sysmail_allitems].[attach_query_result_as_file] AS [attach_query_result_as_file], 
+      [sysmail_allitems].[query_result_header] AS [query_result_header], 
+      [sysmail_allitems].[query_result_width] AS [query_result_width], 
+      [sysmail_allitems].[query_result_separator] AS [query_result_separator], 
+      [sysmail_allitems].[exclude_query_output] AS [exclude_query_output], 
+      [sysmail_allitems].[append_query_error] AS [append_query_error], 
+      [sysmail_allitems].[send_request_date] AS [send_request_date], 
+      [sysmail_allitems].[send_request_user] AS [send_request_user], 
+      [sysmail_allitems].[sent_account_id] AS [sent_account_id], 
+      [sysmail_allitems].[sent_status] AS [sent_status], 
+      [sysmail_allitems].[sent_date] AS [sent_date], 
+      [sysmail_allitems].[last_mod_date] AS [last_mod_date], 
+      [sysmail_allitems].[last_mod_user] AS [last_mod_user]
+      FROM [dbo].[sysmail_allitems] AS [sysmail_allitems]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmail_event_log" EntityType="msdbModel.Store.sysmail_event_log" store:Type="Views" store:Schema="dbo" store:Name="sysmail_event_log">
+      <DefiningQuery>SELECT 
+      [sysmail_event_log].[log_id] AS [log_id], 
+      [sysmail_event_log].[event_type] AS [event_type], 
+      [sysmail_event_log].[log_date] AS [log_date], 
+      [sysmail_event_log].[description] AS [description], 
+      [sysmail_event_log].[process_id] AS [process_id], 
+      [sysmail_event_log].[mailitem_id] AS [mailitem_id], 
+      [sysmail_event_log].[account_id] AS [account_id], 
+      [sysmail_event_log].[last_mod_date] AS [last_mod_date], 
+      [sysmail_event_log].[last_mod_user] AS [last_mod_user]
+      FROM [dbo].[sysmail_event_log] AS [sysmail_event_log]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmail_faileditems" EntityType="msdbModel.Store.sysmail_faileditems" store:Type="Views" store:Schema="dbo" store:Name="sysmail_faileditems">
+      <DefiningQuery>SELECT 
+      [sysmail_faileditems].[mailitem_id] AS [mailitem_id], 
+      [sysmail_faileditems].[profile_id] AS [profile_id], 
+      [sysmail_faileditems].[recipients] AS [recipients], 
+      [sysmail_faileditems].[copy_recipients] AS [copy_recipients], 
+      [sysmail_faileditems].[blind_copy_recipients] AS [blind_copy_recipients], 
+      [sysmail_faileditems].[subject] AS [subject], 
+      [sysmail_faileditems].[body] AS [body], 
+      [sysmail_faileditems].[body_format] AS [body_format], 
+      [sysmail_faileditems].[importance] AS [importance], 
+      [sysmail_faileditems].[sensitivity] AS [sensitivity], 
+      [sysmail_faileditems].[file_attachments] AS [file_attachments], 
+      [sysmail_faileditems].[attachment_encoding] AS [attachment_encoding], 
+      [sysmail_faileditems].[query] AS [query], 
+      [sysmail_faileditems].[execute_query_database] AS [execute_query_database], 
+      [sysmail_faileditems].[attach_query_result_as_file] AS [attach_query_result_as_file], 
+      [sysmail_faileditems].[query_result_header] AS [query_result_header], 
+      [sysmail_faileditems].[query_result_width] AS [query_result_width], 
+      [sysmail_faileditems].[query_result_separator] AS [query_result_separator], 
+      [sysmail_faileditems].[exclude_query_output] AS [exclude_query_output], 
+      [sysmail_faileditems].[append_query_error] AS [append_query_error], 
+      [sysmail_faileditems].[send_request_date] AS [send_request_date], 
+      [sysmail_faileditems].[send_request_user] AS [send_request_user], 
+      [sysmail_faileditems].[sent_account_id] AS [sent_account_id], 
+      [sysmail_faileditems].[sent_status] AS [sent_status], 
+      [sysmail_faileditems].[sent_date] AS [sent_date], 
+      [sysmail_faileditems].[last_mod_date] AS [last_mod_date], 
+      [sysmail_faileditems].[last_mod_user] AS [last_mod_user]
+      FROM [dbo].[sysmail_faileditems] AS [sysmail_faileditems]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmail_mailattachments" EntityType="msdbModel.Store.sysmail_mailattachments" store:Type="Views" store:Schema="dbo" store:Name="sysmail_mailattachments">
+      <DefiningQuery>SELECT 
+      [sysmail_mailattachments].[attachment_id] AS [attachment_id], 
+      [sysmail_mailattachments].[mailitem_id] AS [mailitem_id], 
+      [sysmail_mailattachments].[filename] AS [filename], 
+      [sysmail_mailattachments].[filesize] AS [filesize], 
+      [sysmail_mailattachments].[attachment] AS [attachment], 
+      [sysmail_mailattachments].[last_mod_date] AS [last_mod_date], 
+      [sysmail_mailattachments].[last_mod_user] AS [last_mod_user]
+      FROM [dbo].[sysmail_mailattachments] AS [sysmail_mailattachments]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmail_sentitems" EntityType="msdbModel.Store.sysmail_sentitems" store:Type="Views" store:Schema="dbo" store:Name="sysmail_sentitems">
+      <DefiningQuery>SELECT 
+      [sysmail_sentitems].[mailitem_id] AS [mailitem_id], 
+      [sysmail_sentitems].[profile_id] AS [profile_id], 
+      [sysmail_sentitems].[recipients] AS [recipients], 
+      [sysmail_sentitems].[copy_recipients] AS [copy_recipients], 
+      [sysmail_sentitems].[blind_copy_recipients] AS [blind_copy_recipients], 
+      [sysmail_sentitems].[subject] AS [subject], 
+      [sysmail_sentitems].[body] AS [body], 
+      [sysmail_sentitems].[body_format] AS [body_format], 
+      [sysmail_sentitems].[importance] AS [importance], 
+      [sysmail_sentitems].[sensitivity] AS [sensitivity], 
+      [sysmail_sentitems].[file_attachments] AS [file_attachments], 
+      [sysmail_sentitems].[attachment_encoding] AS [attachment_encoding], 
+      [sysmail_sentitems].[query] AS [query], 
+      [sysmail_sentitems].[execute_query_database] AS [execute_query_database], 
+      [sysmail_sentitems].[attach_query_result_as_file] AS [attach_query_result_as_file], 
+      [sysmail_sentitems].[query_result_header] AS [query_result_header], 
+      [sysmail_sentitems].[query_result_width] AS [query_result_width], 
+      [sysmail_sentitems].[query_result_separator] AS [query_result_separator], 
+      [sysmail_sentitems].[exclude_query_output] AS [exclude_query_output], 
+      [sysmail_sentitems].[append_query_error] AS [append_query_error], 
+      [sysmail_sentitems].[send_request_date] AS [send_request_date], 
+      [sysmail_sentitems].[send_request_user] AS [send_request_user], 
+      [sysmail_sentitems].[sent_account_id] AS [sent_account_id], 
+      [sysmail_sentitems].[sent_status] AS [sent_status], 
+      [sysmail_sentitems].[sent_date] AS [sent_date], 
+      [sysmail_sentitems].[last_mod_date] AS [last_mod_date], 
+      [sysmail_sentitems].[last_mod_user] AS [last_mod_user]
+      FROM [dbo].[sysmail_sentitems] AS [sysmail_sentitems]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmail_unsentitems" EntityType="msdbModel.Store.sysmail_unsentitems" store:Type="Views" store:Schema="dbo" store:Name="sysmail_unsentitems">
+      <DefiningQuery>SELECT 
+      [sysmail_unsentitems].[mailitem_id] AS [mailitem_id], 
+      [sysmail_unsentitems].[profile_id] AS [profile_id], 
+      [sysmail_unsentitems].[recipients] AS [recipients], 
+      [sysmail_unsentitems].[copy_recipients] AS [copy_recipients], 
+      [sysmail_unsentitems].[blind_copy_recipients] AS [blind_copy_recipients], 
+      [sysmail_unsentitems].[subject] AS [subject], 
+      [sysmail_unsentitems].[body] AS [body], 
+      [sysmail_unsentitems].[body_format] AS [body_format], 
+      [sysmail_unsentitems].[importance] AS [importance], 
+      [sysmail_unsentitems].[sensitivity] AS [sensitivity], 
+      [sysmail_unsentitems].[file_attachments] AS [file_attachments], 
+      [sysmail_unsentitems].[attachment_encoding] AS [attachment_encoding], 
+      [sysmail_unsentitems].[query] AS [query], 
+      [sysmail_unsentitems].[execute_query_database] AS [execute_query_database], 
+      [sysmail_unsentitems].[attach_query_result_as_file] AS [attach_query_result_as_file], 
+      [sysmail_unsentitems].[query_result_header] AS [query_result_header], 
+      [sysmail_unsentitems].[query_result_width] AS [query_result_width], 
+      [sysmail_unsentitems].[query_result_separator] AS [query_result_separator], 
+      [sysmail_unsentitems].[exclude_query_output] AS [exclude_query_output], 
+      [sysmail_unsentitems].[append_query_error] AS [append_query_error], 
+      [sysmail_unsentitems].[send_request_date] AS [send_request_date], 
+      [sysmail_unsentitems].[send_request_user] AS [send_request_user], 
+      [sysmail_unsentitems].[sent_account_id] AS [sent_account_id], 
+      [sysmail_unsentitems].[sent_status] AS [sent_status], 
+      [sysmail_unsentitems].[sent_date] AS [sent_date], 
+      [sysmail_unsentitems].[last_mod_date] AS [last_mod_date], 
+      [sysmail_unsentitems].[last_mod_user] AS [last_mod_user]
+      FROM [dbo].[sysmail_unsentitems] AS [sysmail_unsentitems]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmaintplan_plans" EntityType="msdbModel.Store.sysmaintplan_plans" store:Type="Views" store:Schema="dbo" store:Name="sysmaintplan_plans">
+      <DefiningQuery>SELECT 
+      [sysmaintplan_plans].[name] AS [name], 
+      [sysmaintplan_plans].[id] AS [id], 
+      [sysmaintplan_plans].[description] AS [description], 
+      [sysmaintplan_plans].[create_date] AS [create_date], 
+      [sysmaintplan_plans].[owner] AS [owner], 
+      [sysmaintplan_plans].[version_major] AS [version_major], 
+      [sysmaintplan_plans].[version_minor] AS [version_minor], 
+      [sysmaintplan_plans].[version_build] AS [version_build], 
+      [sysmaintplan_plans].[version_comments] AS [version_comments]
+      FROM [dbo].[sysmaintplan_plans] AS [sysmaintplan_plans]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysproxyloginsubsystem_view" EntityType="msdbModel.Store.sysproxyloginsubsystem_view" store:Type="Views" store:Schema="dbo" store:Name="sysproxyloginsubsystem_view">
+      <DefiningQuery>SELECT 
+      [sysproxyloginsubsystem_view].[subsystem_id] AS [subsystem_id], 
+      [sysproxyloginsubsystem_view].[proxy_id] AS [proxy_id], 
+      [sysproxyloginsubsystem_view].[sid] AS [sid], 
+      [sysproxyloginsubsystem_view].[flags] AS [flags]
+      FROM [dbo].[sysproxyloginsubsystem_view] AS [sysproxyloginsubsystem_view]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysschedules_localserver_view" EntityType="msdbModel.Store.sysschedules_localserver_view" store:Type="Views" store:Schema="dbo" store:Name="sysschedules_localserver_view">
+      <DefiningQuery>SELECT 
+      [sysschedules_localserver_view].[schedule_id] AS [schedule_id], 
+      [sysschedules_localserver_view].[schedule_uid] AS [schedule_uid], 
+      [sysschedules_localserver_view].[originating_server_id] AS [originating_server_id], 
+      [sysschedules_localserver_view].[name] AS [name], 
+      [sysschedules_localserver_view].[owner_sid] AS [owner_sid], 
+      [sysschedules_localserver_view].[enabled] AS [enabled], 
+      [sysschedules_localserver_view].[freq_type] AS [freq_type], 
+      [sysschedules_localserver_view].[freq_interval] AS [freq_interval], 
+      [sysschedules_localserver_view].[freq_subday_type] AS [freq_subday_type], 
+      [sysschedules_localserver_view].[freq_subday_interval] AS [freq_subday_interval], 
+      [sysschedules_localserver_view].[freq_relative_interval] AS [freq_relative_interval], 
+      [sysschedules_localserver_view].[freq_recurrence_factor] AS [freq_recurrence_factor], 
+      [sysschedules_localserver_view].[active_start_date] AS [active_start_date], 
+      [sysschedules_localserver_view].[active_end_date] AS [active_end_date], 
+      [sysschedules_localserver_view].[active_start_time] AS [active_start_time], 
+      [sysschedules_localserver_view].[active_end_time] AS [active_end_time], 
+      [sysschedules_localserver_view].[date_created] AS [date_created], 
+      [sysschedules_localserver_view].[date_modified] AS [date_modified], 
+      [sysschedules_localserver_view].[version_number] AS [version_number], 
+      [sysschedules_localserver_view].[originating_server] AS [originating_server], 
+      [sysschedules_localserver_view].[master_server] AS [master_server]
+      FROM [dbo].[sysschedules_localserver_view] AS [sysschedules_localserver_view]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="systargetservers_view" EntityType="msdbModel.Store.systargetservers_view" store:Type="Views" store:Schema="dbo" store:Name="systargetservers_view">
+      <DefiningQuery>SELECT 
+      [systargetservers_view].[server_id] AS [server_id], 
+      [systargetservers_view].[server_name] AS [server_name], 
+      [systargetservers_view].[enlist_date] AS [enlist_date], 
+      [systargetservers_view].[last_poll_date] AS [last_poll_date]
+      FROM [dbo].[systargetservers_view] AS [systargetservers_view]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__backupfil__backu__793DFFAF" Association="msdbModel.Store.FK__backupfil__backu__793DFFAF">
+      <End Role="backupset" EntitySet="backupset" />
+      <End Role="backupfilegroup" EntitySet="backupfilegroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK__backupfil__backu__7C1A6C5A" Association="msdbModel.Store.FK__backupfil__backu__7C1A6C5A">
+      <End Role="backupset" EntitySet="backupset" />
+      <End Role="backupfile" EntitySet="backupfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__backupmed__media__72910220" Association="msdbModel.Store.FK__backupmed__media__72910220">
+      <End Role="backupmediaset" EntitySet="backupmediaset" />
+      <End Role="backupmediafamily" EntitySet="backupmediafamily" />
+    </AssociationSet>
+    <AssociationSet Name="FK__backupset__media__76619304" Association="msdbModel.Store.FK__backupset__media__76619304">
+      <End Role="backupmediaset" EntitySet="backupmediaset" />
+      <End Role="backupset" EntitySet="backupset" />
+    </AssociationSet>
+    <AssociationSet Name="FK__log_shipp__prima__60083D91" Association="msdbModel.Store.FK__log_shipp__prima__60083D91">
+      <End Role="log_shipping_primaries" EntitySet="log_shipping_primaries" />
+      <End Role="log_shipping_secondaries" EntitySet="log_shipping_secondaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK__restorefi__resto__00DF2177" Association="msdbModel.Store.FK__restorefi__resto__00DF2177">
+      <End Role="restorehistory" EntitySet="restorehistory" />
+      <End Role="restorefile" EntitySet="restorefile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__restorefi__resto__02C769E9" Association="msdbModel.Store.FK__restorefi__resto__02C769E9">
+      <End Role="restorehistory" EntitySet="restorehistory" />
+      <End Role="restorefilegroup" EntitySet="restorefilegroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK__restorehi__backu__7EF6D905" Association="msdbModel.Store.FK__restorehi__backu__7EF6D905">
+      <End Role="backupset" EntitySet="backupset" />
+      <End Role="restorehistory" EntitySet="restorehistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysdbmain__plan___473C8FC7" Association="msdbModel.Store.FK__sysdbmain__plan___473C8FC7">
+      <End Role="sysdbmaintplans" EntitySet="sysdbmaintplans" />
+      <End Role="sysdbmaintplan_jobs" EntitySet="sysdbmaintplan_jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysdbmain__plan___4A18FC72" Association="msdbModel.Store.FK__sysdbmain__plan___4A18FC72">
+      <End Role="sysdbmaintplans" EntitySet="sysdbmaintplans" />
+      <End Role="sysdbmaintplan_databases" EntitySet="sysdbmaintplan_databases" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysdtspac__categ__0D44F85C" Association="msdbModel.Store.FK__sysdtspac__categ__0D44F85C">
+      <End Role="sysdtscategories" EntitySet="sysdtscategories" />
+      <End Role="sysdtspackages" EntitySet="sysdtspackages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysdtsste__linea__2057CCD0" Association="msdbModel.Store.FK__sysdtsste__linea__2057CCD0">
+      <End Role="sysdtspackagelog" EntitySet="sysdtspackagelog" />
+      <End Role="sysdtssteplog" EntitySet="sysdtssteplog" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysdtstas__stepe__2334397B" Association="msdbModel.Store.FK__sysdtstas__stepe__2334397B">
+      <End Role="sysdtssteplog" EntitySet="sysdtssteplog" />
+      <End Role="sysdtstasklog" EntitySet="sysdtstasklog" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysjobact__sessi__173876EA" Association="msdbModel.Store.FK__sysjobact__sessi__173876EA">
+      <End Role="syssessions" EntitySet="syssessions" />
+      <End Role="sysjobactivity" EntitySet="sysjobactivity" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysjobsch__sched__267ABA7A" Association="msdbModel.Store.FK__sysjobsch__sched__267ABA7A">
+      <End Role="sysschedules" EntitySet="sysschedules" />
+      <End Role="sysjobschedules" EntitySet="sysjobschedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysmail_p__accou__40C49C62" Association="msdbModel.Store.FK__sysmail_p__accou__40C49C62">
+      <End Role="sysmail_account" EntitySet="sysmail_account" />
+      <End Role="sysmail_profileaccount" EntitySet="sysmail_profileaccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysmail_p__profi__36470DEF" Association="msdbModel.Store.FK__sysmail_p__profi__36470DEF">
+      <End Role="sysmail_profile" EntitySet="sysmail_profile" />
+      <End Role="sysmail_principalprofile" EntitySet="sysmail_principalprofile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysmail_s__accou__4B422AD5" Association="msdbModel.Store.FK__sysmail_s__accou__4B422AD5">
+      <End Role="sysmail_account" EntitySet="sysmail_account" />
+      <End Role="sysmail_server" EntitySet="sysmail_server" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sysmail_s__serve__4C364F0E" Association="msdbModel.Store.FK__sysmail_s__serve__4C364F0E">
+      <End Role="sysmail_servertype" EntitySet="sysmail_servertype" />
+      <End Role="sysmail_server" EntitySet="sysmail_server" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mailitems_mailitem_id" Association="msdbModel.Store.FK_mailitems_mailitem_id">
+      <End Role="sysmail_mailitems" EntitySet="sysmail_mailitems" />
+      <End Role="sysmail_send_retries" EntitySet="sysmail_send_retries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MSdbms_datatype_dbms_id" Association="msdbModel.Store.fk_MSdbms_datatype_dbms_id">
+      <End Role="MSdbms" EntitySet="MSdbms" />
+      <End Role="MSdbms_datatype" EntitySet="MSdbms_datatype" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MSdbms_datatype_mapping_dest_datatype_id" Association="msdbModel.Store.fk_MSdbms_datatype_mapping_dest_datatype_id">
+      <End Role="MSdbms_datatype" EntitySet="MSdbms_datatype" />
+      <End Role="MSdbms_datatype_mapping" EntitySet="MSdbms_datatype_mapping" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MSdbms_datatype_mapping_map_id" Association="msdbModel.Store.fk_MSdbms_datatype_mapping_map_id">
+      <End Role="MSdbms_map" EntitySet="MSdbms_map" />
+      <End Role="MSdbms_datatype_mapping" EntitySet="MSdbms_datatype_mapping" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MSdbms_map_default_datatype_mapping_id" Association="msdbModel.Store.fk_MSdbms_map_default_datatype_mapping_id">
+      <End Role="MSdbms_datatype_mapping" EntitySet="MSdbms_datatype_mapping" />
+      <End Role="MSdbms_map" EntitySet="MSdbms_map" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MSdbms_map_dest_dbms_id" Association="msdbModel.Store.fk_MSdbms_map_dest_dbms_id">
+      <End Role="MSdbms" EntitySet="MSdbms" />
+      <End Role="MSdbms_map" EntitySet="MSdbms_map" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MSdbms_map_src_datatype_id" Association="msdbModel.Store.fk_MSdbms_map_src_datatype_id">
+      <End Role="MSdbms_datatype" EntitySet="MSdbms_datatype" />
+      <End Role="MSdbms_map" EntitySet="MSdbms_map" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MSdbms_map_src_dbms_id" Association="msdbModel.Store.fk_MSdbms_map_src_dbms_id">
+      <End Role="MSdbms" EntitySet="MSdbms" />
+      <End Role="MSdbms_map" EntitySet="MSdbms_map" />
+    </AssociationSet>
+    <AssociationSet Name="FK_subplan_schedule_id" Association="msdbModel.Store.FK_subplan_schedule_id">
+      <End Role="sysschedules" EntitySet="sysschedules" />
+      <End Role="sysmaintplan_subplans" EntitySet="sysmaintplan_subplans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sysmail_mailitems_mailitem_id" Association="msdbModel.Store.FK_sysmail_mailitems_mailitem_id">
+      <End Role="sysmail_mailitems" EntitySet="sysmail_mailitems" />
+      <End Role="sysmail_attachments" EntitySet="sysmail_attachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sysmaintplan_log_detail_task_id" Association="msdbModel.Store.FK_sysmaintplan_log_detail_task_id">
+      <End Role="sysmaintplan_log" EntitySet="sysmaintplan_log" />
+      <End Role="sysmaintplan_logdetail" EntitySet="sysmaintplan_logdetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sysmaintplan_log_subplan_id" Association="msdbModel.Store.FK_sysmaintplan_log_subplan_id">
+      <End Role="sysmaintplan_subplans" EntitySet="sysmaintplan_subplans" />
+      <End Role="sysmaintplan_log" EntitySet="sysmaintplan_log" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="backupfile">
+    <Key>
+      <PropertyRef Name="backup_set_id" />
+      <PropertyRef Name="file_number" />
+    </Key>
+    <Property Name="backup_set_id" Type="int" Nullable="false" />
+    <Property Name="first_family_number" Type="tinyint" />
+    <Property Name="first_media_number" Type="smallint" />
+    <Property Name="filegroup_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="page_size" Type="int" />
+    <Property Name="file_number" Type="numeric" Nullable="false" Precision="10" />
+    <Property Name="backed_up_page_count" Type="numeric" Precision="10" />
+    <Property Name="file_type" Type="char" MaxLength="1" />
+    <Property Name="source_file_block_size" Type="numeric" Precision="10" />
+    <Property Name="file_size" Type="numeric" Precision="20" />
+    <Property Name="logical_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="physical_drive" Type="nvarchar" MaxLength="260" />
+    <Property Name="physical_name" Type="nvarchar" MaxLength="260" />
+    <Property Name="state" Type="tinyint" />
+    <Property Name="state_desc" Type="nvarchar" MaxLength="64" />
+    <Property Name="create_lsn" Type="numeric" Precision="25" />
+    <Property Name="drop_lsn" Type="numeric" Precision="25" />
+    <Property Name="file_guid" Type="uniqueidentifier" />
+    <Property Name="read_only_lsn" Type="numeric" Precision="25" />
+    <Property Name="read_write_lsn" Type="numeric" Precision="25" />
+    <Property Name="differential_base_lsn" Type="numeric" Precision="25" />
+    <Property Name="differential_base_guid" Type="uniqueidentifier" />
+    <Property Name="backup_size" Type="numeric" Precision="20" />
+    <Property Name="filegroup_guid" Type="uniqueidentifier" />
+    <Property Name="is_readonly" Type="bit" />
+    <Property Name="is_present" Type="bit" />
+  </EntityType>
+  <EntityType Name="backupfilegroup">
+    <Key>
+      <PropertyRef Name="backup_set_id" />
+      <PropertyRef Name="filegroup_id" />
+    </Key>
+    <Property Name="backup_set_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="filegroup_id" Type="int" Nullable="false" />
+    <Property Name="filegroup_guid" Type="uniqueidentifier" />
+    <Property Name="type" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="type_desc" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="is_default" Type="bit" Nullable="false" />
+    <Property Name="is_readonly" Type="bit" Nullable="false" />
+    <Property Name="log_filegroup_guid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="backupmediafamily">
+    <Key>
+      <PropertyRef Name="media_set_id" />
+      <PropertyRef Name="family_sequence_number" />
+      <PropertyRef Name="mirror" />
+    </Key>
+    <Property Name="media_set_id" Type="int" Nullable="false" />
+    <Property Name="family_sequence_number" Type="tinyint" Nullable="false" />
+    <Property Name="media_family_id" Type="uniqueidentifier" />
+    <Property Name="media_count" Type="int" />
+    <Property Name="logical_device_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="physical_device_name" Type="nvarchar" MaxLength="260" />
+    <Property Name="device_type" Type="tinyint" />
+    <Property Name="physical_block_size" Type="int" />
+    <Property Name="mirror" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="backupmediaset">
+    <Key>
+      <PropertyRef Name="media_set_id" />
+    </Key>
+    <Property Name="media_set_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="media_uuid" Type="uniqueidentifier" />
+    <Property Name="media_family_count" Type="tinyint" />
+    <Property Name="name" Type="nvarchar" MaxLength="128" />
+    <Property Name="description" Type="nvarchar" MaxLength="255" />
+    <Property Name="software_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="software_vendor_id" Type="int" />
+    <Property Name="MTF_major_version" Type="tinyint" />
+    <Property Name="mirror_count" Type="tinyint" />
+    <Property Name="is_password_protected" Type="bit" />
+  </EntityType>
+  <EntityType Name="backupset">
+    <Key>
+      <PropertyRef Name="backup_set_id" />
+    </Key>
+    <Property Name="backup_set_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="backup_set_uuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="media_set_id" Type="int" Nullable="false" />
+    <Property Name="first_family_number" Type="tinyint" />
+    <Property Name="first_media_number" Type="smallint" />
+    <Property Name="last_family_number" Type="tinyint" />
+    <Property Name="last_media_number" Type="smallint" />
+    <Property Name="catalog_family_number" Type="tinyint" />
+    <Property Name="catalog_media_number" Type="smallint" />
+    <Property Name="position" Type="int" />
+    <Property Name="expiration_date" Type="datetime" />
+    <Property Name="software_vendor_id" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="128" />
+    <Property Name="description" Type="nvarchar" MaxLength="255" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="software_major_version" Type="tinyint" />
+    <Property Name="software_minor_version" Type="tinyint" />
+    <Property Name="software_build_version" Type="smallint" />
+    <Property Name="time_zone" Type="smallint" />
+    <Property Name="mtf_minor_version" Type="tinyint" />
+    <Property Name="first_lsn" Type="numeric" Precision="25" />
+    <Property Name="last_lsn" Type="numeric" Precision="25" />
+    <Property Name="checkpoint_lsn" Type="numeric" Precision="25" />
+    <Property Name="database_backup_lsn" Type="numeric" Precision="25" />
+    <Property Name="database_creation_date" Type="datetime" />
+    <Property Name="backup_start_date" Type="datetime" />
+    <Property Name="backup_finish_date" Type="datetime" />
+    <Property Name="type" Type="char" MaxLength="1" />
+    <Property Name="sort_order" Type="smallint" />
+    <Property Name="code_page" Type="smallint" />
+    <Property Name="compatibility_level" Type="tinyint" />
+    <Property Name="database_version" Type="int" />
+    <Property Name="backup_size" Type="numeric" Precision="20" />
+    <Property Name="database_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="server_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="machine_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="flags" Type="int" />
+    <Property Name="unicode_locale" Type="int" />
+    <Property Name="unicode_compare_style" Type="int" />
+    <Property Name="collation_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="is_password_protected" Type="bit" />
+    <Property Name="recovery_model" Type="nvarchar" MaxLength="60" />
+    <Property Name="has_bulk_logged_data" Type="bit" />
+    <Property Name="is_snapshot" Type="bit" />
+    <Property Name="is_readonly" Type="bit" />
+    <Property Name="is_single_user" Type="bit" />
+    <Property Name="has_backup_checksums" Type="bit" />
+    <Property Name="is_damaged" Type="bit" />
+    <Property Name="begins_log_chain" Type="bit" />
+    <Property Name="has_incomplete_metadata" Type="bit" />
+    <Property Name="is_force_offline" Type="bit" />
+    <Property Name="is_copy_only" Type="bit" />
+    <Property Name="first_recovery_fork_guid" Type="uniqueidentifier" />
+    <Property Name="last_recovery_fork_guid" Type="uniqueidentifier" />
+    <Property Name="fork_point_lsn" Type="numeric" Precision="25" />
+    <Property Name="database_guid" Type="uniqueidentifier" />
+    <Property Name="family_guid" Type="uniqueidentifier" />
+    <Property Name="differential_base_lsn" Type="numeric" Precision="25" />
+    <Property Name="differential_base_guid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="log_shipping_monitor_alert">
+    <Key>
+      <PropertyRef Name="alert_job_id" />
+    </Key>
+    <Property Name="alert_job_id" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.log_shipping_monitor_error_detail”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="log_shipping_monitor_error_detail">
+    <Key>
+      <PropertyRef Name="agent_id" />
+      <PropertyRef Name="agent_type" />
+      <PropertyRef Name="session_id" />
+      <PropertyRef Name="sequence_number" />
+      <PropertyRef Name="log_time" />
+      <PropertyRef Name="log_time_utc" />
+      <PropertyRef Name="message" />
+      <PropertyRef Name="source" />
+      <PropertyRef Name="help_url" />
+    </Key>
+    <Property Name="agent_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="agent_type" Type="tinyint" Nullable="false" />
+    <Property Name="session_id" Type="int" Nullable="false" />
+    <Property Name="database_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="sequence_number" Type="int" Nullable="false" />
+    <Property Name="log_time" Type="datetime" Nullable="false" />
+    <Property Name="log_time_utc" Type="datetime" Nullable="false" />
+    <Property Name="message" Type="nvarchar" Nullable="false" />
+    <Property Name="source" Type="nvarchar" Nullable="false" />
+    <Property Name="help_url" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.log_shipping_monitor_history_detail”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="log_shipping_monitor_history_detail">
+    <Key>
+      <PropertyRef Name="agent_id" />
+      <PropertyRef Name="agent_type" />
+      <PropertyRef Name="session_id" />
+      <PropertyRef Name="session_status" />
+      <PropertyRef Name="log_time" />
+      <PropertyRef Name="log_time_utc" />
+      <PropertyRef Name="message" />
+    </Key>
+    <Property Name="agent_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="agent_type" Type="tinyint" Nullable="false" />
+    <Property Name="session_id" Type="int" Nullable="false" />
+    <Property Name="database_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="session_status" Type="tinyint" Nullable="false" />
+    <Property Name="log_time" Type="datetime" Nullable="false" />
+    <Property Name="log_time_utc" Type="datetime" Nullable="false" />
+    <Property Name="message" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="log_shipping_monitor_primary">
+    <Key>
+      <PropertyRef Name="primary_id" />
+    </Key>
+    <Property Name="primary_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="primary_server" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="primary_database" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="backup_threshold" Type="int" Nullable="false" />
+    <Property Name="threshold_alert" Type="int" Nullable="false" />
+    <Property Name="threshold_alert_enabled" Type="bit" Nullable="false" />
+    <Property Name="last_backup_file" Type="nvarchar" MaxLength="500" />
+    <Property Name="last_backup_date" Type="datetime" />
+    <Property Name="last_backup_date_utc" Type="datetime" />
+    <Property Name="history_retention_period" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="log_shipping_monitor_secondary">
+    <Key>
+      <PropertyRef Name="secondary_database" />
+      <PropertyRef Name="secondary_id" />
+    </Key>
+    <Property Name="secondary_server" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="secondary_database" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="secondary_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="primary_server" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="primary_database" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="restore_threshold" Type="int" Nullable="false" />
+    <Property Name="threshold_alert" Type="int" Nullable="false" />
+    <Property Name="threshold_alert_enabled" Type="bit" Nullable="false" />
+    <Property Name="last_copied_file" Type="nvarchar" MaxLength="500" />
+    <Property Name="last_copied_date" Type="datetime" />
+    <Property Name="last_copied_date_utc" Type="datetime" />
+    <Property Name="last_restored_file" Type="nvarchar" MaxLength="500" />
+    <Property Name="last_restored_date" Type="datetime" />
+    <Property Name="last_restored_date_utc" Type="datetime" />
+    <Property Name="last_restored_latency" Type="int" />
+    <Property Name="history_retention_period" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="log_shipping_primaries">
+    <Key>
+      <PropertyRef Name="primary_id" />
+    </Key>
+    <Property Name="primary_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="primary_server_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="primary_database_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="maintenance_plan_id" Type="uniqueidentifier" />
+    <Property Name="backup_threshold" Type="int" Nullable="false" />
+    <Property Name="threshold_alert" Type="int" Nullable="false" />
+    <Property Name="threshold_alert_enabled" Type="bit" Nullable="false" />
+    <Property Name="last_backup_filename" Type="nvarchar" MaxLength="500" />
+    <Property Name="last_updated" Type="datetime" />
+    <Property Name="planned_outage_start_time" Type="int" Nullable="false" />
+    <Property Name="planned_outage_end_time" Type="int" Nullable="false" />
+    <Property Name="planned_outage_weekday_mask" Type="int" Nullable="false" />
+    <Property Name="source_directory" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="log_shipping_primary_databases">
+    <Key>
+      <PropertyRef Name="primary_id" />
+    </Key>
+    <Property Name="primary_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="primary_database" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="backup_directory" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="backup_share" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="backup_retention_period" Type="int" Nullable="false" />
+    <Property Name="backup_job_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="monitor_server" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="user_specified_monitor" Type="bit" />
+    <Property Name="monitor_server_security_mode" Type="bit" Nullable="false" />
+    <Property Name="last_backup_file" Type="nvarchar" MaxLength="500" />
+    <Property Name="last_backup_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="log_shipping_primary_secondaries">
+    <Key>
+      <PropertyRef Name="primary_id" />
+      <PropertyRef Name="secondary_server" />
+      <PropertyRef Name="secondary_database" />
+    </Key>
+    <Property Name="primary_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="secondary_server" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="secondary_database" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.log_shipping_secondaries”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="log_shipping_secondaries">
+    <Key>
+      <PropertyRef Name="secondary_server_name" />
+      <PropertyRef Name="secondary_database_name" />
+    </Key>
+    <Property Name="primary_id" Type="int" />
+    <Property Name="secondary_server_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="secondary_database_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="last_copied_filename" Type="nvarchar" MaxLength="500" />
+    <Property Name="last_loaded_filename" Type="nvarchar" MaxLength="500" />
+    <Property Name="last_copied_last_updated" Type="datetime" />
+    <Property Name="last_loaded_last_updated" Type="datetime" />
+    <Property Name="secondary_plan_id" Type="uniqueidentifier" />
+    <Property Name="copy_enabled" Type="bit" />
+    <Property Name="load_enabled" Type="bit" />
+    <Property Name="out_of_sync_threshold" Type="int" />
+    <Property Name="threshold_alert" Type="int" />
+    <Property Name="threshold_alert_enabled" Type="bit" />
+    <Property Name="planned_outage_start_time" Type="int" />
+    <Property Name="planned_outage_end_time" Type="int" />
+    <Property Name="planned_outage_weekday_mask" Type="int" />
+    <Property Name="allow_role_change" Type="bit" />
+  </EntityType>
+  <EntityType Name="log_shipping_secondary">
+    <Key>
+      <PropertyRef Name="secondary_id" />
+    </Key>
+    <Property Name="secondary_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="primary_server" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="primary_database" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="backup_source_directory" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="backup_destination_directory" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="file_retention_period" Type="int" Nullable="false" />
+    <Property Name="copy_job_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="restore_job_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="monitor_server" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="monitor_server_security_mode" Type="bit" Nullable="false" />
+    <Property Name="user_specified_monitor" Type="bit" />
+    <Property Name="last_copied_file" Type="nvarchar" MaxLength="500" />
+    <Property Name="last_copied_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="log_shipping_secondary_databases">
+    <Key>
+      <PropertyRef Name="secondary_database" />
+    </Key>
+    <Property Name="secondary_database" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="secondary_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="restore_delay" Type="int" Nullable="false" />
+    <Property Name="restore_all" Type="bit" Nullable="false" />
+    <Property Name="restore_mode" Type="bit" Nullable="false" />
+    <Property Name="disconnect_users" Type="bit" Nullable="false" />
+    <Property Name="block_size" Type="int" />
+    <Property Name="buffer_count" Type="int" />
+    <Property Name="max_transfer_size" Type="int" />
+    <Property Name="last_restored_file" Type="nvarchar" MaxLength="500" />
+    <Property Name="last_restored_date" Type="datetime" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.logmarkhistory”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="logmarkhistory">
+    <Key>
+      <PropertyRef Name="database_name" />
+      <PropertyRef Name="mark_name" />
+      <PropertyRef Name="user_name" />
+      <PropertyRef Name="lsn" />
+      <PropertyRef Name="mark_time" />
+    </Key>
+    <Property Name="database_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="mark_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="description" Type="nvarchar" MaxLength="255" />
+    <Property Name="user_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="lsn" Type="numeric" Nullable="false" Precision="25" />
+    <Property Name="mark_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MSdbms">
+    <Key>
+      <PropertyRef Name="dbms_id" />
+    </Key>
+    <Property Name="dbms_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="dbms" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="version" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="MSdbms_datatype">
+    <Key>
+      <PropertyRef Name="datatype_id" />
+    </Key>
+    <Property Name="datatype_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="dbms_id" Type="int" Nullable="false" />
+    <Property Name="type" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="createparams" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MSdbms_datatype_mapping">
+    <Key>
+      <PropertyRef Name="datatype_mapping_id" />
+    </Key>
+    <Property Name="datatype_mapping_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="map_id" Type="int" Nullable="false" />
+    <Property Name="dest_datatype_id" Type="int" Nullable="false" />
+    <Property Name="dest_precision" Type="bigint" />
+    <Property Name="dest_scale" Type="int" />
+    <Property Name="dest_length" Type="bigint" />
+    <Property Name="dest_nullable" Type="bit" />
+    <Property Name="dest_createparams" Type="int" />
+    <Property Name="dataloss" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MSdbms_map">
+    <Key>
+      <PropertyRef Name="map_id" />
+    </Key>
+    <Property Name="map_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="src_dbms_id" Type="int" Nullable="false" />
+    <Property Name="dest_dbms_id" Type="int" Nullable="false" />
+    <Property Name="src_datatype_id" Type="int" Nullable="false" />
+    <Property Name="src_len_min" Type="bigint" />
+    <Property Name="src_len_max" Type="bigint" />
+    <Property Name="src_prec_min" Type="bigint" />
+    <Property Name="src_prec_max" Type="bigint" />
+    <Property Name="src_scale_min" Type="bigint" />
+    <Property Name="src_scale_max" Type="bigint" />
+    <Property Name="src_nullable" Type="bit" />
+    <Property Name="default_datatype_mapping_id" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.restorefile”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="restorefile">
+    <Key>
+      <PropertyRef Name="restore_history_id" />
+    </Key>
+    <Property Name="restore_history_id" Type="int" Nullable="false" />
+    <Property Name="file_number" Type="numeric" Precision="10" />
+    <Property Name="destination_phys_drive" Type="nvarchar" MaxLength="260" />
+    <Property Name="destination_phys_name" Type="nvarchar" MaxLength="260" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.restorefilegroup”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="restorefilegroup">
+    <Key>
+      <PropertyRef Name="restore_history_id" />
+    </Key>
+    <Property Name="restore_history_id" Type="int" Nullable="false" />
+    <Property Name="filegroup_name" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="restorehistory">
+    <Key>
+      <PropertyRef Name="restore_history_id" />
+    </Key>
+    <Property Name="restore_history_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="restore_date" Type="datetime" />
+    <Property Name="destination_database_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="backup_set_id" Type="int" Nullable="false" />
+    <Property Name="restore_type" Type="char" MaxLength="1" />
+    <Property Name="replace" Type="bit" />
+    <Property Name="recovery" Type="bit" />
+    <Property Name="restart" Type="bit" />
+    <Property Name="stop_at" Type="datetime" />
+    <Property Name="device_count" Type="tinyint" />
+    <Property Name="stop_at_mark_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="stop_before" Type="bit" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sqlagent_info”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sqlagent_info">
+    <Key>
+      <PropertyRef Name="attribute" />
+      <PropertyRef Name="value" />
+    </Key>
+    <Property Name="attribute" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="value" Type="nvarchar" Nullable="false" MaxLength="512" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.suspect_pages”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="suspect_pages">
+    <Key>
+      <PropertyRef Name="database_id" />
+      <PropertyRef Name="file_id" />
+      <PropertyRef Name="page_id" />
+      <PropertyRef Name="event_type" />
+      <PropertyRef Name="error_count" />
+      <PropertyRef Name="last_update_date" />
+    </Key>
+    <Property Name="database_id" Type="int" Nullable="false" />
+    <Property Name="file_id" Type="int" Nullable="false" />
+    <Property Name="page_id" Type="bigint" Nullable="false" />
+    <Property Name="event_type" Type="int" Nullable="false" />
+    <Property Name="error_count" Type="int" Nullable="false" />
+    <Property Name="last_update_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysalerts”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysalerts">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="event_source" />
+      <PropertyRef Name="message_id" />
+      <PropertyRef Name="severity" />
+      <PropertyRef Name="enabled" />
+      <PropertyRef Name="delay_between_responses" />
+      <PropertyRef Name="last_occurrence_date" />
+      <PropertyRef Name="last_occurrence_time" />
+      <PropertyRef Name="last_response_date" />
+      <PropertyRef Name="last_response_time" />
+      <PropertyRef Name="include_event_description" />
+      <PropertyRef Name="occurrence_count" />
+      <PropertyRef Name="count_reset_date" />
+      <PropertyRef Name="count_reset_time" />
+      <PropertyRef Name="job_id" />
+      <PropertyRef Name="has_notification" />
+      <PropertyRef Name="flags" />
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="event_source" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="event_category_id" Type="int" />
+    <Property Name="event_id" Type="int" />
+    <Property Name="message_id" Type="int" Nullable="false" />
+    <Property Name="severity" Type="int" Nullable="false" />
+    <Property Name="enabled" Type="tinyint" Nullable="false" />
+    <Property Name="delay_between_responses" Type="int" Nullable="false" />
+    <Property Name="last_occurrence_date" Type="int" Nullable="false" />
+    <Property Name="last_occurrence_time" Type="int" Nullable="false" />
+    <Property Name="last_response_date" Type="int" Nullable="false" />
+    <Property Name="last_response_time" Type="int" Nullable="false" />
+    <Property Name="notification_message" Type="nvarchar" MaxLength="512" />
+    <Property Name="include_event_description" Type="tinyint" Nullable="false" />
+    <Property Name="database_name" Type="nvarchar" MaxLength="512" />
+    <Property Name="event_description_keyword" Type="nvarchar" MaxLength="100" />
+    <Property Name="occurrence_count" Type="int" Nullable="false" />
+    <Property Name="count_reset_date" Type="int" Nullable="false" />
+    <Property Name="count_reset_time" Type="int" Nullable="false" />
+    <Property Name="job_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="has_notification" Type="int" Nullable="false" />
+    <Property Name="flags" Type="int" Nullable="false" />
+    <Property Name="performance_condition" Type="nvarchar" MaxLength="512" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="syscachedcredentials">
+    <Key>
+      <PropertyRef Name="login_name" />
+    </Key>
+    <Property Name="login_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="has_server_access" Type="bit" Nullable="false" />
+    <Property Name="is_sysadmin_member" Type="bit" Nullable="false" />
+    <Property Name="cachedate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.syscategories”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="syscategories">
+    <Key>
+      <PropertyRef Name="category_id" />
+      <PropertyRef Name="category_class" />
+      <PropertyRef Name="category_type" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="category_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="category_class" Type="int" Nullable="false" />
+    <Property Name="category_type" Type="tinyint" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysdbmaintplan_databases”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysdbmaintplan_databases">
+    <Key>
+      <PropertyRef Name="plan_id" />
+      <PropertyRef Name="database_name" />
+    </Key>
+    <Property Name="plan_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="database_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysdbmaintplan_history”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysdbmaintplan_history">
+    <Key>
+      <PropertyRef Name="sequence_id" />
+      <PropertyRef Name="plan_id" />
+      <PropertyRef Name="plan_name" />
+      <PropertyRef Name="server_name" />
+      <PropertyRef Name="succeeded" />
+      <PropertyRef Name="end_time" />
+      <PropertyRef Name="error_number" />
+    </Key>
+    <Property Name="sequence_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="plan_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="plan_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="database_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="server_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="activity" Type="nvarchar" MaxLength="128" />
+    <Property Name="succeeded" Type="bit" Nullable="false" />
+    <Property Name="end_time" Type="datetime" Nullable="false" />
+    <Property Name="duration" Type="int" />
+    <Property Name="start_time" Type="datetime" StoreGeneratedPattern="Computed" />
+    <Property Name="error_number" Type="int" Nullable="false" />
+    <Property Name="message" Type="nvarchar" MaxLength="512" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysdbmaintplan_jobs”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysdbmaintplan_jobs">
+    <Key>
+      <PropertyRef Name="plan_id" />
+      <PropertyRef Name="job_id" />
+    </Key>
+    <Property Name="plan_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="job_id" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdbmaintplans">
+    <Key>
+      <PropertyRef Name="plan_id" />
+    </Key>
+    <Property Name="plan_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="plan_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="date_created" Type="datetime" Nullable="false" />
+    <Property Name="owner" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="max_history_rows" Type="int" Nullable="false" />
+    <Property Name="remote_history_server" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="max_remote_history_rows" Type="int" Nullable="false" />
+    <Property Name="user_defined_1" Type="int" />
+    <Property Name="user_defined_2" Type="nvarchar" MaxLength="100" />
+    <Property Name="user_defined_3" Type="datetime" />
+    <Property Name="user_defined_4" Type="uniqueidentifier" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysdownloadlist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysdownloadlist">
+    <Key>
+      <PropertyRef Name="instance_id" />
+      <PropertyRef Name="source_server" />
+      <PropertyRef Name="operation_code" />
+      <PropertyRef Name="object_type" />
+      <PropertyRef Name="object_id" />
+      <PropertyRef Name="target_server" />
+      <PropertyRef Name="date_posted" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="instance_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="source_server" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="operation_code" Type="tinyint" Nullable="false" />
+    <Property Name="object_type" Type="tinyint" Nullable="false" />
+    <Property Name="object_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="target_server" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="error_message" Type="nvarchar" MaxLength="1024" />
+    <Property Name="date_posted" Type="datetime" Nullable="false" />
+    <Property Name="date_downloaded" Type="datetime" />
+    <Property Name="status" Type="tinyint" Nullable="false" />
+    <Property Name="deleted_object_name" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="sysdtscategories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="description" Type="nvarchar" MaxLength="1024" />
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="parentid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdtslog90">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="event" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="computer" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="operator" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="source" Type="nvarchar" Nullable="false" MaxLength="1024" />
+    <Property Name="sourceid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="executionid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="starttime" Type="datetime" Nullable="false" />
+    <Property Name="endtime" Type="datetime" Nullable="false" />
+    <Property Name="datacode" Type="int" Nullable="false" />
+    <Property Name="databytes" Type="image" />
+    <Property Name="message" Type="nvarchar" Nullable="false" MaxLength="2048" />
+  </EntityType>
+  <EntityType Name="sysdtspackagefolders90">
+    <Key>
+      <PropertyRef Name="folderid" />
+    </Key>
+    <Property Name="folderid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="parentfolderid" Type="uniqueidentifier" />
+    <Property Name="foldername" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="sysdtspackagelog">
+    <Key>
+      <PropertyRef Name="lineagefull" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="versionid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="lineagefull" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="lineageshort" Type="int" Nullable="false" />
+    <Property Name="starttime" Type="datetime" Nullable="false" />
+    <Property Name="endtime" Type="datetime" />
+    <Property Name="elapsedtime" Type="float" />
+    <Property Name="computer" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="operator" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="logdate" Type="datetime" Nullable="false" />
+    <Property Name="errorcode" Type="int" />
+    <Property Name="errordescription" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="sysdtspackages">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="versionid" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="versionid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="1024" />
+    <Property Name="categoryid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="createdate" Type="datetime" />
+    <Property Name="owner" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="packagedata" Type="image" />
+    <Property Name="owner_sid" Type="varbinary" Nullable="false" MaxLength="85" />
+    <Property Name="packagetype" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdtspackages90">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="folderid" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="1024" />
+    <Property Name="createdate" Type="datetime" Nullable="false" />
+    <Property Name="folderid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ownersid" Type="varbinary" Nullable="false" MaxLength="85" />
+    <Property Name="packagedata" Type="image" Nullable="false" />
+    <Property Name="packageformat" Type="int" Nullable="false" />
+    <Property Name="packagetype" Type="int" Nullable="false" />
+    <Property Name="vermajor" Type="int" Nullable="false" />
+    <Property Name="verminor" Type="int" Nullable="false" />
+    <Property Name="verbuild" Type="int" Nullable="false" />
+    <Property Name="vercomments" Type="nvarchar" MaxLength="1024" />
+    <Property Name="verid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="isencrypted" Type="bit" Nullable="false" />
+    <Property Name="readrolesid" Type="varbinary" MaxLength="85" />
+    <Property Name="writerolesid" Type="varbinary" MaxLength="85" />
+  </EntityType>
+  <EntityType Name="sysdtssteplog">
+    <Key>
+      <PropertyRef Name="stepexecutionid" />
+    </Key>
+    <Property Name="stepexecutionid" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="lineagefull" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="stepname" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="stepexecstatus" Type="int" />
+    <Property Name="stepexecresult" Type="int" />
+    <Property Name="starttime" Type="datetime" Nullable="false" />
+    <Property Name="endtime" Type="datetime" />
+    <Property Name="elapsedtime" Type="float" />
+    <Property Name="errorcode" Type="int" />
+    <Property Name="errordescription" Type="nvarchar" MaxLength="2000" />
+    <Property Name="progresscount" Type="bigint" />
+  </EntityType>
+  <EntityType Name="sysdtstasklog">
+    <Key>
+      <PropertyRef Name="stepexecutionid" />
+      <PropertyRef Name="sequenceid" />
+    </Key>
+    <Property Name="stepexecutionid" Type="bigint" Nullable="false" />
+    <Property Name="sequenceid" Type="int" Nullable="false" />
+    <Property Name="errorcode" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysjobactivity”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysjobactivity">
+    <Key>
+      <PropertyRef Name="session_id" />
+      <PropertyRef Name="job_id" />
+    </Key>
+    <Property Name="session_id" Type="int" Nullable="false" />
+    <Property Name="job_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="run_requested_date" Type="datetime" />
+    <Property Name="run_requested_source" Type="nvarchar" MaxLength="128" />
+    <Property Name="queued_date" Type="datetime" />
+    <Property Name="start_execution_date" Type="datetime" />
+    <Property Name="last_executed_step_id" Type="int" />
+    <Property Name="last_executed_step_date" Type="datetime" />
+    <Property Name="stop_execution_date" Type="datetime" />
+    <Property Name="job_history_id" Type="int" />
+    <Property Name="next_scheduled_run_date" Type="datetime" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysjobhistory”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysjobhistory">
+    <Key>
+      <PropertyRef Name="instance_id" />
+      <PropertyRef Name="job_id" />
+      <PropertyRef Name="step_id" />
+      <PropertyRef Name="step_name" />
+      <PropertyRef Name="sql_message_id" />
+      <PropertyRef Name="sql_severity" />
+      <PropertyRef Name="run_status" />
+      <PropertyRef Name="run_date" />
+      <PropertyRef Name="run_time" />
+      <PropertyRef Name="run_duration" />
+      <PropertyRef Name="operator_id_emailed" />
+      <PropertyRef Name="operator_id_netsent" />
+      <PropertyRef Name="operator_id_paged" />
+      <PropertyRef Name="retries_attempted" />
+      <PropertyRef Name="server" />
+    </Key>
+    <Property Name="instance_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="job_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="step_id" Type="int" Nullable="false" />
+    <Property Name="step_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="sql_message_id" Type="int" Nullable="false" />
+    <Property Name="sql_severity" Type="int" Nullable="false" />
+    <Property Name="message" Type="nvarchar" MaxLength="1024" />
+    <Property Name="run_status" Type="int" Nullable="false" />
+    <Property Name="run_date" Type="int" Nullable="false" />
+    <Property Name="run_time" Type="int" Nullable="false" />
+    <Property Name="run_duration" Type="int" Nullable="false" />
+    <Property Name="operator_id_emailed" Type="int" Nullable="false" />
+    <Property Name="operator_id_netsent" Type="int" Nullable="false" />
+    <Property Name="operator_id_paged" Type="int" Nullable="false" />
+    <Property Name="retries_attempted" Type="int" Nullable="false" />
+    <Property Name="server" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysjobs”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysjobs">
+    <Key>
+      <PropertyRef Name="job_id" />
+      <PropertyRef Name="originating_server_id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="enabled" />
+      <PropertyRef Name="start_step_id" />
+      <PropertyRef Name="category_id" />
+      <PropertyRef Name="owner_sid" />
+      <PropertyRef Name="notify_level_eventlog" />
+      <PropertyRef Name="notify_level_email" />
+      <PropertyRef Name="notify_level_netsend" />
+      <PropertyRef Name="notify_level_page" />
+      <PropertyRef Name="notify_email_operator_id" />
+      <PropertyRef Name="notify_netsend_operator_id" />
+      <PropertyRef Name="notify_page_operator_id" />
+      <PropertyRef Name="delete_level" />
+      <PropertyRef Name="date_created" />
+      <PropertyRef Name="date_modified" />
+      <PropertyRef Name="version_number" />
+    </Key>
+    <Property Name="job_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="originating_server_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="enabled" Type="tinyint" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="512" />
+    <Property Name="start_step_id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="owner_sid" Type="varbinary" Nullable="false" MaxLength="85" />
+    <Property Name="notify_level_eventlog" Type="int" Nullable="false" />
+    <Property Name="notify_level_email" Type="int" Nullable="false" />
+    <Property Name="notify_level_netsend" Type="int" Nullable="false" />
+    <Property Name="notify_level_page" Type="int" Nullable="false" />
+    <Property Name="notify_email_operator_id" Type="int" Nullable="false" />
+    <Property Name="notify_netsend_operator_id" Type="int" Nullable="false" />
+    <Property Name="notify_page_operator_id" Type="int" Nullable="false" />
+    <Property Name="delete_level" Type="int" Nullable="false" />
+    <Property Name="date_created" Type="datetime" Nullable="false" />
+    <Property Name="date_modified" Type="datetime" Nullable="false" />
+    <Property Name="version_number" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysjobschedules”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysjobschedules">
+    <Key>
+      <PropertyRef Name="next_run_date" />
+      <PropertyRef Name="next_run_time" />
+    </Key>
+    <Property Name="schedule_id" Type="int" />
+    <Property Name="job_id" Type="uniqueidentifier" />
+    <Property Name="next_run_date" Type="int" Nullable="false" />
+    <Property Name="next_run_time" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysjobservers”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysjobservers">
+    <Key>
+      <PropertyRef Name="job_id" />
+      <PropertyRef Name="server_id" />
+      <PropertyRef Name="last_run_outcome" />
+      <PropertyRef Name="last_run_date" />
+      <PropertyRef Name="last_run_time" />
+      <PropertyRef Name="last_run_duration" />
+    </Key>
+    <Property Name="job_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="server_id" Type="int" Nullable="false" />
+    <Property Name="last_run_outcome" Type="tinyint" Nullable="false" />
+    <Property Name="last_outcome_message" Type="nvarchar" MaxLength="1024" />
+    <Property Name="last_run_date" Type="int" Nullable="false" />
+    <Property Name="last_run_time" Type="int" Nullable="false" />
+    <Property Name="last_run_duration" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysjobsteps”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysjobsteps">
+    <Key>
+      <PropertyRef Name="job_id" />
+      <PropertyRef Name="step_id" />
+      <PropertyRef Name="step_name" />
+      <PropertyRef Name="subsystem" />
+      <PropertyRef Name="flags" />
+      <PropertyRef Name="cmdexec_success_code" />
+      <PropertyRef Name="on_success_action" />
+      <PropertyRef Name="on_success_step_id" />
+      <PropertyRef Name="on_fail_action" />
+      <PropertyRef Name="on_fail_step_id" />
+      <PropertyRef Name="retry_attempts" />
+      <PropertyRef Name="retry_interval" />
+      <PropertyRef Name="os_run_priority" />
+      <PropertyRef Name="last_run_outcome" />
+      <PropertyRef Name="last_run_duration" />
+      <PropertyRef Name="last_run_retries" />
+      <PropertyRef Name="last_run_date" />
+      <PropertyRef Name="last_run_time" />
+    </Key>
+    <Property Name="job_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="step_id" Type="int" Nullable="false" />
+    <Property Name="step_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="subsystem" Type="nvarchar" Nullable="false" MaxLength="40" />
+    <Property Name="command" Type="nvarchar(max)" />
+    <Property Name="flags" Type="int" Nullable="false" />
+    <Property Name="additional_parameters" Type="ntext" />
+    <Property Name="cmdexec_success_code" Type="int" Nullable="false" />
+    <Property Name="on_success_action" Type="tinyint" Nullable="false" />
+    <Property Name="on_success_step_id" Type="int" Nullable="false" />
+    <Property Name="on_fail_action" Type="tinyint" Nullable="false" />
+    <Property Name="on_fail_step_id" Type="int" Nullable="false" />
+    <Property Name="server" Type="nvarchar" MaxLength="128" />
+    <Property Name="database_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="database_user_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="retry_attempts" Type="int" Nullable="false" />
+    <Property Name="retry_interval" Type="int" Nullable="false" />
+    <Property Name="os_run_priority" Type="int" Nullable="false" />
+    <Property Name="output_file_name" Type="nvarchar" MaxLength="200" />
+    <Property Name="last_run_outcome" Type="int" Nullable="false" />
+    <Property Name="last_run_duration" Type="int" Nullable="false" />
+    <Property Name="last_run_retries" Type="int" Nullable="false" />
+    <Property Name="last_run_date" Type="int" Nullable="false" />
+    <Property Name="last_run_time" Type="int" Nullable="false" />
+    <Property Name="proxy_id" Type="int" />
+    <Property Name="step_uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="sysjobstepslogs">
+    <Key>
+      <PropertyRef Name="log_id" />
+    </Key>
+    <Property Name="log_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="log" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="date_created" Type="datetime" Nullable="false" />
+    <Property Name="date_modified" Type="datetime" Nullable="false" />
+    <Property Name="log_size" Type="bigint" Nullable="false" />
+    <Property Name="step_uid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysmail_account">
+    <Key>
+      <PropertyRef Name="account_id" />
+    </Key>
+    <Property Name="account_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="description" Type="nvarchar" MaxLength="256" />
+    <Property Name="email_address" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="display_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="replyto_address" Type="nvarchar" MaxLength="128" />
+    <Property Name="last_mod_datetime" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysmail_attachments”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysmail_attachments">
+    <Key>
+      <PropertyRef Name="attachment_id" />
+      <PropertyRef Name="mailitem_id" />
+      <PropertyRef Name="filename" />
+      <PropertyRef Name="filesize" />
+      <PropertyRef Name="last_mod_date" />
+      <PropertyRef Name="last_mod_user" />
+    </Key>
+    <Property Name="attachment_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mailitem_id" Type="int" Nullable="false" />
+    <Property Name="filename" Type="nvarchar" Nullable="false" MaxLength="260" />
+    <Property Name="filesize" Type="int" Nullable="false" />
+    <Property Name="attachment" Type="varbinary(max)" />
+    <Property Name="last_mod_date" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="sysmail_attachments_transfer">
+    <Key>
+      <PropertyRef Name="transfer_id" />
+    </Key>
+    <Property Name="transfer_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="filename" Type="nvarchar" Nullable="false" MaxLength="260" />
+    <Property Name="filesize" Type="int" Nullable="false" />
+    <Property Name="attachment" Type="varbinary(max)" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysmail_configuration">
+    <Key>
+      <PropertyRef Name="paramname" />
+    </Key>
+    <Property Name="paramname" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="paramvalue" Type="nvarchar" MaxLength="256" />
+    <Property Name="description" Type="nvarchar" MaxLength="256" />
+    <Property Name="last_mod_datetime" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="sysmail_log">
+    <Key>
+      <PropertyRef Name="log_id" />
+    </Key>
+    <Property Name="log_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="event_type" Type="int" Nullable="false" />
+    <Property Name="log_date" Type="datetime" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="process_id" Type="int" />
+    <Property Name="mailitem_id" Type="int" />
+    <Property Name="account_id" Type="int" />
+    <Property Name="last_mod_date" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="sysmail_mailitems">
+    <Key>
+      <PropertyRef Name="mailitem_id" />
+    </Key>
+    <Property Name="mailitem_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="profile_id" Type="int" Nullable="false" />
+    <Property Name="recipients" Type="varchar(max)" />
+    <Property Name="copy_recipients" Type="varchar(max)" />
+    <Property Name="blind_copy_recipients" Type="varchar(max)" />
+    <Property Name="subject" Type="nvarchar" MaxLength="255" />
+    <Property Name="body" Type="nvarchar(max)" />
+    <Property Name="body_format" Type="varchar" MaxLength="20" />
+    <Property Name="importance" Type="varchar" MaxLength="6" />
+    <Property Name="sensitivity" Type="varchar" MaxLength="12" />
+    <Property Name="file_attachments" Type="nvarchar(max)" />
+    <Property Name="attachment_encoding" Type="varchar" MaxLength="20" />
+    <Property Name="query" Type="nvarchar(max)" />
+    <Property Name="execute_query_database" Type="nvarchar" MaxLength="128" />
+    <Property Name="attach_query_result_as_file" Type="bit" />
+    <Property Name="query_result_header" Type="bit" />
+    <Property Name="query_result_width" Type="int" />
+    <Property Name="query_result_separator" Type="char" MaxLength="1" />
+    <Property Name="exclude_query_output" Type="bit" />
+    <Property Name="append_query_error" Type="bit" />
+    <Property Name="send_request_date" Type="datetime" Nullable="false" />
+    <Property Name="send_request_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="sent_account_id" Type="int" />
+    <Property Name="sent_status" Type="tinyint" />
+    <Property Name="sent_date" Type="datetime" />
+    <Property Name="last_mod_date" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="sysmail_principalprofile">
+    <Key>
+      <PropertyRef Name="profile_id" />
+      <PropertyRef Name="principal_sid" />
+    </Key>
+    <Property Name="profile_id" Type="int" Nullable="false" />
+    <Property Name="principal_sid" Type="varbinary" Nullable="false" MaxLength="85" />
+    <Property Name="is_default" Type="bit" Nullable="false" />
+    <Property Name="last_mod_datetime" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="sysmail_profile">
+    <Key>
+      <PropertyRef Name="profile_id" />
+    </Key>
+    <Property Name="profile_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="description" Type="nvarchar" MaxLength="256" />
+    <Property Name="last_mod_datetime" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="sysmail_profileaccount">
+    <Key>
+      <PropertyRef Name="profile_id" />
+      <PropertyRef Name="account_id" />
+    </Key>
+    <Property Name="profile_id" Type="int" Nullable="false" />
+    <Property Name="account_id" Type="int" Nullable="false" />
+    <Property Name="sequence_number" Type="int" />
+    <Property Name="last_mod_datetime" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="sysmail_query_transfer">
+    <Key>
+      <PropertyRef Name="uid" />
+    </Key>
+    <Property Name="uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="text_data" Type="nvarchar(max)" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysmail_send_retries">
+    <Key>
+      <PropertyRef Name="conversation_handle" />
+    </Key>
+    <Property Name="conversation_handle" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="mailitem_id" Type="int" Nullable="false" />
+    <Property Name="send_attempts" Type="int" Nullable="false" />
+    <Property Name="last_send_attempt_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysmail_server">
+    <Key>
+      <PropertyRef Name="account_id" />
+      <PropertyRef Name="servertype" />
+    </Key>
+    <Property Name="account_id" Type="int" Nullable="false" />
+    <Property Name="servertype" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="servername" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="port" Type="int" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="128" />
+    <Property Name="credential_id" Type="int" />
+    <Property Name="use_default_credentials" Type="bit" Nullable="false" />
+    <Property Name="enable_ssl" Type="bit" Nullable="false" />
+    <Property Name="flags" Type="int" Nullable="false" />
+    <Property Name="last_mod_datetime" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="sysmail_servertype">
+    <Key>
+      <PropertyRef Name="servertype" />
+    </Key>
+    <Property Name="servertype" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="is_incoming" Type="bit" Nullable="false" />
+    <Property Name="is_outgoing" Type="bit" Nullable="false" />
+    <Property Name="last_mod_datetime" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="sysmaintplan_log">
+    <Key>
+      <PropertyRef Name="task_detail_id" />
+    </Key>
+    <Property Name="task_detail_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="plan_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="subplan_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="start_time" Type="datetime" />
+    <Property Name="end_time" Type="datetime" />
+    <Property Name="succeeded" Type="bit" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysmaintplan_logdetail”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysmaintplan_logdetail">
+    <Key>
+      <PropertyRef Name="task_detail_id" />
+      <PropertyRef Name="line1" />
+      <PropertyRef Name="server_name" />
+    </Key>
+    <Property Name="task_detail_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="line1" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="line2" Type="nvarchar" MaxLength="256" />
+    <Property Name="line3" Type="nvarchar" MaxLength="256" />
+    <Property Name="line4" Type="nvarchar" MaxLength="256" />
+    <Property Name="line5" Type="nvarchar" MaxLength="256" />
+    <Property Name="server_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="start_time" Type="datetime" />
+    <Property Name="end_time" Type="datetime" />
+    <Property Name="error_number" Type="int" />
+    <Property Name="error_message" Type="nvarchar(max)" />
+    <Property Name="command" Type="nvarchar(max)" />
+    <Property Name="succeeded" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysmaintplan_subplans">
+    <Key>
+      <PropertyRef Name="subplan_id" />
+    </Key>
+    <Property Name="subplan_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="subplan_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="subplan_description" Type="nvarchar" MaxLength="512" />
+    <Property Name="plan_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="job_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="schedule_id" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysnotifications”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysnotifications">
+    <Key>
+      <PropertyRef Name="alert_id" />
+      <PropertyRef Name="operator_id" />
+      <PropertyRef Name="notification_method" />
+    </Key>
+    <Property Name="alert_id" Type="int" Nullable="false" />
+    <Property Name="operator_id" Type="int" Nullable="false" />
+    <Property Name="notification_method" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysoperators”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysoperators">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="enabled" />
+      <PropertyRef Name="last_email_date" />
+      <PropertyRef Name="last_email_time" />
+      <PropertyRef Name="last_pager_date" />
+      <PropertyRef Name="last_pager_time" />
+      <PropertyRef Name="weekday_pager_start_time" />
+      <PropertyRef Name="weekday_pager_end_time" />
+      <PropertyRef Name="saturday_pager_start_time" />
+      <PropertyRef Name="saturday_pager_end_time" />
+      <PropertyRef Name="sunday_pager_start_time" />
+      <PropertyRef Name="sunday_pager_end_time" />
+      <PropertyRef Name="pager_days" />
+      <PropertyRef Name="last_netsend_date" />
+      <PropertyRef Name="last_netsend_time" />
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="enabled" Type="tinyint" Nullable="false" />
+    <Property Name="email_address" Type="nvarchar" MaxLength="100" />
+    <Property Name="last_email_date" Type="int" Nullable="false" />
+    <Property Name="last_email_time" Type="int" Nullable="false" />
+    <Property Name="pager_address" Type="nvarchar" MaxLength="100" />
+    <Property Name="last_pager_date" Type="int" Nullable="false" />
+    <Property Name="last_pager_time" Type="int" Nullable="false" />
+    <Property Name="weekday_pager_start_time" Type="int" Nullable="false" />
+    <Property Name="weekday_pager_end_time" Type="int" Nullable="false" />
+    <Property Name="saturday_pager_start_time" Type="int" Nullable="false" />
+    <Property Name="saturday_pager_end_time" Type="int" Nullable="false" />
+    <Property Name="sunday_pager_start_time" Type="int" Nullable="false" />
+    <Property Name="sunday_pager_end_time" Type="int" Nullable="false" />
+    <Property Name="pager_days" Type="tinyint" Nullable="false" />
+    <Property Name="netsend_address" Type="nvarchar" MaxLength="100" />
+    <Property Name="last_netsend_date" Type="int" Nullable="false" />
+    <Property Name="last_netsend_time" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysoriginatingservers”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysoriginatingservers">
+    <Key>
+      <PropertyRef Name="originating_server" />
+    </Key>
+    <Property Name="originating_server_id" Type="int" />
+    <Property Name="originating_server" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="master_server" Type="bit" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysproxies”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysproxies">
+    <Key>
+      <PropertyRef Name="proxy_id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="credential_id" />
+      <PropertyRef Name="enabled" />
+      <PropertyRef Name="user_sid" />
+      <PropertyRef Name="credential_date_created" />
+    </Key>
+    <Property Name="proxy_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="credential_id" Type="int" Nullable="false" />
+    <Property Name="enabled" Type="tinyint" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="512" />
+    <Property Name="user_sid" Type="varbinary" Nullable="false" MaxLength="85" />
+    <Property Name="credential_date_created" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysproxylogin”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysproxylogin">
+    <Key>
+      <PropertyRef Name="proxy_id" />
+      <PropertyRef Name="flags" />
+    </Key>
+    <Property Name="proxy_id" Type="int" Nullable="false" />
+    <Property Name="sid" Type="varbinary" MaxLength="85" />
+    <Property Name="flags" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysproxysubsystem”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysproxysubsystem">
+    <Key>
+      <PropertyRef Name="subsystem_id" />
+      <PropertyRef Name="proxy_id" />
+    </Key>
+    <Property Name="subsystem_id" Type="int" Nullable="false" />
+    <Property Name="proxy_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysschedules">
+    <Key>
+      <PropertyRef Name="schedule_id" />
+    </Key>
+    <Property Name="schedule_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="schedule_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="originating_server_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="owner_sid" Type="varbinary" Nullable="false" MaxLength="85" />
+    <Property Name="enabled" Type="int" Nullable="false" />
+    <Property Name="freq_type" Type="int" Nullable="false" />
+    <Property Name="freq_interval" Type="int" Nullable="false" />
+    <Property Name="freq_subday_type" Type="int" Nullable="false" />
+    <Property Name="freq_subday_interval" Type="int" Nullable="false" />
+    <Property Name="freq_relative_interval" Type="int" Nullable="false" />
+    <Property Name="freq_recurrence_factor" Type="int" Nullable="false" />
+    <Property Name="active_start_date" Type="int" Nullable="false" />
+    <Property Name="active_end_date" Type="int" Nullable="false" />
+    <Property Name="active_start_time" Type="int" Nullable="false" />
+    <Property Name="active_end_time" Type="int" Nullable="false" />
+    <Property Name="date_created" Type="datetime" Nullable="false" />
+    <Property Name="date_modified" Type="datetime" Nullable="false" />
+    <Property Name="version_number" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="syssessions">
+    <Key>
+      <PropertyRef Name="session_id" />
+    </Key>
+    <Property Name="session_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="agent_start_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.syssubsystems”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="syssubsystems">
+    <Key>
+      <PropertyRef Name="subsystem_id" />
+      <PropertyRef Name="subsystem" />
+    </Key>
+    <Property Name="subsystem_id" Type="int" Nullable="false" />
+    <Property Name="subsystem" Type="nvarchar" Nullable="false" MaxLength="40" />
+    <Property Name="description_id" Type="int" />
+    <Property Name="subsystem_dll" Type="nvarchar" MaxLength="255" />
+    <Property Name="agent_exe" Type="nvarchar" MaxLength="255" />
+    <Property Name="start_entry_point" Type="nvarchar" MaxLength="30" />
+    <Property Name="event_entry_point" Type="nvarchar" MaxLength="30" />
+    <Property Name="stop_entry_point" Type="nvarchar" MaxLength="30" />
+    <Property Name="max_worker_threads" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.systargetservergroupmembers”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="systargetservergroupmembers">
+    <Key>
+      <PropertyRef Name="servergroup_id" />
+      <PropertyRef Name="server_id" />
+    </Key>
+    <Property Name="servergroup_id" Type="int" Nullable="false" />
+    <Property Name="server_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.systargetservergroups”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="systargetservergroups">
+    <Key>
+      <PropertyRef Name="servergroup_id" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="servergroup_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.systargetservers”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="systargetservers">
+    <Key>
+      <PropertyRef Name="server_id" />
+      <PropertyRef Name="server_name" />
+      <PropertyRef Name="time_zone_adjustment" />
+      <PropertyRef Name="enlist_date" />
+      <PropertyRef Name="last_poll_date" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="local_time_at_last_poll" />
+      <PropertyRef Name="enlisted_by_nt_user" />
+      <PropertyRef Name="poll_interval" />
+    </Key>
+    <Property Name="server_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="server_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="location" Type="nvarchar" MaxLength="200" />
+    <Property Name="time_zone_adjustment" Type="int" Nullable="false" />
+    <Property Name="enlist_date" Type="datetime" Nullable="false" />
+    <Property Name="last_poll_date" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="local_time_at_last_poll" Type="datetime" Nullable="false" />
+    <Property Name="enlisted_by_nt_user" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="poll_interval" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.systaskids”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="systaskids">
+    <Key>
+      <PropertyRef Name="task_id" />
+      <PropertyRef Name="job_id" />
+    </Key>
+    <Property Name="task_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="job_id" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.MSdatatype_mappings”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="MSdatatype_mappings">
+    <Key>
+      <PropertyRef Name="dbms_name" />
+      <PropertyRef Name="sql_type" />
+      <PropertyRef Name="dest_type" />
+    </Key>
+    <Property Name="dbms_name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="sql_type" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="dest_type" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="dest_prec" Type="bigint" />
+    <Property Name="dest_create_params" Type="int" />
+    <Property Name="dest_nullable" Type="bit" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysdatatypemappings”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysdatatypemappings">
+    <Key>
+      <PropertyRef Name="source_dbms" />
+      <PropertyRef Name="source_type" />
+      <PropertyRef Name="destination_dbms" />
+      <PropertyRef Name="destination_type" />
+    </Key>
+    <Property Name="mapping_id" Type="int" />
+    <Property Name="source_dbms" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="source_version" Type="nvarchar" MaxLength="128" />
+    <Property Name="source_type" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="source_length_min" Type="bigint" />
+    <Property Name="source_length_max" Type="bigint" />
+    <Property Name="source_precision_min" Type="bigint" />
+    <Property Name="source_precision_max" Type="bigint" />
+    <Property Name="source_scale_min" Type="int" />
+    <Property Name="source_scale_max" Type="int" />
+    <Property Name="source_nullable" Type="bit" />
+    <Property Name="source_createparams" Type="int" />
+    <Property Name="destination_dbms" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="destination_version" Type="nvarchar" MaxLength="128" />
+    <Property Name="destination_type" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="destination_length" Type="bigint" />
+    <Property Name="destination_precision" Type="bigint" />
+    <Property Name="destination_scale" Type="int" />
+    <Property Name="destination_nullable" Type="bit" />
+    <Property Name="destination_createparams" Type="int" />
+    <Property Name="dataloss" Type="bit" />
+    <Property Name="is_default" Type="bit" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysjobs_view”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysjobs_view">
+    <Key>
+      <PropertyRef Name="job_id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="enabled" />
+      <PropertyRef Name="start_step_id" />
+      <PropertyRef Name="category_id" />
+      <PropertyRef Name="owner_sid" />
+      <PropertyRef Name="notify_level_eventlog" />
+      <PropertyRef Name="notify_level_email" />
+      <PropertyRef Name="notify_level_netsend" />
+      <PropertyRef Name="notify_level_page" />
+      <PropertyRef Name="notify_email_operator_id" />
+      <PropertyRef Name="notify_netsend_operator_id" />
+      <PropertyRef Name="notify_page_operator_id" />
+      <PropertyRef Name="delete_level" />
+      <PropertyRef Name="date_created" />
+      <PropertyRef Name="date_modified" />
+      <PropertyRef Name="version_number" />
+      <PropertyRef Name="originating_server_id" />
+    </Key>
+    <Property Name="job_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="originating_server" Type="nvarchar" MaxLength="128" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="enabled" Type="tinyint" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="512" />
+    <Property Name="start_step_id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="owner_sid" Type="varbinary" Nullable="false" MaxLength="85" />
+    <Property Name="notify_level_eventlog" Type="int" Nullable="false" />
+    <Property Name="notify_level_email" Type="int" Nullable="false" />
+    <Property Name="notify_level_netsend" Type="int" Nullable="false" />
+    <Property Name="notify_level_page" Type="int" Nullable="false" />
+    <Property Name="notify_email_operator_id" Type="int" Nullable="false" />
+    <Property Name="notify_netsend_operator_id" Type="int" Nullable="false" />
+    <Property Name="notify_page_operator_id" Type="int" Nullable="false" />
+    <Property Name="delete_level" Type="int" Nullable="false" />
+    <Property Name="date_created" Type="datetime" Nullable="false" />
+    <Property Name="date_modified" Type="datetime" Nullable="false" />
+    <Property Name="version_number" Type="int" Nullable="false" />
+    <Property Name="originating_server_id" Type="int" Nullable="false" />
+    <Property Name="master_server" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysmail_allitems”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysmail_allitems">
+    <Key>
+      <PropertyRef Name="mailitem_id" />
+      <PropertyRef Name="profile_id" />
+      <PropertyRef Name="send_request_date" />
+      <PropertyRef Name="send_request_user" />
+      <PropertyRef Name="sent_status" />
+      <PropertyRef Name="last_mod_date" />
+      <PropertyRef Name="last_mod_user" />
+    </Key>
+    <Property Name="mailitem_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="profile_id" Type="int" Nullable="false" />
+    <Property Name="recipients" Type="varchar(max)" />
+    <Property Name="copy_recipients" Type="varchar(max)" />
+    <Property Name="blind_copy_recipients" Type="varchar(max)" />
+    <Property Name="subject" Type="nvarchar" MaxLength="255" />
+    <Property Name="body" Type="nvarchar(max)" />
+    <Property Name="body_format" Type="varchar" MaxLength="20" />
+    <Property Name="importance" Type="varchar" MaxLength="6" />
+    <Property Name="sensitivity" Type="varchar" MaxLength="12" />
+    <Property Name="file_attachments" Type="nvarchar(max)" />
+    <Property Name="attachment_encoding" Type="varchar" MaxLength="20" />
+    <Property Name="query" Type="nvarchar(max)" />
+    <Property Name="execute_query_database" Type="nvarchar" MaxLength="128" />
+    <Property Name="attach_query_result_as_file" Type="bit" />
+    <Property Name="query_result_header" Type="bit" />
+    <Property Name="query_result_width" Type="int" />
+    <Property Name="query_result_separator" Type="char" MaxLength="1" />
+    <Property Name="exclude_query_output" Type="bit" />
+    <Property Name="append_query_error" Type="bit" />
+    <Property Name="send_request_date" Type="datetime" Nullable="false" />
+    <Property Name="send_request_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="sent_account_id" Type="int" />
+    <Property Name="sent_status" Type="varchar" Nullable="false" MaxLength="8" />
+    <Property Name="sent_date" Type="datetime" />
+    <Property Name="last_mod_date" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysmail_event_log”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysmail_event_log">
+    <Key>
+      <PropertyRef Name="log_id" />
+      <PropertyRef Name="event_type" />
+      <PropertyRef Name="log_date" />
+      <PropertyRef Name="last_mod_date" />
+      <PropertyRef Name="last_mod_user" />
+    </Key>
+    <Property Name="log_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="event_type" Type="varchar" Nullable="false" MaxLength="11" />
+    <Property Name="log_date" Type="datetime" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="process_id" Type="int" />
+    <Property Name="mailitem_id" Type="int" />
+    <Property Name="account_id" Type="int" />
+    <Property Name="last_mod_date" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysmail_faileditems”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysmail_faileditems">
+    <Key>
+      <PropertyRef Name="mailitem_id" />
+      <PropertyRef Name="profile_id" />
+      <PropertyRef Name="send_request_date" />
+      <PropertyRef Name="send_request_user" />
+      <PropertyRef Name="sent_status" />
+      <PropertyRef Name="last_mod_date" />
+      <PropertyRef Name="last_mod_user" />
+    </Key>
+    <Property Name="mailitem_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="profile_id" Type="int" Nullable="false" />
+    <Property Name="recipients" Type="varchar(max)" />
+    <Property Name="copy_recipients" Type="varchar(max)" />
+    <Property Name="blind_copy_recipients" Type="varchar(max)" />
+    <Property Name="subject" Type="nvarchar" MaxLength="255" />
+    <Property Name="body" Type="nvarchar(max)" />
+    <Property Name="body_format" Type="varchar" MaxLength="20" />
+    <Property Name="importance" Type="varchar" MaxLength="6" />
+    <Property Name="sensitivity" Type="varchar" MaxLength="12" />
+    <Property Name="file_attachments" Type="nvarchar(max)" />
+    <Property Name="attachment_encoding" Type="varchar" MaxLength="20" />
+    <Property Name="query" Type="nvarchar(max)" />
+    <Property Name="execute_query_database" Type="nvarchar" MaxLength="128" />
+    <Property Name="attach_query_result_as_file" Type="bit" />
+    <Property Name="query_result_header" Type="bit" />
+    <Property Name="query_result_width" Type="int" />
+    <Property Name="query_result_separator" Type="char" MaxLength="1" />
+    <Property Name="exclude_query_output" Type="bit" />
+    <Property Name="append_query_error" Type="bit" />
+    <Property Name="send_request_date" Type="datetime" Nullable="false" />
+    <Property Name="send_request_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="sent_account_id" Type="int" />
+    <Property Name="sent_status" Type="varchar" Nullable="false" MaxLength="8" />
+    <Property Name="sent_date" Type="datetime" />
+    <Property Name="last_mod_date" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysmail_mailattachments”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysmail_mailattachments">
+    <Key>
+      <PropertyRef Name="attachment_id" />
+      <PropertyRef Name="mailitem_id" />
+      <PropertyRef Name="filename" />
+      <PropertyRef Name="filesize" />
+      <PropertyRef Name="last_mod_date" />
+      <PropertyRef Name="last_mod_user" />
+    </Key>
+    <Property Name="attachment_id" Type="int" Nullable="false" />
+    <Property Name="mailitem_id" Type="int" Nullable="false" />
+    <Property Name="filename" Type="nvarchar" Nullable="false" MaxLength="260" />
+    <Property Name="filesize" Type="int" Nullable="false" />
+    <Property Name="attachment" Type="varbinary(max)" />
+    <Property Name="last_mod_date" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysmail_sentitems”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysmail_sentitems">
+    <Key>
+      <PropertyRef Name="mailitem_id" />
+      <PropertyRef Name="profile_id" />
+      <PropertyRef Name="send_request_date" />
+      <PropertyRef Name="send_request_user" />
+      <PropertyRef Name="sent_status" />
+      <PropertyRef Name="last_mod_date" />
+      <PropertyRef Name="last_mod_user" />
+    </Key>
+    <Property Name="mailitem_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="profile_id" Type="int" Nullable="false" />
+    <Property Name="recipients" Type="varchar(max)" />
+    <Property Name="copy_recipients" Type="varchar(max)" />
+    <Property Name="blind_copy_recipients" Type="varchar(max)" />
+    <Property Name="subject" Type="nvarchar" MaxLength="255" />
+    <Property Name="body" Type="nvarchar(max)" />
+    <Property Name="body_format" Type="varchar" MaxLength="20" />
+    <Property Name="importance" Type="varchar" MaxLength="6" />
+    <Property Name="sensitivity" Type="varchar" MaxLength="12" />
+    <Property Name="file_attachments" Type="nvarchar(max)" />
+    <Property Name="attachment_encoding" Type="varchar" MaxLength="20" />
+    <Property Name="query" Type="nvarchar(max)" />
+    <Property Name="execute_query_database" Type="nvarchar" MaxLength="128" />
+    <Property Name="attach_query_result_as_file" Type="bit" />
+    <Property Name="query_result_header" Type="bit" />
+    <Property Name="query_result_width" Type="int" />
+    <Property Name="query_result_separator" Type="char" MaxLength="1" />
+    <Property Name="exclude_query_output" Type="bit" />
+    <Property Name="append_query_error" Type="bit" />
+    <Property Name="send_request_date" Type="datetime" Nullable="false" />
+    <Property Name="send_request_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="sent_account_id" Type="int" />
+    <Property Name="sent_status" Type="varchar" Nullable="false" MaxLength="8" />
+    <Property Name="sent_date" Type="datetime" />
+    <Property Name="last_mod_date" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysmail_unsentitems”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysmail_unsentitems">
+    <Key>
+      <PropertyRef Name="mailitem_id" />
+      <PropertyRef Name="profile_id" />
+      <PropertyRef Name="send_request_date" />
+      <PropertyRef Name="send_request_user" />
+      <PropertyRef Name="sent_status" />
+      <PropertyRef Name="last_mod_date" />
+      <PropertyRef Name="last_mod_user" />
+    </Key>
+    <Property Name="mailitem_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="profile_id" Type="int" Nullable="false" />
+    <Property Name="recipients" Type="varchar(max)" />
+    <Property Name="copy_recipients" Type="varchar(max)" />
+    <Property Name="blind_copy_recipients" Type="varchar(max)" />
+    <Property Name="subject" Type="nvarchar" MaxLength="255" />
+    <Property Name="body" Type="nvarchar(max)" />
+    <Property Name="body_format" Type="varchar" MaxLength="20" />
+    <Property Name="importance" Type="varchar" MaxLength="6" />
+    <Property Name="sensitivity" Type="varchar" MaxLength="12" />
+    <Property Name="file_attachments" Type="nvarchar(max)" />
+    <Property Name="attachment_encoding" Type="varchar" MaxLength="20" />
+    <Property Name="query" Type="nvarchar(max)" />
+    <Property Name="execute_query_database" Type="nvarchar" MaxLength="128" />
+    <Property Name="attach_query_result_as_file" Type="bit" />
+    <Property Name="query_result_header" Type="bit" />
+    <Property Name="query_result_width" Type="int" />
+    <Property Name="query_result_separator" Type="char" MaxLength="1" />
+    <Property Name="exclude_query_output" Type="bit" />
+    <Property Name="append_query_error" Type="bit" />
+    <Property Name="send_request_date" Type="datetime" Nullable="false" />
+    <Property Name="send_request_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="sent_account_id" Type="int" />
+    <Property Name="sent_status" Type="varchar" Nullable="false" MaxLength="8" />
+    <Property Name="sent_date" Type="datetime" />
+    <Property Name="last_mod_date" Type="datetime" Nullable="false" />
+    <Property Name="last_mod_user" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysmaintplan_plans”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysmaintplan_plans">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="id" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="version_major" />
+      <PropertyRef Name="version_minor" />
+      <PropertyRef Name="version_build" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="1024" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="owner" Type="nvarchar" MaxLength="128" />
+    <Property Name="version_major" Type="int" Nullable="false" />
+    <Property Name="version_minor" Type="int" Nullable="false" />
+    <Property Name="version_build" Type="int" Nullable="false" />
+    <Property Name="version_comments" Type="nvarchar" MaxLength="1024" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysproxyloginsubsystem_view”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysproxyloginsubsystem_view">
+    <Key>
+      <PropertyRef Name="subsystem_id" />
+      <PropertyRef Name="proxy_id" />
+      <PropertyRef Name="flags" />
+    </Key>
+    <Property Name="subsystem_id" Type="int" Nullable="false" />
+    <Property Name="proxy_id" Type="int" Nullable="false" />
+    <Property Name="sid" Type="varbinary" MaxLength="85" />
+    <Property Name="flags" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.sysschedules_localserver_view”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="sysschedules_localserver_view">
+    <Key>
+      <PropertyRef Name="schedule_id" />
+      <PropertyRef Name="schedule_uid" />
+      <PropertyRef Name="originating_server_id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="owner_sid" />
+      <PropertyRef Name="enabled" />
+      <PropertyRef Name="freq_type" />
+      <PropertyRef Name="freq_interval" />
+      <PropertyRef Name="freq_subday_type" />
+      <PropertyRef Name="freq_subday_interval" />
+      <PropertyRef Name="freq_relative_interval" />
+      <PropertyRef Name="freq_recurrence_factor" />
+      <PropertyRef Name="active_start_date" />
+      <PropertyRef Name="active_end_date" />
+      <PropertyRef Name="active_start_time" />
+      <PropertyRef Name="active_end_time" />
+      <PropertyRef Name="date_created" />
+      <PropertyRef Name="date_modified" />
+      <PropertyRef Name="version_number" />
+    </Key>
+    <Property Name="schedule_id" Type="int" Nullable="false" />
+    <Property Name="schedule_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="originating_server_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="owner_sid" Type="varbinary" Nullable="false" MaxLength="85" />
+    <Property Name="enabled" Type="int" Nullable="false" />
+    <Property Name="freq_type" Type="int" Nullable="false" />
+    <Property Name="freq_interval" Type="int" Nullable="false" />
+    <Property Name="freq_subday_type" Type="int" Nullable="false" />
+    <Property Name="freq_subday_interval" Type="int" Nullable="false" />
+    <Property Name="freq_relative_interval" Type="int" Nullable="false" />
+    <Property Name="freq_recurrence_factor" Type="int" Nullable="false" />
+    <Property Name="active_start_date" Type="int" Nullable="false" />
+    <Property Name="active_end_date" Type="int" Nullable="false" />
+    <Property Name="active_start_time" Type="int" Nullable="false" />
+    <Property Name="active_end_time" Type="int" Nullable="false" />
+    <Property Name="date_created" Type="datetime" Nullable="false" />
+    <Property Name="date_modified" Type="datetime" Nullable="false" />
+    <Property Name="version_number" Type="int" Nullable="false" />
+    <Property Name="originating_server" Type="nvarchar" MaxLength="128" />
+    <Property Name="master_server" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“msdb.dbo.systargetservers_view”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="systargetservers_view">
+    <Key>
+      <PropertyRef Name="server_id" />
+    </Key>
+    <Property Name="server_id" Type="int" Nullable="false" />
+    <Property Name="server_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="enlist_date" Type="datetime" />
+    <Property Name="last_poll_date" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__backupfil__backu__793DFFAF">
+    <End Role="backupset" Type="msdbModel.Store.backupset" Multiplicity="1" />
+    <End Role="backupfilegroup" Type="msdbModel.Store.backupfilegroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="backupset">
+        <PropertyRef Name="backup_set_id" />
+      </Principal>
+      <Dependent Role="backupfilegroup">
+        <PropertyRef Name="backup_set_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__backupfil__backu__7C1A6C5A">
+    <End Role="backupset" Type="msdbModel.Store.backupset" Multiplicity="1" />
+    <End Role="backupfile" Type="msdbModel.Store.backupfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="backupset">
+        <PropertyRef Name="backup_set_id" />
+      </Principal>
+      <Dependent Role="backupfile">
+        <PropertyRef Name="backup_set_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__backupmed__media__72910220">
+    <End Role="backupmediaset" Type="msdbModel.Store.backupmediaset" Multiplicity="1" />
+    <End Role="backupmediafamily" Type="msdbModel.Store.backupmediafamily" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="backupmediaset">
+        <PropertyRef Name="media_set_id" />
+      </Principal>
+      <Dependent Role="backupmediafamily">
+        <PropertyRef Name="media_set_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__backupset__media__76619304">
+    <End Role="backupmediaset" Type="msdbModel.Store.backupmediaset" Multiplicity="1" />
+    <End Role="backupset" Type="msdbModel.Store.backupset" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="backupmediaset">
+        <PropertyRef Name="media_set_id" />
+      </Principal>
+      <Dependent Role="backupset">
+        <PropertyRef Name="media_set_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__log_shipp__prima__60083D91">
+    <End Role="log_shipping_primaries" Type="msdbModel.Store.log_shipping_primaries" Multiplicity="0..1" />
+    <End Role="log_shipping_secondaries" Type="msdbModel.Store.log_shipping_secondaries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="log_shipping_primaries">
+        <PropertyRef Name="primary_id" />
+      </Principal>
+      <Dependent Role="log_shipping_secondaries">
+        <PropertyRef Name="primary_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__restorefi__resto__00DF2177">
+    <End Role="restorehistory" Type="msdbModel.Store.restorehistory" Multiplicity="1" />
+    <End Role="restorefile" Type="msdbModel.Store.restorefile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="restorehistory">
+        <PropertyRef Name="restore_history_id" />
+      </Principal>
+      <Dependent Role="restorefile">
+        <PropertyRef Name="restore_history_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__restorefi__resto__02C769E9">
+    <End Role="restorehistory" Type="msdbModel.Store.restorehistory" Multiplicity="1" />
+    <End Role="restorefilegroup" Type="msdbModel.Store.restorefilegroup" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="restorehistory">
+        <PropertyRef Name="restore_history_id" />
+      </Principal>
+      <Dependent Role="restorefilegroup">
+        <PropertyRef Name="restore_history_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__restorehi__backu__7EF6D905">
+    <End Role="backupset" Type="msdbModel.Store.backupset" Multiplicity="1" />
+    <End Role="restorehistory" Type="msdbModel.Store.restorehistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="backupset">
+        <PropertyRef Name="backup_set_id" />
+      </Principal>
+      <Dependent Role="restorehistory">
+        <PropertyRef Name="backup_set_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysdbmain__plan___473C8FC7">
+    <End Role="sysdbmaintplans" Type="msdbModel.Store.sysdbmaintplans" Multiplicity="1" />
+    <End Role="sysdbmaintplan_jobs" Type="msdbModel.Store.sysdbmaintplan_jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysdbmaintplans">
+        <PropertyRef Name="plan_id" />
+      </Principal>
+      <Dependent Role="sysdbmaintplan_jobs">
+        <PropertyRef Name="plan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysdbmain__plan___4A18FC72">
+    <End Role="sysdbmaintplans" Type="msdbModel.Store.sysdbmaintplans" Multiplicity="1" />
+    <End Role="sysdbmaintplan_databases" Type="msdbModel.Store.sysdbmaintplan_databases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysdbmaintplans">
+        <PropertyRef Name="plan_id" />
+      </Principal>
+      <Dependent Role="sysdbmaintplan_databases">
+        <PropertyRef Name="plan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysdtspac__categ__0D44F85C">
+    <End Role="sysdtscategories" Type="msdbModel.Store.sysdtscategories" Multiplicity="1" />
+    <End Role="sysdtspackages" Type="msdbModel.Store.sysdtspackages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysdtscategories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sysdtspackages">
+        <PropertyRef Name="categoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysdtsste__linea__2057CCD0">
+    <End Role="sysdtspackagelog" Type="msdbModel.Store.sysdtspackagelog" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysdtssteplog" Type="msdbModel.Store.sysdtssteplog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysdtspackagelog">
+        <PropertyRef Name="lineagefull" />
+      </Principal>
+      <Dependent Role="sysdtssteplog">
+        <PropertyRef Name="lineagefull" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysdtstas__stepe__2334397B">
+    <End Role="sysdtssteplog" Type="msdbModel.Store.sysdtssteplog" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysdtstasklog" Type="msdbModel.Store.sysdtstasklog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysdtssteplog">
+        <PropertyRef Name="stepexecutionid" />
+      </Principal>
+      <Dependent Role="sysdtstasklog">
+        <PropertyRef Name="stepexecutionid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysjobact__sessi__173876EA">
+    <End Role="syssessions" Type="msdbModel.Store.syssessions" Multiplicity="1" />
+    <End Role="sysjobactivity" Type="msdbModel.Store.sysjobactivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="syssessions">
+        <PropertyRef Name="session_id" />
+      </Principal>
+      <Dependent Role="sysjobactivity">
+        <PropertyRef Name="session_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysjobsch__sched__267ABA7A">
+    <End Role="sysschedules" Type="msdbModel.Store.sysschedules" Multiplicity="0..1" />
+    <End Role="sysjobschedules" Type="msdbModel.Store.sysjobschedules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysschedules">
+        <PropertyRef Name="schedule_id" />
+      </Principal>
+      <Dependent Role="sysjobschedules">
+        <PropertyRef Name="schedule_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysmail_p__accou__40C49C62">
+    <End Role="sysmail_account" Type="msdbModel.Store.sysmail_account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysmail_profileaccount" Type="msdbModel.Store.sysmail_profileaccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmail_account">
+        <PropertyRef Name="account_id" />
+      </Principal>
+      <Dependent Role="sysmail_profileaccount">
+        <PropertyRef Name="account_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysmail_p__profi__36470DEF">
+    <End Role="sysmail_profile" Type="msdbModel.Store.sysmail_profile" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysmail_principalprofile" Type="msdbModel.Store.sysmail_principalprofile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmail_profile">
+        <PropertyRef Name="profile_id" />
+      </Principal>
+      <Dependent Role="sysmail_principalprofile">
+        <PropertyRef Name="profile_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysmail_s__accou__4B422AD5">
+    <End Role="sysmail_account" Type="msdbModel.Store.sysmail_account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysmail_server" Type="msdbModel.Store.sysmail_server" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmail_account">
+        <PropertyRef Name="account_id" />
+      </Principal>
+      <Dependent Role="sysmail_server">
+        <PropertyRef Name="account_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sysmail_s__serve__4C364F0E">
+    <End Role="sysmail_servertype" Type="msdbModel.Store.sysmail_servertype" Multiplicity="1" />
+    <End Role="sysmail_server" Type="msdbModel.Store.sysmail_server" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmail_servertype">
+        <PropertyRef Name="servertype" />
+      </Principal>
+      <Dependent Role="sysmail_server">
+        <PropertyRef Name="servertype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mailitems_mailitem_id">
+    <End Role="sysmail_mailitems" Type="msdbModel.Store.sysmail_mailitems" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysmail_send_retries" Type="msdbModel.Store.sysmail_send_retries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmail_mailitems">
+        <PropertyRef Name="mailitem_id" />
+      </Principal>
+      <Dependent Role="sysmail_send_retries">
+        <PropertyRef Name="mailitem_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MSdbms_datatype_dbms_id">
+    <End Role="MSdbms" Type="msdbModel.Store.MSdbms" Multiplicity="1" />
+    <End Role="MSdbms_datatype" Type="msdbModel.Store.MSdbms_datatype" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSdbms">
+        <PropertyRef Name="dbms_id" />
+      </Principal>
+      <Dependent Role="MSdbms_datatype">
+        <PropertyRef Name="dbms_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MSdbms_datatype_mapping_dest_datatype_id">
+    <End Role="MSdbms_datatype" Type="msdbModel.Store.MSdbms_datatype" Multiplicity="1" />
+    <End Role="MSdbms_datatype_mapping" Type="msdbModel.Store.MSdbms_datatype_mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSdbms_datatype">
+        <PropertyRef Name="datatype_id" />
+      </Principal>
+      <Dependent Role="MSdbms_datatype_mapping">
+        <PropertyRef Name="dest_datatype_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MSdbms_datatype_mapping_map_id">
+    <End Role="MSdbms_map" Type="msdbModel.Store.MSdbms_map" Multiplicity="1" />
+    <End Role="MSdbms_datatype_mapping" Type="msdbModel.Store.MSdbms_datatype_mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSdbms_map">
+        <PropertyRef Name="map_id" />
+      </Principal>
+      <Dependent Role="MSdbms_datatype_mapping">
+        <PropertyRef Name="map_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MSdbms_map_default_datatype_mapping_id">
+    <End Role="MSdbms_datatype_mapping" Type="msdbModel.Store.MSdbms_datatype_mapping" Multiplicity="0..1" />
+    <End Role="MSdbms_map" Type="msdbModel.Store.MSdbms_map" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSdbms_datatype_mapping">
+        <PropertyRef Name="datatype_mapping_id" />
+      </Principal>
+      <Dependent Role="MSdbms_map">
+        <PropertyRef Name="default_datatype_mapping_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MSdbms_map_dest_dbms_id">
+    <End Role="MSdbms" Type="msdbModel.Store.MSdbms" Multiplicity="1" />
+    <End Role="MSdbms_map" Type="msdbModel.Store.MSdbms_map" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSdbms">
+        <PropertyRef Name="dbms_id" />
+      </Principal>
+      <Dependent Role="MSdbms_map">
+        <PropertyRef Name="dest_dbms_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MSdbms_map_src_datatype_id">
+    <End Role="MSdbms_datatype" Type="msdbModel.Store.MSdbms_datatype" Multiplicity="1" />
+    <End Role="MSdbms_map" Type="msdbModel.Store.MSdbms_map" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSdbms_datatype">
+        <PropertyRef Name="datatype_id" />
+      </Principal>
+      <Dependent Role="MSdbms_map">
+        <PropertyRef Name="src_datatype_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MSdbms_map_src_dbms_id">
+    <End Role="MSdbms" Type="msdbModel.Store.MSdbms" Multiplicity="1" />
+    <End Role="MSdbms_map" Type="msdbModel.Store.MSdbms_map" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSdbms">
+        <PropertyRef Name="dbms_id" />
+      </Principal>
+      <Dependent Role="MSdbms_map">
+        <PropertyRef Name="src_dbms_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_subplan_schedule_id">
+    <End Role="sysschedules" Type="msdbModel.Store.sysschedules" Multiplicity="0..1" />
+    <End Role="sysmaintplan_subplans" Type="msdbModel.Store.sysmaintplan_subplans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysschedules">
+        <PropertyRef Name="schedule_id" />
+      </Principal>
+      <Dependent Role="sysmaintplan_subplans">
+        <PropertyRef Name="schedule_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sysmail_mailitems_mailitem_id">
+    <End Role="sysmail_mailitems" Type="msdbModel.Store.sysmail_mailitems" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysmail_attachments" Type="msdbModel.Store.sysmail_attachments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmail_mailitems">
+        <PropertyRef Name="mailitem_id" />
+      </Principal>
+      <Dependent Role="sysmail_attachments">
+        <PropertyRef Name="mailitem_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sysmaintplan_log_detail_task_id">
+    <End Role="sysmaintplan_log" Type="msdbModel.Store.sysmaintplan_log" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sysmaintplan_logdetail" Type="msdbModel.Store.sysmaintplan_logdetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmaintplan_log">
+        <PropertyRef Name="task_detail_id" />
+      </Principal>
+      <Dependent Role="sysmaintplan_logdetail">
+        <PropertyRef Name="task_detail_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sysmaintplan_log_subplan_id">
+    <End Role="sysmaintplan_subplans" Type="msdbModel.Store.sysmaintplan_subplans" Multiplicity="1" />
+    <End Role="sysmaintplan_log" Type="msdbModel.Store.sysmaintplan_log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sysmaintplan_subplans">
+        <PropertyRef Name="subplan_id" />
+      </Principal>
+      <Dependent Role="sysmaintplan_log">
+        <PropertyRef Name="subplan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--生成过程中发现错误:
+      警告 6013: 表/视图“msdb.dbo.sysoriginatingservers_view”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+      
+      <EntityType Name="sysoriginatingservers_view">
+        <Property Name="originating_server_id" Type="int" />
+        <Property Name="originating_server" Type="nvarchar" MaxLength="128" />
+        <Property Name="master_server" Type="int" />
+      </EntityType>-->
+</Schema>

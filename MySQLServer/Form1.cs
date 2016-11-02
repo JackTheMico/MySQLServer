@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using CCWin;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace MySQLServer
 {
@@ -19,20 +20,62 @@ namespace MySQLServer
         DataSet orids;
         List<string> dataGridList = new List<string>();
         List<string> oriList = new List<string>();
+        ArrayList allDB;
+        Array TBArray;
 
         bool updateStatus = false;
         bool addStatus = false;
 
-        string con = "Data Source=.;Initial Catalog=MyExercise;Integrated Security=True", sql;
+        string con = "Data Source=.;Initial Catalog={0};Integrated Security=True", sql;
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void skinButton1_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            sql = "SELECT * from student";
+            allDB = GetAllDataBase(".");
+            DBComboBox.DataSource = allDB;
+            
+        }
+
+        /// <summary>
+        /// 获取指定IP地址的数据库所有数据库实例名。
+        /// </summary>
+        /// <param name="ip">指定的 IP 地址。</param>
+        /// <param name="username">登录数据库的用户名。</param>
+        /// <param name="password">登陆数据库的密码。</param>
+        /// <returns>返回包含数据实例名的列表。</returns>
+        private ArrayList GetAllDataBase(string ip)
+        {
+            ArrayList DBNameList = new ArrayList();
+            SqlConnection Connection = new SqlConnection(
+                String.Format("Data Source={0};Initial Catalog = master;Integrated Security=True",ip));
+            DataTable DBNameTable = new DataTable();
+            SqlDataAdapter Adapter = new SqlDataAdapter("select name from master..sysdatabases", Connection);
+
+            lock (Adapter)
+            {
+                Adapter.Fill(DBNameTable);
+            }
+
+            foreach (DataRow row in DBNameTable.Rows)
+            {
+                DBNameList.Add(row["name"]);
+            }
+
+            return DBNameList;
+        }
+
+        private void DBComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (myCon != null)
+            {
+                if (myCon.State == ConnectionState.Open)
+                    myCon.Close();
+            }
+            con = string.Format("Data Source=.;Initial Catalog={0};Integrated Security=True", DBComboBox.SelectedItem.ToString());
             myCon = new SqlConnection(con);
             try
             {
@@ -42,26 +85,56 @@ namespace MySQLServer
             {
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                if (myCon.State == ConnectionState.Open)
-                {
-                    myda = new SqlDataAdapter(sql, con);
-                    DataSet myds = new DataSet();
-                    myda.Fill(myds, "student");
-                    skinDataGridView1.DataSource = myds.Tables["student"];
-                  
-                    closeCommand = myCon.CreateCommand();
-                    closeCommand.CommandType = CommandType.Text;
 
-                    orids = new DataSet();
-                    myda.Fill(orids, "student");
-                    for (int i = 0; i < orids.Tables["student"].Rows.Count; i++)
-                    {
-                        oriList.Add(orids.Tables["student"].Rows[i].ItemArray[0].ToString());
-                    }
+            SqlCommand cmdToTables = new SqlCommand("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'", myCon);
+            SqlDataReader dr = cmdToTables.ExecuteReader();
+            ArrayList TBList = new ArrayList();
+
+            while (dr.Read())
+            {
+                TBList.Add(dr.GetString(0));
+            }
+            TBArray = TBList.ToArray();
+            TBComboBox.DataSource = TBList;
+        }
+
+
+        private void skinButton1_Click(object sender, EventArgs e)
+        {
+            sql = string.Format("SELECT * from {0}",TBComboBox.SelectedItem.ToString());
+
+
+
+            if (myCon.State == ConnectionState.Open)
+            {
+                myda = new SqlDataAdapter(sql, con);
+                DataSet myds = new DataSet();
+
+             //   SqlCommand cmdToTables = new SqlCommand("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'", myCon);
+            //    SqlDataReader dr = cmdToTables.ExecuteReader();
+            //    ArrayList TBList = new ArrayList();
+
+            //    while (dr.Read())
+            //    {
+            //        TBList.Add(dr.GetString(0));
+            //    }
+            //    Array TBArray = TBList.ToArray();
+            //    TBComboBox.DataSource = TBList;
+
+                myda.Fill(myds, TBArray.GetValue(0).ToString());
+                skinDataGridView1.DataSource = myds.Tables[TBArray.GetValue(0).ToString()];
+
+                closeCommand = myCon.CreateCommand();
+                closeCommand.CommandType = CommandType.Text;
+
+                orids = new DataSet();
+                myda.Fill(orids, TBArray.GetValue(0).ToString());
+                for (int i = 0; i < orids.Tables[TBArray.GetValue(0).ToString()].Rows.Count; i++)
+                {
+                    oriList.Add(orids.Tables[TBArray.GetValue(0).ToString()].Rows[i].ItemArray[0].ToString());
                 }
             }
+
         }
 
 
@@ -71,7 +144,7 @@ namespace MySQLServer
             updateStatus = false;
             addStatus = false;
 
-            sql = "SELECT * from student";
+            sql = string.Format("SELECT * from {0}", TBComboBox.SelectedItem.ToString());
             myda = new SqlDataAdapter(sql, con);
             orids = new DataSet();
             myda.Fill(orids, "student");
@@ -253,6 +326,10 @@ namespace MySQLServer
             }
 
         }
+
+        
+
+        
 
     }
 

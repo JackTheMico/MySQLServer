@@ -38,6 +38,9 @@
     <Reference Include="CSkin">
       <HintPath>F:\C#资料\CSkin 16.1.14.2\CSkin 16.1.14.2\CSkin 4.0\CSkin.dll</HintPath>
     </Reference>
+    <Reference Include="DLWSQL">
+      <HintPath>..\..\ObjectiveSQL\DLWSQL\bin\Debug\DLWSQL.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />

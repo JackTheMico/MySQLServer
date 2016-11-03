@@ -9,3 +9,5 @@ D:\CSharp_Projects\MySQLServer\MySQLServer\bin\Debug\CSkin.dll
 D:\CSharp_Projects\MySQLServer\MySQLServer\bin\Debug\CSkin.xml
 D:\CSharp_Projects\MySQLServer\MySQLServer\obj\x86\Debug\MySQLServer.exe
 D:\CSharp_Projects\MySQLServer\MySQLServer\obj\x86\Debug\MySQLServer.pdb
+D:\CSharp_Projects\MySQLServer\MySQLServer\bin\Debug\DLWSQL.dll
+D:\CSharp_Projects\MySQLServer\MySQLServer\bin\Debug\DLWSQL.pdb

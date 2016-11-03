@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using CCWin;
 using System.Data.SqlClient;
 using System.Collections;
+using ObjectiveSQL;
 
 namespace MySQLServer
 {
@@ -96,6 +97,8 @@ namespace MySQLServer
             }
             TBArray = TBList.ToArray();
             TBComboBox.DataSource = TBList;
+
+            dr.Close();
         }
 
 
@@ -163,7 +166,7 @@ namespace MySQLServer
 
             for (int i = 0; i < skinDataGridView1.Rows.Count - 1; i++)
             {
-
+                /*
                 if (skinDataGridView1.Rows[i].Cells[0].Value.ToString() == "" ||
                     skinDataGridView1.Rows[i].Cells[1].Value.ToString() == "" ||
                     skinDataGridView1.Rows[i].Cells[2].Value.ToString() == "" ||
@@ -173,59 +176,86 @@ namespace MySQLServer
                     MessageBox.Show("格式错误，值不能为null");
                     return;
                 }
+                 */
 
-
-                try
+                for (int p = 0; p < skinDataGridView1.Rows[i].Cells.Count; p++)
                 {
-                    if (oriList.Contains(skinDataGridView1.Rows[i].Cells[0].Value.ToString()))
+                    if (skinDataGridView1.Rows[i].Cells[p].Value.ToString() == "")
                     {
-                        closeCommand.CommandText = string.Format("UPDATE student set name = '{0}' ,age = '{1}' ,sex = '{2}' ,height = '{3}' ,weight = '{4}' where name = '{5}'",
-                                skinDataGridView1.Rows[i].Cells[0].Value,
-                                Int16.Parse(skinDataGridView1.Rows[i].Cells[1].Value.ToString()),
-                                skinDataGridView1.Rows[i].Cells[2].Value,
-                                skinDataGridView1.Rows[i].Cells[3].Value,
-                                skinDataGridView1.Rows[i].Cells[4].Value,
-                                skinDataGridView1.Rows[i].Cells[0].Value
-                        );
-                        try
-                        {
-                            closeCommand.ExecuteNonQuery();
-                            updateStatus = true;
-                        }
-                        catch (Exception updateEx)
-                        {
-                            updateStatus = false;
-                            MessageBox.Show(updateEx.Message);
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        closeCommand.CommandText = string.Format("INSERT INTO student (name, age, sex, height, weight) VALUES ('{0}','{1}','{2}','{3}','{4}')",
-                                skinDataGridView1.Rows[i].Cells[0].Value,
-                                Int16.Parse(skinDataGridView1.Rows[i].Cells[1].Value.ToString()),
-                                skinDataGridView1.Rows[i].Cells[2].Value,
-                                skinDataGridView1.Rows[i].Cells[3].Value,
-                                skinDataGridView1.Rows[i].Cells[4].Value
-                        );
-                        try
-                        {
-                            closeCommand.ExecuteNonQuery();
-                            addStatus = true;
-                        }
-                        catch (Exception addEx)
-                        {
-                            MessageBox.Show(addEx.Message);
-                            addStatus = false;
-                            return;
-                        }
+                        MessageBox.Show("格式错误，值不能为null");
+                        return;
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return;
-                }
+
+
+
+                    try
+                    {
+                        if (oriList.Contains(skinDataGridView1.Rows[i].Cells[0].Value.ToString()))
+                        {
+                            /*
+                            closeCommand.CommandText = string.Format("UPDATE student set name = '{0}' ,age = '{1}' ,sex = '{2}' ,height = '{3}' ,weight = '{4}' where name = '{5}'",
+                                    skinDataGridView1.Rows[i].Cells[0].Value,
+                                    Int16.Parse(skinDataGridView1.Rows[i].Cells[1].Value.ToString()),
+                                    skinDataGridView1.Rows[i].Cells[2].Value,
+                                    skinDataGridView1.Rows[i].Cells[3].Value,
+                                    skinDataGridView1.Rows[i].Cells[4].Value,
+                                    skinDataGridView1.Rows[i].Cells[0].Value
+                            );
+                             */
+
+                            SQL.Update sqlUpdate = SQL.UPDATE(TBComboBox.SelectedItem.ToString());
+
+                            for (int varm = 0; varm < skinDataGridView1.Rows[i].Cells.Count; varm++)
+                            {
+                                sqlUpdate.Set(skinDataGridView1.Columns[varm].Name, skinDataGridView1.Rows[i].Cells[varm].Value.ToString());
+                            }
+                            string where = skinDataGridView1.Columns[0].Name + " = ?";
+                            sqlUpdate.Where(where, "'"+skinDataGridView1.Rows[i].Cells[0].Value.ToString()+"'");
+                            Command command = sqlUpdate.toCommand();
+                            closeCommand.CommandText = command.getStatement();
+
+                            MessageBox.Show(command.getStatement());
+
+                            try
+                            {
+                                closeCommand.ExecuteNonQuery();
+                                updateStatus = true;
+                            }
+                            catch (Exception updateEx)
+                            {
+                                updateStatus = false;
+                                MessageBox.Show(updateEx.Message);
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            closeCommand.CommandText = string.Format("INSERT INTO student (name, age, sex, height, weight) VALUES ('{0}','{1}','{2}','{3}','{4}')",
+                                    skinDataGridView1.Rows[i].Cells[0].Value,
+                                    Int16.Parse(skinDataGridView1.Rows[i].Cells[1].Value.ToString()),
+                                    skinDataGridView1.Rows[i].Cells[2].Value,
+                                    skinDataGridView1.Rows[i].Cells[3].Value,
+                                    skinDataGridView1.Rows[i].Cells[4].Value
+                            );
+                            try
+                            {
+                                closeCommand.ExecuteNonQuery();
+                                addStatus = true;
+                            }
+                            catch (Exception addEx)
+                            {
+                                MessageBox.Show(addEx.Message);
+                                addStatus = false;
+                                return;
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        return;
+                    }
 
             }
             dataGridList.Clear();

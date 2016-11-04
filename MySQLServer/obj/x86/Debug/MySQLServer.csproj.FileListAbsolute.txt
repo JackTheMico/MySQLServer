@@ -5,7 +5,6 @@ D:\CSharp_Projects\MySQLServer\MySQLServer\obj\x86\Debug\MySQLServer.csproj.Gene
 D:\CSharp_Projects\MySQLServer\MySQLServer\bin\Debug\MySQLServer.exe.config
 D:\CSharp_Projects\MySQLServer\MySQLServer\bin\Debug\MySQLServer.exe
 D:\CSharp_Projects\MySQLServer\MySQLServer\bin\Debug\MySQLServer.pdb
-D:\CSharp_Projects\MySQLServer\MySQLServer\bin\Debug\CSkin.dll
 D:\CSharp_Projects\MySQLServer\MySQLServer\bin\Debug\CSkin.xml
 D:\CSharp_Projects\MySQLServer\MySQLServer\obj\x86\Debug\MySQLServer.exe
 D:\CSharp_Projects\MySQLServer\MySQLServer\obj\x86\Debug\MySQLServer.pdb

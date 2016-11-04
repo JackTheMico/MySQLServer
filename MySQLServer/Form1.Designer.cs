@@ -259,9 +259,9 @@
             this.DBComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.DBComboBox.Font = new System.Drawing.Font("宋体", 13F);
             this.DBComboBox.FormattingEnabled = true;
-            this.DBComboBox.Location = new System.Drawing.Point(327, 35);
+            this.DBComboBox.Location = new System.Drawing.Point(228, 35);
             this.DBComboBox.Name = "DBComboBox";
-            this.DBComboBox.Size = new System.Drawing.Size(127, 28);
+            this.DBComboBox.Size = new System.Drawing.Size(187, 28);
             this.DBComboBox.TabIndex = 1;
             this.DBComboBox.WaterText = "";
             this.DBComboBox.SelectedIndexChanged += new System.EventHandler(this.DBComboBox_SelectedIndexChanged);
@@ -271,9 +271,9 @@
             this.TBComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.TBComboBox.Font = new System.Drawing.Font("宋体", 13F);
             this.TBComboBox.FormattingEnabled = true;
-            this.TBComboBox.Location = new System.Drawing.Point(460, 35);
+            this.TBComboBox.Location = new System.Drawing.Point(421, 35);
             this.TBComboBox.Name = "TBComboBox";
-            this.TBComboBox.Size = new System.Drawing.Size(121, 28);
+            this.TBComboBox.Size = new System.Drawing.Size(226, 28);
             this.TBComboBox.TabIndex = 3;
             this.TBComboBox.WaterText = "";
             // 

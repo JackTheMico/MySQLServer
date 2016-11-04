@@ -35,8 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CSkin">
-      <HintPath>F:\C#资料\CSkin 16.1.14.2\CSkin 16.1.14.2\CSkin 4.0\CSkin.dll</HintPath>
+    <Reference Include="CSkin, Version=16.1.14.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CSkin.dll</HintPath>
     </Reference>
     <Reference Include="DLWSQL">
       <HintPath>..\..\ObjectiveSQL\DLWSQL\bin\Debug\DLWSQL.dll</HintPath>

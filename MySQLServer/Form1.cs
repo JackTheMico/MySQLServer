@@ -24,6 +24,7 @@ namespace MySQLServer
         ArrayList allDB;
         Array TBArray;
 
+
         bool updateStatus = false;
         bool addStatus = false;
 
@@ -106,7 +107,7 @@ namespace MySQLServer
         {
             sql = string.Format("SELECT * from {0}",TBComboBox.SelectedItem.ToString());
 
-
+            skinGroupBox3.Controls.Clear();
 
             if (myCon.State == ConnectionState.Open)
             {
@@ -126,6 +127,7 @@ namespace MySQLServer
 
                 myda.Fill(myds, TBArray.GetValue(0).ToString());
                 skinDataGridView1.DataSource = myds.Tables[TBArray.GetValue(0).ToString()];
+                
 
                 closeCommand = myCon.CreateCommand();
                 closeCommand.CommandType = CommandType.Text;
@@ -136,8 +138,200 @@ namespace MySQLServer
                 {
                     oriList.Add(orids.Tables[TBArray.GetValue(0).ToString()].Rows[i].ItemArray[0].ToString());
                 }
+
+                int basicX = 16, basicY = 44;
+
+                for (int col = 0; col < skinDataGridView1.Columns.Count; col++)
+                {
+                    //MessageBox.Show(skinDataGridView1.Columns[col].ValueType.ToString());
+                    skinDataGridView1.Columns[col].Width = skinDataGridView1.Columns[col].Name.Length*15;
+                    Color c = Color.FromArgb(100, 255, 255, 255);
+                    switch (skinDataGridView1.Columns[col].ValueType.ToString())
+                    {
+                        case "System.String":
+                            #region System.String
+                            CCWin.SkinControl.SkinLabel  labelN = new CCWin.SkinControl.SkinLabel();
+                            labelN.Name = skinDataGridView1.Columns[col].Name;
+                            labelN.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular); 
+                            labelN.TextAlign = ContentAlignment.MiddleLeft;
+                            labelN.Location = new Point(basicX , basicY * (col + 1));
+                            labelN.Text = skinDataGridView1.Columns[col].Name;
+                            labelN.AutoSize = true;
+                            skinGroupBox3.Controls.Add(labelN);
+
+                            CCWin.SkinControl.SkinTextBox textBoxN = new CCWin.SkinControl.SkinTextBox();
+                            textBoxN.Name = skinDataGridView1.Columns[col].Name + "TextBoxN";
+                            textBoxN.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular);
+                            textBoxN.TextAlign = HorizontalAlignment.Left;
+                            textBoxN.Location = new Point(labelN.Location.X+labelN.Size.Width, labelN.Location.Y);
+                            textBoxN.WaterColor = c;
+                            textBoxN.WaterText = skinDataGridView1.Columns[col].ValueType.ToString();
+                            skinGroupBox3.Controls.Add(textBoxN);
+                            #endregion
+                            break;
+
+                        case "System.Int32":
+                            #region System.Int32
+                            CCWin.SkinControl.SkinLabel  labelINT = new CCWin.SkinControl.SkinLabel();
+                            labelINT.Name = skinDataGridView1.Columns[col].Name;
+                            labelINT.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular);
+                            labelINT.TextAlign = ContentAlignment.MiddleLeft;
+                            labelINT.Location = new Point(basicX, basicY * (col + 1));
+                            labelINT.Text = skinDataGridView1.Columns[col].Name;
+                            labelINT.AutoSize = true;
+                            skinGroupBox3.Controls.Add(labelINT);
+
+                            CCWin.SkinControl.SkinTextBox textBoxINT1 = new CCWin.SkinControl.SkinTextBox();
+                            textBoxINT1.AutoSize = false;
+                            textBoxINT1.Size = new System.Drawing.Size(50, labelINT.Size.Height);
+                            textBoxINT1.Name = skinDataGridView1.Columns[col].Name + "TextBox1";
+                            textBoxINT1.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular);
+                            textBoxINT1.TextAlign = HorizontalAlignment.Left;
+                            textBoxINT1.Location = new Point(labelINT.Location.X + labelINT.Size.Width, labelINT.Location.Y);
+                            textBoxINT1.WaterColor = c;
+                            textBoxINT1.WaterText = skinDataGridView1.Columns[col].ValueType.ToString();
+                            skinGroupBox3.Controls.Add(textBoxINT1);
+
+                            CCWin.SkinControl.SkinLabel  labelINTtag = new CCWin.SkinControl.SkinLabel();
+                            labelINTtag.AutoSize = false;
+                            labelINTtag.Size = new System.Drawing.Size(20, labelINT.Size.Height);
+                            labelINTtag.Name = "tag";
+                            labelINTtag.Font = new System.Drawing.Font("微软雅黑", 14, FontStyle.Regular);
+                            labelINTtag.TextAlign = ContentAlignment.MiddleLeft;
+                            labelINTtag.Location = new Point(textBoxINT1.Location.X+textBoxINT1.Size.Width, labelINT.Location.Y);
+                            labelINTtag.Text = "~";
+                            skinGroupBox3.Controls.Add(labelINTtag);
+
+                            CCWin.SkinControl.SkinTextBox textBoxINT2 = new CCWin.SkinControl.SkinTextBox();
+                            textBoxINT2.AutoSize = false;
+                            textBoxINT2.Size = new System.Drawing.Size(50, labelINT.Size.Height);
+                            textBoxINT2.Name = skinDataGridView1.Columns[col].Name + "TextBox2";
+                            textBoxINT2.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular);
+                            textBoxINT2.TextAlign = HorizontalAlignment.Left;
+                            textBoxINT2.Location = new Point(labelINTtag.Location.X + labelINTtag.Size.Width, labelINTtag.Location.Y);
+                            textBoxINT2.WaterColor = c;
+                            textBoxINT2.WaterText = skinDataGridView1.Columns[col].ValueType.ToString();
+                            skinGroupBox3.Controls.Add(textBoxINT2);
+                            #endregion
+                            break;
+
+                        case "System.Boolean":
+                            #region System.Boolean
+                            CCWin.SkinControl.SkinGroupBox groupBox = new CCWin.SkinControl.SkinGroupBox();
+                            groupBox.AutoSize = false;
+                            groupBox.Size = new System.Drawing.Size(285, basicY);
+                            groupBox.Location = new Point(basicX,basicY*(col+1));
+                            groupBox.Text = skinDataGridView1.Columns[col].Name;
+                            skinGroupBox3.Controls.Add(groupBox);
+
+                            CCWin.SkinControl.SkinRadioButton radioBtnTrue = new CCWin.SkinControl.SkinRadioButton();
+                            radioBtnTrue.AutoSize = false;
+                            radioBtnTrue.Name = "True";
+                            radioBtnTrue.Size = new System.Drawing.Size(50, 20);
+                            radioBtnTrue.Font = new System.Drawing.Font("微软雅黑", 9 , FontStyle.Regular);
+                            radioBtnTrue.Location = new Point(55, 20);
+                            if (groupBox.Text == "sex")
+                                radioBtnTrue.Text = "男";
+                            else
+                                radioBtnTrue.Text = "True";
+                            groupBox.Controls.Add(radioBtnTrue);
+
+                            CCWin.SkinControl.SkinRadioButton radioBtnFalse = new CCWin.SkinControl.SkinRadioButton();
+                            radioBtnFalse.AutoSize = false;
+                            radioBtnFalse.Name = "False";
+                            radioBtnFalse.Size = new System.Drawing.Size(50, 20);
+                            radioBtnFalse.Font = new System.Drawing.Font("微软雅黑", 9, FontStyle.Regular);
+                            radioBtnFalse.Location = new Point(135, 20);
+                            if (groupBox.Text == "sex")
+                                radioBtnFalse.Text = "女";
+                            else
+                                radioBtnFalse.Text = "False";
+                            groupBox.Controls.Add(radioBtnFalse);
+
+                            CCWin.SkinControl.SkinRadioButton radioBtnAll = new CCWin.SkinControl.SkinRadioButton();
+                            radioBtnAll.AutoSize = false;
+                            radioBtnAll.Name = "All";
+                            radioBtnAll.Size = new System.Drawing.Size(50, 20);
+                            radioBtnAll.Font = new System.Drawing.Font("微软雅黑", 9, FontStyle.Regular);
+                            radioBtnAll.Location = new Point(215, 20);
+                            radioBtnAll.Text = "ALL";
+                            groupBox.Controls.Add(radioBtnAll);
+                            #endregion
+                            break;
+
+                        case "System.Double":
+                            #region System.Double
+                            CCWin.SkinControl.SkinLabel  labelDouble = new CCWin.SkinControl.SkinLabel();
+                            labelDouble.Name = skinDataGridView1.Columns[col].Name;
+                            labelDouble.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular);
+                            labelDouble.TextAlign = ContentAlignment.MiddleLeft;
+                            labelDouble.Location = new Point(basicX, basicY * (col + 1));
+                            labelDouble.Text = skinDataGridView1.Columns[col].Name;
+                            labelDouble.AutoSize = true;
+                            skinGroupBox3.Controls.Add(labelDouble);
+
+                            CCWin.SkinControl.SkinTextBox textBoxDouble1 = new CCWin.SkinControl.SkinTextBox();
+                            textBoxDouble1.AutoSize = false;
+                            textBoxDouble1.Size = new System.Drawing.Size(50, labelDouble.Size.Height);
+                            textBoxDouble1.Name = skinDataGridView1.Columns[col].Name + "TextBox1";
+                            textBoxDouble1.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular);
+                            textBoxDouble1.TextAlign = HorizontalAlignment.Left;
+                            textBoxDouble1.Location = new Point(labelDouble.Location.X + labelDouble.Size.Width, labelDouble.Location.Y);
+                            textBoxDouble1.WaterColor = c;
+                            textBoxDouble1.WaterText = skinDataGridView1.Columns[col].ValueType.ToString();
+                            skinGroupBox3.Controls.Add(textBoxDouble1);
+
+                            CCWin.SkinControl.SkinLabel  labelDoubletag = new CCWin.SkinControl.SkinLabel();
+                            labelDoubletag.AutoSize = false;
+                            labelDoubletag.Size = new System.Drawing.Size(20, labelDouble.Size.Height);
+                            labelDoubletag.Name = "tag";
+                            labelDoubletag.Font = new System.Drawing.Font("微软雅黑", 14, FontStyle.Regular);
+                            labelDoubletag.TextAlign = ContentAlignment.MiddleLeft;
+                            labelDoubletag.Location = new Point(textBoxDouble1.Location.X + textBoxDouble1.Size.Width, textBoxDouble1.Location.Y);
+                            labelDoubletag.Text = "~";
+                            skinGroupBox3.Controls.Add(labelDoubletag);
+
+                            CCWin.SkinControl.SkinTextBox textBoxDouble2 = new CCWin.SkinControl.SkinTextBox();
+                            textBoxDouble2.AutoSize = false;
+                            textBoxDouble2.Size = new System.Drawing.Size(50, labelDouble.Size.Height);
+                            textBoxDouble2.Name = skinDataGridView1.Columns[col].Name + "TextBox2";
+                            textBoxDouble2.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular);
+                            textBoxDouble2.TextAlign = HorizontalAlignment.Left;
+                            textBoxDouble2.Location = new Point(labelDoubletag.Location.X + labelDoubletag.Size.Width, labelDoubletag.Location.Y);
+                            textBoxDouble2.WaterColor = c;
+                            textBoxDouble2.WaterText = skinDataGridView1.Columns[col].ValueType.ToString();
+                            skinGroupBox3.Controls.Add(textBoxDouble2);
+                            #endregion
+                            break;
+                    }
+                }
+
+                // 给 GroupBox3 添加滚动条
+
+                VScrollBar VBar = new VScrollBar();
+                VBar.Anchor = AnchorStyles.Right;
+                VBar.Anchor = AnchorStyles.Top;
+                VBar.Location = new Point(skinGroupBox3.Width - 20, 10);
+                VBar.Size = new Size(20, skinGroupBox1.Height-10);
+                VBar.Scroll += new ScrollEventHandler(vScrollBar_Scroll);
+                skinGroupBox3.Controls.Add(VBar);
+            }
+            foreach (Control gbox in skinGroupBox3.Controls)
+            {
+                if (gbox is CCWin.SkinControl.SkinVScrollBar) continue;
+                gbox.Tag = gbox.Location.Y;
             }
 
+        }
+
+
+        private void vScrollBar_Scroll(object sender, ScrollEventArgs e)
+        {
+            foreach (Control gbox in skinGroupBox3.Controls)
+            {
+                if (gbox is CCWin.SkinControl.SkinVScrollBar) continue;
+                gbox.Location = new Point(gbox.Location.X, (int)gbox.Tag - e.NewValue);
+            }
         }
 
 
@@ -218,7 +412,7 @@ namespace MySQLServer
                             Command command = sqlUpdate.toCommand();
                             closeCommand.CommandText = command.getStatement();
 
-                           //essageBox.Show(command.getStatement());
+                           //MessageBox.Show(command.getStatement());
 
                             try
                             {
@@ -328,8 +522,10 @@ namespace MySQLServer
             }
         }
 
+        
         private void skinButton3_Click(object sender, EventArgs e)
         {
+            /*
             bool sex = false;
 
             sql = string.Format("SELECT * FROM student WHERE name = '{0}' and age >= {1} and age <= {2} and sex = '{3}' and height >= {4} and height <= {5} and weight >= {6} and weight <= {7}",
@@ -374,6 +570,95 @@ namespace MySQLServer
                 DataSet myds = new DataSet();
                 myda.Fill(myds, "student");
                 skinDataGridView1.DataSource = myds.Tables["student"];
+            }
+             */
+
+            SQL.Select sqlSearch = SQL.SELECT("*").From(TBComboBox.SelectedItem.ToString());
+            for (int box = 0; box < skinGroupBox3.Controls.Count; box++)
+            {
+                if (skinGroupBox3.Controls[box].GetType() == typeof(CCWin.SkinControl.SkinTextBox))
+                {
+                    CCWin.SkinControl.SkinTextBox gbox = (CCWin.SkinControl.SkinTextBox)skinGroupBox3.Controls[box];
+                    string name = gbox.Name.Remove(gbox.Name.Length - 8);
+                    
+                    if (gbox.Text != "" && gbox.WaterText == "System.String")
+                    {
+                        string searchData = "'" + gbox.Text.ToString() + "'";
+                        name = name+" = ?";
+                        if (box == 0)
+                        {
+                            sqlSearch.Where(name, searchData);
+                        }
+                        else
+                        {
+                            sqlSearch.And(name, searchData );
+                        }
+                    }
+                    else if (gbox.Text != "" && (gbox.WaterText == "System.Double" || gbox.WaterText == "System.Int32"))
+                    {
+                        string searchData = gbox.Text.ToString();
+                        if (gbox.Name.EndsWith("1"))
+                        {
+                            name = name + " >= ?";
+                            if (box == 0)
+                            {
+                                sqlSearch.Where(name, searchData);
+                            }
+                            else
+                            {
+                                sqlSearch.And(name, searchData);
+                            }
+                        }
+                        else if (gbox.Name.EndsWith("2"))
+                        {
+                            name = name + " <= ?";
+                            if (box == 0)
+                            {
+                                sqlSearch.Where(name, searchData);
+                            }
+                            else
+                            {
+                                sqlSearch.And(name, searchData);
+                            }
+                        }
+                    }
+                }
+
+                if (skinGroupBox3.Controls[box].GetType() == typeof(CCWin.SkinControl.SkinGroupBox))
+                {
+                    CCWin.SkinControl.SkinGroupBox boolGbox = (CCWin.SkinControl.SkinGroupBox)skinGroupBox3.Controls[box];
+                    string boolName = boolGbox.Text+" = ?";
+                    foreach (CCWin.SkinControl.SkinRadioButton radioBtn in boolGbox.Controls)
+                    {
+                        string searchData = "'" + radioBtn.Name.ToString() + "'";
+                        if (radioBtn.Checked == true && radioBtn.Name != "All")
+                        {
+                            if (box == 0)
+                            {
+                                sqlSearch.Where(boolName, searchData);
+                            }
+                            else
+                            {
+                                sqlSearch.And(boolName, searchData);
+                            }
+                        }
+                        else
+                        {
+
+                        }
+
+                    }
+                }
+            }
+            Command cmdSearch = sqlSearch.toCommand();
+           // MessageBox.Show(cmdSearch.getStatement()); //DEBUG
+
+            if (myCon.State == ConnectionState.Open)
+            {
+                myda = new SqlDataAdapter(cmdSearch.getStatement(), con);
+                DataSet myds = new DataSet();
+                myda.Fill(myds, TBComboBox.SelectedItem.ToString());
+                skinDataGridView1.DataSource = myds.Tables[TBComboBox.SelectedItem.ToString()];
             }
 
         }

@@ -150,11 +150,11 @@ namespace MySQLServer
             sql = string.Format("SELECT * from {0}", TBComboBox.SelectedItem.ToString());
             myda = new SqlDataAdapter(sql, con);
             orids = new DataSet();
-            myda.Fill(orids, "student");
+            myda.Fill(orids, TBComboBox.SelectedItem.ToString());
 
-            for (int x = 0; x < orids.Tables["student"].Rows.Count; x++)
+            for (int x = 0; x < orids.Tables[TBComboBox.SelectedItem.ToString()].Rows.Count; x++)
             {
-                oriList.Add(orids.Tables["student"].Rows[x].ItemArray[0].ToString());
+                oriList.Add(orids.Tables[TBComboBox.SelectedItem.ToString()].Rows[x].ItemArray[0].ToString());
             }
 
 
@@ -177,6 +177,8 @@ namespace MySQLServer
                     return;
                 }
                  */
+                
+
 
                 for (int p = 0; p < skinDataGridView1.Rows[i].Cells.Count; p++)
                 {
@@ -186,6 +188,7 @@ namespace MySQLServer
                         return;
                     }
                 }
+            
 
 
 
@@ -215,7 +218,7 @@ namespace MySQLServer
                             Command command = sqlUpdate.toCommand();
                             closeCommand.CommandText = command.getStatement();
 
-                            MessageBox.Show(command.getStatement());
+                           //essageBox.Show(command.getStatement());
 
                             try
                             {
@@ -231,6 +234,7 @@ namespace MySQLServer
                         }
                         else
                         {
+                            /*
                             closeCommand.CommandText = string.Format("INSERT INTO student (name, age, sex, height, weight) VALUES ('{0}','{1}','{2}','{3}','{4}')",
                                     skinDataGridView1.Rows[i].Cells[0].Value,
                                     Int16.Parse(skinDataGridView1.Rows[i].Cells[1].Value.ToString()),
@@ -238,6 +242,20 @@ namespace MySQLServer
                                     skinDataGridView1.Rows[i].Cells[3].Value,
                                     skinDataGridView1.Rows[i].Cells[4].Value
                             );
+                            MessageBox.Show(closeCommand.CommandText);
+                             */
+
+                            SQL.Insert sqlInsert = SQL.INSERT(TBComboBox.SelectedItem.ToString());
+                            for (int col = 0; col < skinDataGridView1.Columns.Count; col++)
+                            {
+                                sqlInsert.Values(skinDataGridView1.Columns[col].Name, "'"+skinDataGridView1.Rows[i].Cells[col].Value.ToString()+"'");
+                            }
+                            Command  insert = sqlInsert.toCommand();
+                            closeCommand.CommandText = insert.getStatement();
+
+                            
+                           // MessageBox.Show(insert.getStatement());
+
                             try
                             {
                                 closeCommand.ExecuteNonQuery();
@@ -294,11 +312,14 @@ namespace MySQLServer
             {
                 if (row.Selected == true)
                 {
-                    closeCommand.CommandText = string.Format("DELETE FROM student WHERE name = '{0}'",
-                                row.Cells[0].Value.ToString());
+                    string where = skinDataGridView1.Columns[0].Name +" = ?";
+                    SQL.Delete sqlRemove = SQL.DELETE(TBComboBox.SelectedItem.ToString()).Where(where, "'" + row.Cells[0].Value.ToString() + "'");
+                    Command remove = sqlRemove.toCommand();
+
+                    closeCommand.CommandText = remove.getStatement();
                     closeCommand.ExecuteNonQuery();
-                    if (oriList.Count != 0 && orids.Tables["student"].Rows.Count != row.Index)
-                        oriList.Remove(orids.Tables["student"].Rows[row.Index].ItemArray[0].ToString());
+                    if (oriList.Count != 0 && orids.Tables[TBComboBox.SelectedItem.ToString()].Rows.Count != row.Index)
+                        oriList.Remove(orids.Tables[TBComboBox.SelectedItem.ToString()].Rows[row.Index].ItemArray[0].ToString());
                     else
                         return;
                     skinDataGridView1.Rows.RemoveAt(row.Index);
@@ -355,6 +376,17 @@ namespace MySQLServer
                 skinDataGridView1.DataSource = myds.Tables["student"];
             }
 
+        }
+
+        private void skinDataGridView1_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+        {
+            for (int de = 0; de < e.Row.Cells.Count; de++)
+            {
+                if (e.Row.Cells[de].ValueType == typeof(bool) )
+                {
+                    e.Row.Cells[de].Value = false;
+                }
+            }
         }
 
         

@@ -143,8 +143,7 @@ namespace MySQLServer
 
                 for (int col = 0; col < skinDataGridView1.Columns.Count; col++)
                 {
-                    //MessageBox.Show(skinDataGridView1.Columns[col].ValueType.ToString());
-                    skinDataGridView1.Columns[col].Width = skinDataGridView1.Columns[col].Name.Length*15;
+                  //  MessageBox.Show(skinDataGridView1.Columns[col].ValueType.ToString());     // 显示每一列的type
                     Color c = Color.FromArgb(100, 255, 255, 255);
                     switch (skinDataGridView1.Columns[col].ValueType.ToString())
                     {
@@ -303,6 +302,26 @@ namespace MySQLServer
                             skinGroupBox3.Controls.Add(textBoxDouble2);
                             #endregion
                             break;
+
+                        case "System.DateTime":
+                            #region  System.DateTime
+                            CCWin.SkinControl.SkinLabel  labelTime = new CCWin.SkinControl.SkinLabel();
+                            labelTime.Name = skinDataGridView1.Columns[col].Name;
+                            labelTime.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular);
+                            labelTime.TextAlign = ContentAlignment.MiddleLeft;
+                            labelTime.Location = new Point(basicX, basicY * (col + 1));
+                            labelTime.Text = skinDataGridView1.Columns[col].Name;
+                            labelTime.AutoSize = true;
+                            skinGroupBox3.Controls.Add(labelTime);
+
+                            CCWin.SkinControl.SkinDateTimePicker dtPicker = new CCWin.SkinControl.SkinDateTimePicker();
+                            dtPicker.Text = "";
+                            dtPicker.font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Bold);
+                            dtPicker.Name = skinDataGridView1.Columns[col].Name;
+                            skinGroupBox3.Controls.Add(dtPicker);
+                            dtPicker.Location = new Point(labelTime.Location.X + labelTime.Width, labelTime.Location.Y);
+                            #endregion
+                            break;
                     }
                 }
 
@@ -334,7 +353,7 @@ namespace MySQLServer
             }
         }
 
-
+        #region 更新 & 插入
         private void skinButton2_Click(object sender, EventArgs e)
         {
             oriList.Clear();
@@ -376,7 +395,7 @@ namespace MySQLServer
 
                 for (int p = 0; p < skinDataGridView1.Rows[i].Cells.Count; p++)
                 {
-                    if (skinDataGridView1.Rows[i].Cells[p].Value.ToString() == "")
+                    if (skinDataGridView1.Rows[i].Cells[p].Value.ToString() == "" && (skinDataGridView1.Rows[i].Cells[p].ValueType != typeof(System.DateTime)))
                     {
                         MessageBox.Show("格式错误，值不能为null");
                         return;
@@ -410,9 +429,9 @@ namespace MySQLServer
                             string where = skinDataGridView1.Columns[0].Name + " = ?";
                             sqlUpdate.Where(where, "'"+skinDataGridView1.Rows[i].Cells[0].Value.ToString()+"'");
                             Command command = sqlUpdate.toCommand();
-                            closeCommand.CommandText = command.getStatement();
+                            closeCommand.CommandText = command.getStatement().Replace("date = ''","date = null");
 
-                           //MessageBox.Show(command.getStatement());
+                           //  MessageBox.Show(command.getStatement());
 
                             try
                             {
@@ -445,7 +464,7 @@ namespace MySQLServer
                                 sqlInsert.Values(skinDataGridView1.Columns[col].Name, "'"+skinDataGridView1.Rows[i].Cells[col].Value.ToString()+"'");
                             }
                             Command  insert = sqlInsert.toCommand();
-                            closeCommand.CommandText = insert.getStatement();
+                            closeCommand.CommandText = insert.getStatement().Replace(",''", ",null");
 
                             
                            // MessageBox.Show(insert.getStatement());
@@ -479,6 +498,7 @@ namespace MySQLServer
                 MessageBox.Show("添加成功！");
 
         }
+        #endregion
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -490,7 +510,7 @@ namespace MySQLServer
         }
 
 
-
+        // 鼠标右键的事件
         private void skinDataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
@@ -500,6 +520,7 @@ namespace MySQLServer
 
         }
 
+        #region 删除
         private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in skinDataGridView1.SelectedRows)
@@ -513,16 +534,21 @@ namespace MySQLServer
                     closeCommand.CommandText = remove.getStatement();
                     closeCommand.ExecuteNonQuery();
                     if (oriList.Count != 0 && orids.Tables[TBComboBox.SelectedItem.ToString()].Rows.Count != row.Index)
+                    {
                         oriList.Remove(orids.Tables[TBComboBox.SelectedItem.ToString()].Rows[row.Index].ItemArray[0].ToString());
+                        skinDataGridView1.Rows.RemoveAt(row.Index);
+                        MessageBox.Show("删除成功！");
+                    }
                     else
                         return;
-                    skinDataGridView1.Rows.RemoveAt(row.Index);
-                    MessageBox.Show("删除成功！");
+                    
                 }
             }
         }
+        #endregion
 
-        
+
+        #region 查询
         private void skinButton3_Click(object sender, EventArgs e)
         {
             /*
@@ -649,9 +675,25 @@ namespace MySQLServer
 
                     }
                 }
+
+                if (skinGroupBox3.Controls[box].GetType() == typeof(CCWin.SkinControl.SkinDateTimePicker) && skinGroupBox3.Controls[box].Text != "")
+                {
+                    CCWin.SkinControl.SkinDateTimePicker dtBox = (CCWin.SkinControl.SkinDateTimePicker)skinGroupBox3.Controls[box];
+                    string dtName = dtBox.Name + " = ?";
+                    string searchData = "'" + dtBox.Text + "'"; 
+                    if (box == 0)
+                    {
+                        sqlSearch.Where(dtName, searchData);
+                    }
+                    else
+                    {
+                        sqlSearch.And(dtName, searchData);
+                    }
+                }
+
             }
             Command cmdSearch = sqlSearch.toCommand();
-           // MessageBox.Show(cmdSearch.getStatement()); //DEBUG
+          //  MessageBox.Show(cmdSearch.getStatement()); //DEBUG
 
             if (myCon.State == ConnectionState.Open)
             {
@@ -662,6 +704,7 @@ namespace MySQLServer
             }
 
         }
+        #endregion
 
         private void skinDataGridView1_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {

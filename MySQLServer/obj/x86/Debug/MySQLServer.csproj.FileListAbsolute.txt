@@ -22,3 +22,5 @@ D:\CSharp_Projects\MySQLServer - 备份\MySQLServer\obj\x86\Debug\MySQLServer.cs
 D:\CSharp_Projects\MySQLServer - 备份\MySQLServer\obj\x86\Debug\MySQLServer.Form1.resources
 D:\CSharp_Projects\MySQLServer - 备份\MySQLServer\obj\x86\Debug\MySQLServer.Properties.Resources.resources
 D:\CSharp_Projects\MySQLServer - 备份\MySQLServer\obj\x86\Debug\MySQLServer.csproj.GenerateResource.Cache
+D:\CSharp_Projects\MySQLServer\MySQLServer\bin\Debug\DLWSQL.xml
+D:\CSharp_Projects\MySQLServer - 备份\MySQLServer\bin\Debug\DLWSQL.xml

@@ -33,13 +33,13 @@ namespace MySQLServer
         public Form1()
         {
             InitializeComponent();
+            skinGroupBox3.VerticalScroll.Visible = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             allDB = GetAllDataBase(".");
             DBComboBox.DataSource = allDB;
-            
         }
 
         /// <summary>
@@ -144,6 +144,9 @@ namespace MySQLServer
                 for (int col = 0; col < skinDataGridView1.Columns.Count; col++)
                 {
                   //  MessageBox.Show(skinDataGridView1.Columns[col].ValueType.ToString());     // 显示每一列的type
+                    int autoTitleWidth = skinDataGridView1.Columns[col].Name.Length * (int)skinDataGridView1.HeadFont.SizeInPoints;
+                    if (skinDataGridView1.Columns[col].Width < autoTitleWidth)
+                        skinDataGridView1.Columns[col].Width = autoTitleWidth;
                     Color c = Color.FromArgb(100, 255, 255, 255);
                     switch (skinDataGridView1.Columns[col].ValueType.ToString())
                     {
@@ -325,33 +328,10 @@ namespace MySQLServer
                     }
                 }
 
-                // 给 GroupBox3 添加滚动条
-
-                VScrollBar VBar = new VScrollBar();
-                VBar.Anchor = AnchorStyles.Right;
-                VBar.Anchor = AnchorStyles.Top;
-                VBar.Location = new Point(skinGroupBox3.Width - 20, 10);
-                VBar.Size = new Size(20, skinGroupBox1.Height-10);
-                VBar.Scroll += new ScrollEventHandler(vScrollBar_Scroll);
-                skinGroupBox3.Controls.Add(VBar);
-            }
-            foreach (Control gbox in skinGroupBox3.Controls)
-            {
-                if (gbox is CCWin.SkinControl.SkinVScrollBar) continue;
-                gbox.Tag = gbox.Location.Y;
             }
 
         }
 
-
-        private void vScrollBar_Scroll(object sender, ScrollEventArgs e)
-        {
-            foreach (Control gbox in skinGroupBox3.Controls)
-            {
-                if (gbox is CCWin.SkinControl.SkinVScrollBar) continue;
-                gbox.Location = new Point(gbox.Location.X, (int)gbox.Tag - e.NewValue);
-            }
-        }
 
         #region 更新 & 插入
         private void skinButton2_Click(object sender, EventArgs e)
@@ -421,15 +401,17 @@ namespace MySQLServer
                              */
 
                             SQL.Update sqlUpdate = SQL.UPDATE(TBComboBox.SelectedItem.ToString());
-
+                            string tempForNullDateTime = "";
                             for (int varm = 0; varm < skinDataGridView1.Rows[i].Cells.Count; varm++)
                             {
+                                if (skinDataGridView1.Columns[varm].ValueType == typeof(System.DateTime))
+                                    tempForNullDateTime = skinDataGridView1.Columns[varm].Name;
                                 sqlUpdate.Set(skinDataGridView1.Columns[varm].Name, skinDataGridView1.Rows[i].Cells[varm].Value.ToString());
                             }
                             string where = skinDataGridView1.Columns[0].Name + " = ?";
                             sqlUpdate.Where(where, "'"+skinDataGridView1.Rows[i].Cells[0].Value.ToString()+"'");
                             Command command = sqlUpdate.toCommand();
-                            closeCommand.CommandText = command.getStatement().Replace("date = ''","date = null");
+                            closeCommand.CommandText = command.getStatement().Replace(tempForNullDateTime+" = ''",tempForNullDateTime+" = null");
 
                            //  MessageBox.Show(command.getStatement());
 

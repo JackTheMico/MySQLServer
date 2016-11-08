@@ -42,13 +42,7 @@ namespace MySQLServer
             DBComboBox.DataSource = allDB;
         }
 
-        /// <summary>
-        /// 获取指定IP地址的数据库所有数据库实例名。
-        /// </summary>
-        /// <param name="ip">指定的 IP 地址。</param>
-        /// <param name="username">登录数据库的用户名。</param>
-        /// <param name="password">登陆数据库的密码。</param>
-        /// <returns>返回包含数据实例名的列表。</returns>
+        // 获取全部数据库
         private ArrayList GetAllDataBase(string ip)
         {
             ArrayList DBNameList = new ArrayList();
@@ -70,6 +64,7 @@ namespace MySQLServer
             return DBNameList;
         }
 
+        // 选择数据库后,获取全部表并显示
         private void DBComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (myCon != null)
@@ -104,13 +99,16 @@ namespace MySQLServer
             dr.Close();
         }
 
-
+        // 连接数据库, 刷新条件查询控件
         private void skinButton1_Click(object sender, EventArgs e)
         {
             if (TBComboBox.SelectedItem != null)
                 sql = string.Format("SELECT * from {0}", TBComboBox.SelectedItem.ToString());
             else
+            {
+                MessageBox.Show("没有表，连接失败，呵呵哒！");
                 return;
+            }
 
             skinGroupBox3.Controls.Clear();
 
@@ -119,20 +117,20 @@ namespace MySQLServer
                 myda = new SqlDataAdapter(sql, con);
                 DataSet myds = new DataSet();
 
-             //   SqlCommand cmdToTables = new SqlCommand("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'", myCon);
-            //    SqlDataReader dr = cmdToTables.ExecuteReader();
-            //    ArrayList TBList = new ArrayList();
+                //   SqlCommand cmdToTables = new SqlCommand("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'", myCon);
+                //    SqlDataReader dr = cmdToTables.ExecuteReader();
+                //    ArrayList TBList = new ArrayList();
 
-            //    while (dr.Read())
-            //    {
-            //        TBList.Add(dr.GetString(0));
-            //    }
-            //    Array TBArray = TBList.ToArray();
-            //    TBComboBox.DataSource = TBList;
+                //    while (dr.Read())
+                //    {
+                //        TBList.Add(dr.GetString(0));
+                //    }
+                //    Array TBArray = TBList.ToArray();
+                //    TBComboBox.DataSource = TBList;
 
                 myda.Fill(myds, TBArray.GetValue(0).ToString());
                 skinDataGridView1.DataSource = myds.Tables[TBArray.GetValue(0).ToString()];
-                
+
 
                 closeCommand = myCon.CreateCommand();
                 closeCommand.CommandType = CommandType.Text;
@@ -148,7 +146,7 @@ namespace MySQLServer
 
                 for (int col = 0; col < skinDataGridView1.Columns.Count; col++)
                 {
-                  //  MessageBox.Show(skinDataGridView1.Columns[col].ValueType.ToString());     // 显示每一列的type
+                    //  MessageBox.Show(skinDataGridView1.Columns[col].ValueType.ToString());     // 显示每一列的type
                     int autoTitleWidth = skinDataGridView1.Columns[col].Name.Length * (int)skinDataGridView1.HeadFont.SizeInPoints;
                     if (skinDataGridView1.Columns[col].Width < autoTitleWidth)
                         skinDataGridView1.Columns[col].Width = autoTitleWidth;
@@ -157,11 +155,11 @@ namespace MySQLServer
                     {
                         case "System.String":
                             #region System.String
-                            CCWin.SkinControl.SkinLabel  labelN = new CCWin.SkinControl.SkinLabel();
+                            CCWin.SkinControl.SkinLabel labelN = new CCWin.SkinControl.SkinLabel();
                             labelN.Name = skinDataGridView1.Columns[col].Name;
-                            labelN.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular); 
+                            labelN.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular);
                             labelN.TextAlign = ContentAlignment.MiddleLeft;
-                            labelN.Location = new Point(basicX , basicY * (col + 1));
+                            labelN.Location = new Point(basicX, basicY * (col + 1));
                             labelN.Text = skinDataGridView1.Columns[col].Name;
                             labelN.AutoSize = true;
                             skinGroupBox3.Controls.Add(labelN);
@@ -170,7 +168,7 @@ namespace MySQLServer
                             textBoxN.Name = skinDataGridView1.Columns[col].Name + "TextBoxN";
                             textBoxN.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular);
                             textBoxN.TextAlign = HorizontalAlignment.Left;
-                            textBoxN.Location = new Point(labelN.Location.X+labelN.Size.Width, labelN.Location.Y);
+                            textBoxN.Location = new Point(labelN.Location.X + labelN.Size.Width, labelN.Location.Y);
                             textBoxN.WaterColor = c;
                             textBoxN.WaterText = skinDataGridView1.Columns[col].ValueType.ToString();
                             skinGroupBox3.Controls.Add(textBoxN);
@@ -179,7 +177,7 @@ namespace MySQLServer
 
                         case "System.Int32":
                             #region System.Int32
-                            CCWin.SkinControl.SkinLabel  labelINT = new CCWin.SkinControl.SkinLabel();
+                            CCWin.SkinControl.SkinLabel labelINT = new CCWin.SkinControl.SkinLabel();
                             labelINT.Name = skinDataGridView1.Columns[col].Name;
                             labelINT.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular);
                             labelINT.TextAlign = ContentAlignment.MiddleLeft;
@@ -199,13 +197,13 @@ namespace MySQLServer
                             textBoxINT1.WaterText = skinDataGridView1.Columns[col].ValueType.ToString();
                             skinGroupBox3.Controls.Add(textBoxINT1);
 
-                            CCWin.SkinControl.SkinLabel  labelINTtag = new CCWin.SkinControl.SkinLabel();
+                            CCWin.SkinControl.SkinLabel labelINTtag = new CCWin.SkinControl.SkinLabel();
                             labelINTtag.AutoSize = false;
                             labelINTtag.Size = new System.Drawing.Size(20, labelINT.Size.Height);
                             labelINTtag.Name = "tag";
                             labelINTtag.Font = new System.Drawing.Font("微软雅黑", 14, FontStyle.Regular);
                             labelINTtag.TextAlign = ContentAlignment.MiddleLeft;
-                            labelINTtag.Location = new Point(textBoxINT1.Location.X+textBoxINT1.Size.Width, labelINT.Location.Y);
+                            labelINTtag.Location = new Point(textBoxINT1.Location.X + textBoxINT1.Size.Width, labelINT.Location.Y);
                             labelINTtag.Text = "~";
                             skinGroupBox3.Controls.Add(labelINTtag);
 
@@ -227,7 +225,7 @@ namespace MySQLServer
                             CCWin.SkinControl.SkinGroupBox groupBox = new CCWin.SkinControl.SkinGroupBox();
                             groupBox.AutoSize = false;
                             groupBox.Size = new System.Drawing.Size(285, basicY);
-                            groupBox.Location = new Point(basicX,basicY*(col+1));
+                            groupBox.Location = new Point(basicX, basicY * (col + 1));
                             groupBox.Text = skinDataGridView1.Columns[col].Name;
                             skinGroupBox3.Controls.Add(groupBox);
 
@@ -235,7 +233,7 @@ namespace MySQLServer
                             radioBtnTrue.AutoSize = false;
                             radioBtnTrue.Name = "True";
                             radioBtnTrue.Size = new System.Drawing.Size(50, 20);
-                            radioBtnTrue.Font = new System.Drawing.Font("微软雅黑", 9 , FontStyle.Regular);
+                            radioBtnTrue.Font = new System.Drawing.Font("微软雅黑", 9, FontStyle.Regular);
                             radioBtnTrue.Location = new Point(55, 20);
                             if (groupBox.Text == "sex")
                                 radioBtnTrue.Text = "男";
@@ -268,7 +266,7 @@ namespace MySQLServer
 
                         case "System.Double":
                             #region System.Double
-                            CCWin.SkinControl.SkinLabel  labelDouble = new CCWin.SkinControl.SkinLabel();
+                            CCWin.SkinControl.SkinLabel labelDouble = new CCWin.SkinControl.SkinLabel();
                             labelDouble.Name = skinDataGridView1.Columns[col].Name;
                             labelDouble.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular);
                             labelDouble.TextAlign = ContentAlignment.MiddleLeft;
@@ -288,7 +286,7 @@ namespace MySQLServer
                             textBoxDouble1.WaterText = skinDataGridView1.Columns[col].ValueType.ToString();
                             skinGroupBox3.Controls.Add(textBoxDouble1);
 
-                            CCWin.SkinControl.SkinLabel  labelDoubletag = new CCWin.SkinControl.SkinLabel();
+                            CCWin.SkinControl.SkinLabel labelDoubletag = new CCWin.SkinControl.SkinLabel();
                             labelDoubletag.AutoSize = false;
                             labelDoubletag.Size = new System.Drawing.Size(20, labelDouble.Size.Height);
                             labelDoubletag.Name = "tag";
@@ -313,7 +311,7 @@ namespace MySQLServer
 
                         case "System.DateTime":
                             #region  System.DateTime
-                            CCWin.SkinControl.SkinLabel  labelTime = new CCWin.SkinControl.SkinLabel();
+                            CCWin.SkinControl.SkinLabel labelTime = new CCWin.SkinControl.SkinLabel();
                             labelTime.Name = skinDataGridView1.Columns[col].Name;
                             labelTime.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular);
                             labelTime.TextAlign = ContentAlignment.MiddleLeft;
@@ -334,18 +332,26 @@ namespace MySQLServer
                 }
 
             }
+            
 
         }
 
 
-        #region 更新 & 插入
+        #region 保存（更新 & 插入）
         private void skinButton2_Click(object sender, EventArgs e)
         {
             oriList.Clear();
             updateStatus = false;
             addStatus = false;
 
-            sql = string.Format("SELECT * from {0}", TBComboBox.SelectedItem.ToString());
+            if (TBComboBox.SelectedItem != null)
+                sql = string.Format("SELECT * from {0}", TBComboBox.SelectedItem.ToString());
+            else
+            {
+                MessageBox.Show("木有表，保存失败，呵呵哒！");
+                return;
+            }
+                
             myda = new SqlDataAdapter(sql, con);
             orids = new DataSet();
             myda.Fill(orids, TBComboBox.SelectedItem.ToString());
@@ -471,7 +477,10 @@ namespace MySQLServer
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        if (ex.Message == "未将对象引用设置到对象的实例。")
+                            MessageBox.Show("保存失败，未连接到数据库！");
+                        else
+                            MessageBox.Show(ex.Message);
                         return;
                     }
 
@@ -535,7 +544,7 @@ namespace MySQLServer
         #endregion
 
 
-        #region 查询
+        #region 条件查询
         private void skinButton3_Click(object sender, EventArgs e)
         {
             /*
@@ -585,8 +594,17 @@ namespace MySQLServer
                 skinDataGridView1.DataSource = myds.Tables["student"];
             }
              */
+            SQL.Select sqlSearch;
 
-            SQL.Select sqlSearch = SQL.SELECT("*").From(TBComboBox.SelectedItem.ToString());
+            if (TBComboBox.SelectedItem != null)
+            {
+                sqlSearch = SQL.SELECT("*").From(TBComboBox.SelectedItem.ToString());
+            }
+            else
+            {
+                MessageBox.Show("没有表，呵呵哒！");
+                return;
+            }
             for (int box = 0; box < skinGroupBox3.Controls.Count; box++)
             {
                 if (skinGroupBox3.Controls[box].GetType() == typeof(CCWin.SkinControl.SkinTextBox))
@@ -693,6 +711,7 @@ namespace MySQLServer
         }
         #endregion
 
+        // boolean类型的值默认赋为false
         private void skinDataGridView1_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             for (int de = 0; de < e.Row.Cells.Count; de++)

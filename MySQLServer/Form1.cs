@@ -40,6 +40,8 @@ namespace MySQLServer
         {
             allDB = GetAllDataBase(".");
             DBComboBox.DataSource = allDB;
+            skinButton2.Enabled = false;
+            skinButton3.Enabled = false;
         }
 
         // 获取全部数据库
@@ -98,6 +100,13 @@ namespace MySQLServer
 
             dr.Close();
             skinButton3.Enabled = false;
+            skinButton2.Enabled = false;
+        }
+
+        private void TBComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            skinButton3.Enabled = false;
+            skinButton2.Enabled = false;
         }
 
         // 连接数据库, 刷新条件查询控件
@@ -339,6 +348,7 @@ namespace MySQLServer
             }
 
             skinButton3.Enabled = true;
+            skinButton2.Enabled = true;
         }
 
         void textBox_Validating(object sender, KeyPressEventArgs e)
@@ -744,6 +754,8 @@ namespace MySQLServer
                 }
             }
         }
+
+        
 
         
 

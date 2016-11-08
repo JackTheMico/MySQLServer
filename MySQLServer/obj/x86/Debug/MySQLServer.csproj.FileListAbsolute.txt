@@ -1,4 +1,3 @@
-D:\CSharp_Projects\MySQLServer\MySQLServer\obj\x86\Debug\MySQLServer.csprojResolveAssemblyReference.cache
 D:\CSharp_Projects\MySQLServer\MySQLServer\obj\x86\Debug\MySQLServer.Form1.resources
 D:\CSharp_Projects\MySQLServer\MySQLServer\obj\x86\Debug\MySQLServer.Properties.Resources.resources
 D:\CSharp_Projects\MySQLServer\MySQLServer\obj\x86\Debug\MySQLServer.csproj.GenerateResource.Cache

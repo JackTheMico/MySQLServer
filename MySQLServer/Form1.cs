@@ -98,6 +98,8 @@ namespace MySQLServer
             }
             TBArray = TBList.ToArray();
             TBComboBox.DataSource = TBList;
+            if (TBComboBox.Items.Count == 0)
+                TBComboBox.Text = "";
 
             dr.Close();
         }
@@ -105,7 +107,10 @@ namespace MySQLServer
 
         private void skinButton1_Click(object sender, EventArgs e)
         {
-            sql = string.Format("SELECT * from {0}",TBComboBox.SelectedItem.ToString());
+            if (TBComboBox.SelectedItem != null)
+                sql = string.Format("SELECT * from {0}", TBComboBox.SelectedItem.ToString());
+            else
+                return;
 
             skinGroupBox3.Controls.Clear();
 

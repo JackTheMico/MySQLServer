@@ -97,6 +97,7 @@ namespace MySQLServer
                 TBComboBox.Text = "";
 
             dr.Close();
+            skinButton3.Enabled = false;
         }
 
         // 连接数据库, 刷新条件查询控件
@@ -164,7 +165,7 @@ namespace MySQLServer
                             labelN.AutoSize = true;
                             skinGroupBox3.Controls.Add(labelN);
 
-                            CCWin.SkinControl.SkinTextBox textBoxN = new CCWin.SkinControl.SkinTextBox();
+                            CCWin.SkinControl.SkinWaterTextBox textBoxN = new CCWin.SkinControl.SkinWaterTextBox();
                             textBoxN.Name = skinDataGridView1.Columns[col].Name + "TextBoxN";
                             textBoxN.Font = new System.Drawing.Font("微软雅黑", 12, FontStyle.Regular);
                             textBoxN.TextAlign = HorizontalAlignment.Left;
@@ -186,7 +187,7 @@ namespace MySQLServer
                             labelINT.AutoSize = true;
                             skinGroupBox3.Controls.Add(labelINT);
 
-                            CCWin.SkinControl.SkinTextBox textBoxINT1 = new CCWin.SkinControl.SkinTextBox();
+                            CCWin.SkinControl.SkinWaterTextBox textBoxINT1 = new CCWin.SkinControl.SkinWaterTextBox();
                             textBoxINT1.AutoSize = false;
                             textBoxINT1.Size = new System.Drawing.Size(50, labelINT.Size.Height);
                             textBoxINT1.Name = skinDataGridView1.Columns[col].Name + "TextBox1";
@@ -195,6 +196,7 @@ namespace MySQLServer
                             textBoxINT1.Location = new Point(labelINT.Location.X + labelINT.Size.Width, labelINT.Location.Y);
                             textBoxINT1.WaterColor = c;
                             textBoxINT1.WaterText = skinDataGridView1.Columns[col].ValueType.ToString();
+                            textBoxINT1.KeyPress += new KeyPressEventHandler(textBox_Validating);
                             skinGroupBox3.Controls.Add(textBoxINT1);
 
                             CCWin.SkinControl.SkinLabel labelINTtag = new CCWin.SkinControl.SkinLabel();
@@ -207,7 +209,7 @@ namespace MySQLServer
                             labelINTtag.Text = "~";
                             skinGroupBox3.Controls.Add(labelINTtag);
 
-                            CCWin.SkinControl.SkinTextBox textBoxINT2 = new CCWin.SkinControl.SkinTextBox();
+                            CCWin.SkinControl.SkinWaterTextBox  textBoxINT2 = new CCWin.SkinControl.SkinWaterTextBox();
                             textBoxINT2.AutoSize = false;
                             textBoxINT2.Size = new System.Drawing.Size(50, labelINT.Size.Height);
                             textBoxINT2.Name = skinDataGridView1.Columns[col].Name + "TextBox2";
@@ -216,6 +218,7 @@ namespace MySQLServer
                             textBoxINT2.Location = new Point(labelINTtag.Location.X + labelINTtag.Size.Width, labelINTtag.Location.Y);
                             textBoxINT2.WaterColor = c;
                             textBoxINT2.WaterText = skinDataGridView1.Columns[col].ValueType.ToString();
+                            textBoxINT2.KeyPress += new KeyPressEventHandler(textBox_Validating);
                             skinGroupBox3.Controls.Add(textBoxINT2);
                             #endregion
                             break;
@@ -275,7 +278,7 @@ namespace MySQLServer
                             labelDouble.AutoSize = true;
                             skinGroupBox3.Controls.Add(labelDouble);
 
-                            CCWin.SkinControl.SkinTextBox textBoxDouble1 = new CCWin.SkinControl.SkinTextBox();
+                            CCWin.SkinControl.SkinWaterTextBox textBoxDouble1 = new CCWin.SkinControl.SkinWaterTextBox();
                             textBoxDouble1.AutoSize = false;
                             textBoxDouble1.Size = new System.Drawing.Size(50, labelDouble.Size.Height);
                             textBoxDouble1.Name = skinDataGridView1.Columns[col].Name + "TextBox1";
@@ -284,6 +287,7 @@ namespace MySQLServer
                             textBoxDouble1.Location = new Point(labelDouble.Location.X + labelDouble.Size.Width, labelDouble.Location.Y);
                             textBoxDouble1.WaterColor = c;
                             textBoxDouble1.WaterText = skinDataGridView1.Columns[col].ValueType.ToString();
+                            textBoxDouble1.KeyPress += new KeyPressEventHandler(double_Validating);
                             skinGroupBox3.Controls.Add(textBoxDouble1);
 
                             CCWin.SkinControl.SkinLabel labelDoubletag = new CCWin.SkinControl.SkinLabel();
@@ -296,7 +300,7 @@ namespace MySQLServer
                             labelDoubletag.Text = "~";
                             skinGroupBox3.Controls.Add(labelDoubletag);
 
-                            CCWin.SkinControl.SkinTextBox textBoxDouble2 = new CCWin.SkinControl.SkinTextBox();
+                            CCWin.SkinControl.SkinWaterTextBox textBoxDouble2 = new CCWin.SkinControl.SkinWaterTextBox();
                             textBoxDouble2.AutoSize = false;
                             textBoxDouble2.Size = new System.Drawing.Size(50, labelDouble.Size.Height);
                             textBoxDouble2.Name = skinDataGridView1.Columns[col].Name + "TextBox2";
@@ -305,6 +309,7 @@ namespace MySQLServer
                             textBoxDouble2.Location = new Point(labelDoubletag.Location.X + labelDoubletag.Size.Width, labelDoubletag.Location.Y);
                             textBoxDouble2.WaterColor = c;
                             textBoxDouble2.WaterText = skinDataGridView1.Columns[col].ValueType.ToString();
+                            textBoxDouble2.KeyPress += new KeyPressEventHandler(double_Validating);
                             skinGroupBox3.Controls.Add(textBoxDouble2);
                             #endregion
                             break;
@@ -332,9 +337,26 @@ namespace MySQLServer
                 }
 
             }
-            
 
+            skinButton3.Enabled = true;
         }
+
+        void textBox_Validating(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }  
+        }
+
+        void double_Validating(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (!Char.IsDigit(e.KeyChar) && e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
 
 
         #region 保存（更新 & 插入）
@@ -607,9 +629,9 @@ namespace MySQLServer
             }
             for (int box = 0; box < skinGroupBox3.Controls.Count; box++)
             {
-                if (skinGroupBox3.Controls[box].GetType() == typeof(CCWin.SkinControl.SkinTextBox))
+                if (skinGroupBox3.Controls[box].GetType() == typeof(CCWin.SkinControl.SkinWaterTextBox))
                 {
-                    CCWin.SkinControl.SkinTextBox gbox = (CCWin.SkinControl.SkinTextBox)skinGroupBox3.Controls[box];
+                    CCWin.SkinControl.SkinWaterTextBox gbox = (CCWin.SkinControl.SkinWaterTextBox)skinGroupBox3.Controls[box];
                     string name = gbox.Name.Remove(gbox.Name.Length - 8);
                     
                     if (gbox.Text != "" && gbox.WaterText == "System.String")
